@@ -1,0 +1,246 @@
+@import url('public/reset.css');
+@import url('public/bootstrap.min.css');
+@charset "utf-8";
+/* CSS Document */
+/* S Reset */
+a {
+  background: transparent;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  outline: none;
+}
+a:hover {
+  color: #E78D00;
+  text-decoration: underline;
+  /*-moz-transition:all .3s ease;-webkit-transition:all .3s ease;-o-transition:all .3s ease;transition:all .3s ease;*/
+}
+::selection {
+  background: #E78D00;
+  color: #fff;
+}
+::-moz-selection {
+  background: #E78D00;
+  color: #fff;
+}
+.clearBoth {
+  clear: both;
+}
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+}
+.clearfix {
+  _zoom: 1;
+}
+* + html .clearfix {
+  overflow: auto;
+}
+/* E Reset */
+* html,
+* html body {
+  background-image: url(about:blank);
+  background-attachment: fixed;
+}
+body {
+  color: #333;
+  line-height: 20px;
+  font: 14px 'Microsoft YaHei', "hiragino sans gb", '黑体', '宋体', Arial, Lucida Grande, Tahoma, sans-serif;
+  background: #FFF;
+}
+* {
+  font-family: 'Microsoft YaHei', "hiragino sans gb", '黑体', '宋体', Arial, Lucida Grande, Tahoma, sans-serif;
+}
+.f_l {
+  float: left;
+}
+.f_r {
+  float: right;
+}
+.none {
+  display: none;
+}
+.the_btn {
+  border: 0 none;
+  cursor: pointer;
+}
+.orange {
+  color: #E78D00;
+}
+.red {
+  color: #F00;
+}
+.gray {
+  color: #CBCBCB;
+}
+.green{
+  color: green;
+}
+.thewidth {
+  width: 1000px;
+  margin: 0 auto;
+}
+.thewidth100 {
+  width: 100%;
+  min-width: 1000px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+.mb15 {
+  margin-bottom: 15px;
+}
+.mb20 {
+  margin-bottom: 20px;
+}
+.mb25 {
+  margin-bottom: 25px;
+}
+.wb10 {
+  width: 10%;
+}
+.wb15 {
+  width: 15%;
+}
+.wb20 {
+  width: 20%;
+}
+.wb25 {
+  width: 25%;
+}
+.wb30 {
+  width: 30%;
+}
+.wb35 {
+  width: 35%;
+}
+.wb40 {
+  width: 40%;
+}
+.wb50 {
+  width: 50%;
+}
+.wn100 {
+  width: 100px;
+}
+.wn150 {
+  width: 150px;
+}
+.wn200 {
+  width: 200px;
+}
+.wn250 {
+  width: 250px;
+}
+.wn300 {
+  width: 300px;
+}
+.wn350 {
+  width: 350px;
+}
+.wn400 {
+  width: 400px;
+}
+.wn450 {
+  width: 450px;
+}
+.wn500 {
+  width: 500px;
+}
+/*container*/
+#container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.ma_l20{margin-left: 20px;}
+.ma_l10{margin-left: 10px;}
+.ma_r20{margin-right: 20px;}
+.bghui{background: #f9f9f9;}
+/*****************************************/
+/****************[ HEADER ]***************/
+/*****************************************/
+.header_top{height: 60px; line-height: 60px;padding: 0 20px;}
+.header{height: 45px; line-height: 45px;}
+.header{background: #464c58;}
+.header li{float: left; border-right: 1px solid #000; border-left:1px solid #000;}
+.header a{color: #fff;padding: 13px 25px; letter-spacing: 3px;}
+.header a:hover,.header .choice{background:#7b8797;}
+
+
+
+
+
+
+
+
+
+
+
+/*****************************************/
+/*****************[ BODY ]****************/
+/*****************************************/
+.wrap{
+  padding-top: 30px;
+  position: relative;
+}
+.wrap_l{
+  position: absolute;
+  width: 260px;
+  word-wrap:break-word;
+}
+.wrap_l h2{
+  background: #f2f6f9; 
+  font-size: 20px; 
+  float: right; 
+  width: 240px; 
+  padding: 5px 0 10px 30px; 
+  height: 50px; 
+  line-height: 40px;
+  border-left: 2px solid #659abc;
+  margin: 0;
+}
+.wrap_l ul {width: 240px; float: right;}
+.wrap_l ul li{margin: 10px 0 0 30px;padding-bottom: 10px; border-bottom: 1px solid #eeeeee;}
+.wrap_l ul li a.choice{color: #6bacdd; font-weight: 900;}
+.wrap_r{
+  margin-left: 280px;
+  word-wrap:break-word;
+  padding: 0 30px 0 10px;
+}
+
+.SearchOperation{
+  height: 50px; 
+  padding: 5px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+.table th,
+.table{text-align: center;}
+
+.table .form-control{width: 80px; margin: 0 auto;height: 25px;}
+.table .form-control.flei{width: 120px;}
+.table .form-control,.table .btn{padding: 1px 10px;font-size: 14px;}
+.form-group{position: relative;}
+.form-group .laydate-icon{position: absolute;top: 6px;right: 8px;border: 0;}
+
+.modify .table .form-control{width: 200px;}
+.modify .table textarea.form-control{width: 100%; min-height: 80px; padding: 5px;}
+
+
+.table-bordered>tbody>tr.lh_100>td, .table-bordered>tfoot>tr.lh_100>td, .table-bordered>thead>tr.lh_100>td{line-height: 100px;}
+
+.laydate_body .laydate_y .laydate_yms ul li{width: 59px !important;}
+.laydate_body .laydate_bottom{height: 35px !important;}
+
+
+.sj {margin: 0 !important;}
+.sj.form-group .laydate-icon{top: 2px;}
+
+#page{padding: 20px 0}
+/*****************************************/
+/*****************[ FOOT ]****************/
+/*****************************************/
+.footer{text-align: center;line-height: 40px;}

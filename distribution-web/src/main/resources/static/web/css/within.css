@@ -1,0 +1,178 @@
+.lis a>div{height: 5rem;line-height: 5rem;font-size:1.4rem;}
+.lis i{color: #989898; font-size: 2.5rem; margin: 1.7rem 0}
+.lis a>div.col-xs-9 span{float: left;}
+.lis a{display: block;}
+
+.classify{
+    width: 2rem; 
+    height: 5rem; 
+    display: block;  
+    background-size: 2rem;
+     margin: 0 auto; 
+ }
+
+
+
+.xuanz{
+    line-height: 4.5rem;
+    text-align: center; 
+    position: fixed; 
+    top: 5rem; 
+    width: 100%;
+    z-index: 9999;
+}
+.xuanz .sousu{
+    line-height: 1rem;
+}
+.xuanz select{
+    border: 0;
+    height: 3rem;
+}
+.xuanz ul{margin: 5rem 0 0 0; text-align: left; }
+.xuanz ul li{padding: 0 1.5rem; line-height: 3.5rem;border-top: 1px solid #dcdcdc;}
+.xuanz ul li:hover{color: #fc0a0a;}
+.xuanz ul i{
+    font-size: 1.8rem;
+    margin: 1.2rem 0;
+}
+.tw_lis>div{padding: .8rem 0;}
+.tw_lis .lis_bo1{padding: .3rem; margin-right: -5px;}
+.tw_lis h5,.tw_lis p{margin: 0 0 .4rem; margin-left: -15px;}
+.tw_lis h5{font-size: 1.4rem;}
+.tw_lis {position: relative;}
+.tw_lis div.jg{
+    margin-right: -15px;
+    margin-left: -15px;
+    position: relative;
+    bottom: 1.5rem;
+    height: 0;
+}
+
+.tw_lis .manjian{
+    background: #fdb222;
+    padding: .1rem .3rem;
+    border-radius: .2rem;
+    color: #fff;
+}
+.tw_lis .tehui{
+    background: #6f8afd;
+    padding: .1rem .3rem;
+    border-radius: .2rem;
+    color: #fff;
+}
+.tw_lis .xliang{
+    background: #52f183;
+    padding: .1rem .3rem;
+    border-radius: .2rem;
+    color: #fff;
+}
+
+
+.shopping{margin-bottom: 2rem;}
+.shopping .lis_bo1{margin-left: 1.5rem; position: relative;}
+.shopping .lis_bo1 div{position: absolute; top:50%; left: -2rem; height: 2rem; width: 2rem;}
+.closing a,.shopping .lis_bo1 div a{
+    height: 1.5rem; 
+    width: 1.5rem;
+    display: block; 
+    margin-top: -1rem; 
+    border-radius: 1.5rem;
+    border: 1px solid #dcdcdc;
+}
+
+.pitchOn{
+    background: url(../images/public/gwc_07.jpg) no-repeat center scroll;
+    background-size: 1.5rem;
+}
+.shopping p{padding-right: 1rem;}
+.shopping i{
+    width: 1.5rem; 
+    height: 1.5rem;
+    display: block; 
+    position: absolute; 
+    top: 0; 
+    right: .8rem; 
+    background:url(../images/public/gwc_03.jpg) no-repeat center scroll; 
+    background-size: 1.5rem;
+}
+.shopping .dj{
+    margin-left: -15px
+    }
+.shopping i:hover{
+    background-image: url(../images/public/gwc_04.jpg);
+}
+
+
+
+.closing{
+    position: fixed;
+    bottom: 5.5rem;
+    height: 5rem;
+    z-index: 1;
+    width: 100%;
+    background: #fff;
+}
+.closing a{
+    margin-top: 0rem; 
+}
+.closing .f_l{ padding:1.5rem 0rem 1rem 1.2rem;}
+.closing .f_l span{margin-left: .5rem;}
+.closing .f_r.ps{padding: .7rem 0;}
+.closing bottom{
+    font-size: 2rem;
+    padding: 0 2.5rem;
+    display: block;
+    height: 5rem;
+    color: #fff;
+    line-height: 5rem;
+}
+.closing p{text-align: right; padding-right: 0.5rem;margin: .3rem .1rem;}
+.sousu{padding:1rem 1.5rem;}
+.sousu  .sousu_fr{max-width: 3rem;}
+.sousu img{
+    max-width: 1.5rem;
+    margin: 0.5rem 0 0 0;
+    height: 1.5rem;
+}
+.sousu .mui-flex{background: #ebebeb; padding: .2rem .8rem; border-radius: 2rem;}
+.sousu .mui-flex img{margin: .3rem;}
+.sousu input{background: #ebebeb;  border: none;padding-left: .5rem !important; line-height: 2rem;}
+
+
+.distrib { margin-top: 1rem;}
+.distrib div{ padding: .8rem; text-align: center;}
+
+.leirong a{   
+    display: block;
+    height: 1.5em;
+    width: 1.5rem;
+    position: absolute;
+    left: -1rem;
+    top: 50%;
+    margin-top: -12.5%;
+    border: 1px solid #dcdcdc;
+    border-radius: 2rem;
+}
+.leirong { padding-left: 2rem;}
+.footer .leirong a{
+    left: 1rem;
+    top: 2rem;
+    margin-top: 0;
+}
+.footer .leirong{padding:2rem 0 0 3rem; float: left; }
+.footer .tianxie{line-height: 5.5rem; padding-right: 1.5rem;}
+.footer .tianxie input,.footer .tianxie button{line-height: 2rem;}
+.footer .tianxie input{padding: .2rem .3rem; width: 9rem;}
+.footer .tianxie button.btn{padding: .3rem 1rem ; color: #fff;}
+
+
+
+.ordername{
+    line-height: 3rem;
+    margin: -1rem 0 0;
+    padding: 0 1.5rem;
+    background-color: #d0e5f6;
+    color: #2092ef;
+}
+.tw_lis h5.ordertitle{line-height: 4.5rem; padding: 0 1.5rem; margin: 0 0 1rem;}
+.orderwei{padding: 1rem 1.5rem; margin-top: 1rem;}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>订单详情-待付款</title>
+<link rel="Stylesheet" href="css/style.css" type="text/css" />
+<link rel="Stylesheet" href="css/public/font-awesome.min.css" type="text/css" />
+<link rel="Stylesheet" href="css/user.css" type="text/css" />
+<!-- jQuery -->
+<script type="text/javascript" src="js/public/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/public/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/public/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/yxMobileSlider.js"></script>
+</head>
+
+<body class="wrap_bg">
+
+<div id="container" class="thewidth100">
+
+<!--header-->
+    <div class="header_bg clearfix thewidth100 hei"> 
+        <div class="header">
+        <div class="f_l" onclick="Return()"><i class="icon-angle-left"></i><span>返回</span></div>
+        <div class="title">订单详情</div>
+        <div class="f_r"><i class="ion_you"></i></div>
+        </div>
+    </div>
+<!--------------------------------------[ header ]-------------------------------------->
+
+<!--------------------------------------[ banner ]-------------------------------------->
+<!--wrap-->
+    <div class=" thewidth100 pa_b8">
+        
+
+        <div class="order_li ">
+            <div class=" mui-flex">
+                <div class="call lil">
+                    <img class="lis_bo1" src="images/shangping.jpg">
+                </div>
+                <div class="call lir">
+                    <div class="title">古井贡酒老玻贡50度750ml*6瓶大瓶自饮酒</div>
+                    <div class="stage">
+                        <span class="red">￥89.00</span>
+                        <span class="f_r"> 数量：2</span>
+                    </div>
+                    <div class=" clearfix">
+                        <div class="f_l xin">
+                            <i class="icon-star red"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                            <i class="icon-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix">
+                <textarea  class="thewidth100 lis_bo1" onfocus="if(value=='评论') {value=''}" onblur="if(value=='') {value='评论'}">评论</textarea>
+            </div>
+        </div>
+        
+
+        <div class="tijiao clearfix ta_c ma_t1">
+           <button class="btn red_bg wb50">提交</button> 
+        </div>
+        
+    </div>
+<!--/wrap-->
+</div>
+</body>
+</html>
+
+   

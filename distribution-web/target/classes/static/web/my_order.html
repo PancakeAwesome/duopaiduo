@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>我的订单</title>
+<link rel="Stylesheet" href="css/style.css" type="text/css" />
+<link rel="Stylesheet" href="css/public/font-awesome.min.css" type="text/css" />
+<link rel="Stylesheet" href="css/user.css" type="text/css" />
+<!-- jQuery -->
+<script type="text/javascript" src="js/public/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/public/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/public/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/yxMobileSlider.js"></script>
+</head>
+
+<body class="wrap_bg none">
+
+<div id="containers" class="thewidth100">
+
+<!--header-->
+    <div class="header_bg clearfix thewidth100 hei"> 
+        <div class="header">
+        <div class="f_l" onclick="Return()"><i class="icon-angle-left"></i><span>返回</span></div>
+        <div class="title">我的订单</div>
+        <div class="f_r"><i class="ion_you"></i></div>
+        </div>
+    </div>
+<!--------------------------------------[ header ]-------------------------------------->
+
+<!--------------------------------------[ banner ]-------------------------------------->
+<!--wrap-->
+    <div id='container' class=" thewidth100 pa_b8">
+        <div class="order_nav1">
+            <div class="order_nav clearfix ">
+                <ul class='top_tab'>
+                    <li><a class="current" href="javascript:;" type='0'>全部</a></li>
+                    <li><a href="javascript:;" type='1'>待付款</a></li>
+                    <li><a href="javascript:;" type='3'>待发货</a></li>
+                    <li><a href="javascript:;" type='2'>待收货</a></li>
+                    <li><a href="javascript:;" type='5'>待评价</a></li>
+                    <!-- <li><a href="javascript:;" type='4'>退货</a></li> -->
+                </ul>
+            </div>
+                
+        </div>
+                
+        <!-- <div class="order_li ">
+            <a href="order_details1.html">
+                <h5><span id='orderNo'>订单号：HSLBG20160523</span> <span class="f_r red">待付款</span></h5>
+                <div class="order_lib mui-flex">
+                    <div class="call lil">
+                        <img class="lis_bo1" src="images/shangping.jpg">
+                    </div>
+                    <div class="call lir">
+                        <div class="title">古井贡酒老玻贡50度750ml*6瓶大瓶自饮酒</div>
+                        <div class="stage">
+                            <span class="red">￥89.00</span>
+                            <span class="ma_l2">x2</span>
+                            <span class="f_r red">共计：￥178.00</span>
+                        </div>
+                        <div class="c_999">下单时间：2016.05.23</div>
+                    </div>
+                </div>
+            </a>
+            <div class="clearfix row">
+                <a href="javascript:;" class="current">去付款</a>
+                <a href="javascript:;">关闭订单</a>
+            </div>
+        </div>
+
+        <div class="order_li ">
+            <a href="order_details3.html">
+                <h5>订单号：HSLBG20160523 <span class="f_r red">已完成</span></h5>
+                <div class="order_lib mui-flex">
+                    <div class="call lil">
+                        <img class="lis_bo1" src="images/shangping.jpg">
+                    </div>
+                    <div class="call lir">
+                        <div class="title">古井贡酒老玻贡50度750ml*6瓶大瓶自饮酒</div>
+                        <div class="stage">
+                            <span class="red">￥89.00</span>
+                            <span class="ma_l2">x2</span>
+                            <span class="f_r red">共计：￥178.00</span>
+                        </div>
+                        <div class="c_999">下单时间：2016.05.23</div>
+                    </div>
+                </div>
+            </a>
+            <div class="clearfix row">
+                <a href="javascript:;" class="current">评价</a>
+                <a href="javascript:;">删除订单</a>
+            </div>
+        </div>
+
+        <div class="order_li ">
+            <a href="order_details.html">
+                <h5>订单号：HSLBG20160523 <span class="f_r red">待发货</span></h5>
+                <div class="order_lib mui-flex">
+                    <div class="call lil">
+                        <img class="lis_bo1" src="images/shangping.jpg">
+                    </div>
+                    <div class="call lir">
+                        <div class="title">古井贡酒老玻贡50度750ml*6瓶大瓶自饮酒</div>
+                        <div class="stage">
+                            <span class="red">￥89.00</span>
+                            <span class="ma_l2">x2</span>
+                            <span class="f_r red">共计：￥178.00</span>
+                        </div>
+                        <div class="c_999">下单时间：2016.05.23</div>
+                    </div>
+                </div>
+            </a>
+            <div class="clearfix row">
+                <a href="javascript:;">申请退单</a>
+            </div>
+        </div>
+
+        <div class="order_li ">
+            <a href="order_details2.html">
+                <h5>订单号：HSLBG20160523 <span class="f_r red">待收货</span></h5>
+                <div class="order_lib mui-flex">
+                    <div class="call lil">
+                        <img class="lis_bo1" src="images/shangping.jpg">
+                    </div>
+                    <div class="call lir">
+                        <div class="title">古井贡酒老玻贡50度750ml*6瓶大瓶自饮酒</div>
+                        <div class="stage">
+                            <span class="red">￥89.00</span>
+                            <span class="ma_l2">x2</span>
+                            <span class="f_r red">共计：￥178.00</span>
+                        </div>
+                        <div class="c_999">下单时间：2016.05.23</div>
+                    </div>
+                </div>
+            </a>
+            <div class="clearfix row">
+                <a href="javascript:;" class="current">确认收货</a>
+                <a href="javascript:;">查看物流</a>
+            </div>
+        </div>
+
+        <div class="order_li ">
+            <a href="order_details3.html">
+                <h5>订单号：HSLBG20160523 <span class="f_r red">交易关闭</span></h5>
+                <div class="order_lib mui-flex">
+                    <div class="call lil">
+                        <img class="lis_bo1" src="images/shangping.jpg">
+                    </div>
+                    <div class="call lir">
+                        <div class="title">古井贡酒老玻贡50度750ml*6瓶大瓶自饮酒</div>
+                        <div class="stage">
+                            <span class="red">￥89.00</span>
+                            <span class="ma_l2">x2</span>
+                            <span class="f_r red">共计：￥178.00</span>
+                        </div>
+                        <div class="c_999">下单时间：2016.05.23</div>
+                    </div>
+                </div>
+            </a>
+            <div class="clearfix row">
+                <a href="javascript:;">删除订单</a>
+            </div>
+        </div>
+
+    </div> -->
+<!--/wrap-->
+</div>
+<script>
+	var userId = 2;/* fake */
+    // alert(globalurl)
+	// globalurl+'/fulltext/shopping-car/15295552013'
+
+	$(function(){
+		userId = base64encode('{"userId":'+userId+'}');
+		AJAXPost = new Ajax('',{
+			url: ' /order/getOrders',
+			param:userId,
+			type:'post',
+			callback : function(res) {
+				/* res要求传送orderNo */
+				var orders = res.data;
+				console.log('请求成功');
+				console.log(res);
+				/* data是一个对象数组 */
+				$.each(orders,function(i,order){
+					var addTime = order.addTime;/* 创建订单时间 */
+					var amount = order.amount;
+					var status = order.status;/* 订单状态 */
+					var payStatus = order.payStatus;
+					var shippingStatus = order.shippingStatus;
+					var orderNo = order.orderNo;
+					var orderdetail = order.orderdetail;/* item数组 */
+					
+					var price;
+					var quantity;
+					var item_name;/* 商品名称 */
+					var item_img;/* 商品图片 */
+					
+                    if(status == 2 || status == 5){
+                        return
+                    }
+                    // 非换货状态订单
+                    /* 开始插入orderitem */
+                    var item = $('<div>');
+                    $(item).addClass('order_li');
+                    $(item).appendTo($('#container'));
+                    
+                    var a = $('<a>');
+                    // $(a).attr('href','order_details1.html?orderNo='+orderNo);
+                    $(a).appendTo($(item));
+                    
+                    var bo = $('<div>');
+                    $(bo).addClass('clearfix row');
+                    $(bo).appendTo($(item));
+                    
+                    var title = $('<h5>');
+                    $(title).appendTo($(a));
+                    
+                    var on = $('<span>');
+                    $(on).text('订单号：'+orderNo);
+                    $(on).appendTo($(title));
+                    
+                    var st = $('<span>');
+                    $(st).addClass('f_r red');
+                    
+                    var btn1 = $('<a>');
+                    $(btn1).addClass('current');
+                    
+                    var btn2 = $('<a>');
+                    console.log(status);
+                    switch(status)
+                    {
+                        case 0:
+                            /* 交易关闭 */
+                          $(st).text('交易关闭');
+
+                          $(a).attr('href','order_cancels.html?orderNo='+orderNo)
+                            
+                          $(item).addClass('0');
+                            
+                          $(btn2).text('删除订单');
+                          $(btn2).attr('href','javascript:confirm_del_order('+orderNo+')');
+                          break;
+                        case 1:
+                          if(!payStatus){
+                              /* 未付款 */
+                              $(st).text('待付款');
+
+                              $(a).attr('href','order_details1.html?orderNo='+orderNo)
+
+                              $(item).addClass('1');
+                              
+                              $(btn1).text('去付款');
+                              $(btn1).attr('href','order_details1.html?orderNo='+orderNo);
+                              $(btn1).appendTo($(bo));
+                              
+                              $(btn2).text('关闭订单');
+                              $(btn2).attr('href','order_details4.html?orderNo='+orderNo+'&type=1');
+                          }else{
+                              /* 已付款 */
+                              if(shippingStatus){
+                                  /* 已发货 */
+                                  $(st).text('待收货');
+
+                                  $(a).attr('href','order_details2.html?orderNo='+orderNo)
+                                  
+                                  $(item).addClass('2');
+                                  
+                                  $(btn1).text('确认收货');
+                                  $(btn1).attr('href','javascript:confirm_order('+orderNo+')');
+                                  $(btn1).appendTo($(bo));
+                                  
+                                  $(btn2).text('查看物流');
+                                  $(btn2).attr('href','order_details2.html?orderNo='+orderNo);
+                              }else{
+                                  /* 未发货 */
+                                  $(st).text('待发货');
+
+                                  $(a).attr('href','order_details.html?orderNo='+orderNo)
+                                  
+                                  $(item).addClass('3');
+
+                                  // $('#container').find('.3').find('a').eq(0).attr('href','order_details.html?orderNo='+orderNo);
+                                  
+                                  $(btn2).text('申请退单');
+                                  $(btn2).attr('href','javascript:confirm_return_order('+orderNo+',type=1)');
+                              }
+                          }
+                          break;
+                        case 2:
+                          /* 退货中订单 */
+                          var return_status = order.orderReturn[0].status;
+                          // console.log(return_status);
+                          $(st).text('退货中');
+
+                          $(a).attr('href','return_progress.html?orderNo='+orderNo)
+                          
+                          $(item).addClass('4');
+                          
+                          // $(btn1).text('退货');
+                          // // $(btn1).attr('href','return_progress.html?orderNo'+orderNo);
+                          
+                          // $(btn1).appendTo($(bo));
+                          
+                          $(btn2).text('取消退货');
+                          $(btn2).attr('href','order_details4.html?orderNo='+orderNo+'&type=2');
+
+                          
+                          break;
+                        case 3:
+                          /* 待评价订单 */
+                          $(st).text('待评价');
+
+                          $(a).attr('href','order_details3.html?orderNo='+orderNo)
+                          
+                          $(item).addClass('5');
+
+                          // $('#container').find('.5').find('a').eq(0).attr('href','order_details4.html?orderNo='+orderNo);
+                          
+                          $(btn1).text('评价');
+                          $(btn1).attr('href','order_details3.html?orderNo='+orderNo);
+                          $(btn1).appendTo($(bo));
+                          
+                          $(btn2).text('删除订单');
+                          $(btn2).attr('href','javascript:confirm_del_order('+orderNo+')');
+
+                          break;   
+                        case 4:
+                          /* 已完成订单 */
+                          $(st).text('已完成');
+
+                          $(a).attr('href','order_complete.html?orderNo='+orderNo)
+                          
+                          $(item).addClass('6');
+
+                          $(btn1).text('退货');
+                          $(btn1).attr('href','javascript:confirm_return_order('+orderNo+',type=3)');
+                          
+                          $(btn1).appendTo($(bo));
+                          
+                          $(btn2).text('删除订单');
+                          $(btn2).attr('href','javascript:confirm_del_order('+orderNo+')');
+                          break;
+                        default:
+                          console.log('order_status error!');
+                    }
+                    /* 统一插入 */
+                    $(st).appendTo($(title));
+                    $(btn2).appendTo($(bo));
+
+
+                    var item_amount = $('<span>');
+                    $(item_amount).addClass('f_l red amount');
+                    $(item_amount).text('共计：￥'+amount);
+                    $(item_amount).appendTo($(bo));
+                    
+                    $.each(orderdetail,function(index,item){
+                        /* 开始插入商品 */
+                        price = item.price;
+                        quantity = item.price;
+                        /* fake */
+                        item_name = '老白干';
+                        item_img = 'images/shangping.jpg';
+                        
+                        var item_box = $('<div>');
+                        $(item_box).addClass('order_lib mui-flex');
+                        $(item_box).appendTo($(a));
+                        
+                        var img_box = $('<div>');
+                        $(img_box).addClass('call lil');
+                        $(img_box).appendTo($(item_box));
+                        
+                        var img = $('<img>');
+                        $(img).addClass('lis_bo1');
+                        $(img).attr('src',item_img);
+                        $(img).appendTo($(img_box));
+                        
+                        var item_detail = $('<div>');
+                        $(item_detail).addClass('call lir');
+                        $(item_detail).appendTo($(item_box));
+                        
+                        var item_title = $('<div>');
+                        $(item_title).addClass('title');
+                        $(item_title).text(item_name);
+                        $(item_title).appendTo($(item_detail));
+                        
+                        var item_pr_qu = $('<div>');
+                        $(item_pr_qu).addClass('stage');
+                        $(item_pr_qu).appendTo($(item_detail));
+                        
+                        var item_price = $('<span>');
+                        $(item_price).addClass('red');
+                        $(item_price).text('￥'+price);
+                        $(item_price).appendTo($(item_pr_qu));
+                        
+                        var item_quantity = $('<span>');
+                        $(item_quantity).addClass('ma_l2');
+                        $(item_quantity).text('x'+quantity);
+                        $(item_quantity).appendTo($(item_pr_qu));
+                        
+                        var item_date = $('<div>');
+                        $(item_date).addClass('c_999');
+                        $(item_date).text('下单时间：'+addTime);
+                        $(item_date).appendTo($(item_detail));
+                    })  
+				})
+                returnOrder_hide()
+                $('body').show();
+			}
+		});
+	})
+	
+    function returnOrder_hide(){
+        $('.order_li').each(function(){
+            if($(this).hasClass('4')){
+                $(this).hide();
+            }
+        })
+    }
+
+    function confirm_del_order(orderNo){
+        var res = confirm('确认删除订单么？');
+        if (res) {
+            del_order(orderNo);
+        } else {
+        }
+    }
+    function del_order(orderNo){
+        // 删除订单接口
+        var param = base64encode('{"orderNo":'+orderNo+'}');
+        console.log(param);
+        var AJAXPost = new Ajax('',{
+            url: '/order/delOrder',
+            param:param ,
+            type:'post',
+            callback : function(res) {
+                /* res要求传送orderNo */
+                // orderNo = res.data;
+                console.log('请求成功');
+                console.log(res);
+                if(!res.data){
+                    console.log('error');
+                }else{
+                    alert('删除成功！');
+                    location.reload();
+                }
+            }
+        });
+    }
+     
+    function confirm_order(orderNo){
+        // 出现弹窗效果
+        var res = confirm('确认收货么？');
+        if (res) {
+            confirm_acc_order(orderNo);
+        } else {
+        }
+    } 
+
+    function confirm_acc_order(orderNo){
+        // 确认收货接口
+        var param = base64encode('{"orderNo":'+orderNo+'}');
+        console.log(param);
+        var AJAXPost = new Ajax('',{
+            url: '/order/takeOrder',
+            param:param ,
+            type:'post',
+            callback : function(res) {
+                /* res要求传送orderNo */
+                // orderNo = res.data;
+                console.log('请求成功');
+                console.log(res);
+                if(!res.data){
+                    console.log('error');
+                }else{
+                    alert('确认收货成功！');
+                    location.reload();
+                }
+            }
+        });
+    }    
+
+    // function turn_return(type,return_status,orderNo){
+    //     // 跳转退货详情页面
+    //     switch(return_status)
+    //     {
+    //         case 1:
+    //             /* 退货申请中 */
+    //           $('.'+type).find('a').eq(0).attr('href','return_progress.html?orderNo'+orderNo);
+    //           $('.'+type).find('.row').find('.current').attr('href','return_progress.html?orderNo'+orderNo);
+    //           break;
+    //         case 2:
+    //         /* 2：审核通过 */
+    //          $('.'+type).find('a').eq(0).attr('href','return_progress3.html?orderNo'+orderNo);
+    //          $('.'+type).find('.row').find('.current').attr('href','return_progress3.html?orderNo'+orderNo);
+    //           break;   
+    //         case 4:
+    //           /* 审核未通过 */
+    //           $('.'+type).find('a').eq(0).attr('href','return_progress1.html?orderNo'+orderNo);
+    //           $('.'+type).find('.row').find('.current').attr('href','return_progress1.html?orderNo'+orderNo);
+    //         case 8:
+    //           /* 退货成功 */
+    //           $('.'+type).find('a').eq(0).attr('href','return_progress5.html?orderNo'+orderNo);
+    //           $('.'+type).find('.row').find('.current').attr('href','return_progress5.html?orderNo'+orderNo);
+    //           break;  
+    //         default:
+    //           console.log('order_status error!');
+    //     }
+    // }
+
+    function confirm_return_order(orderNo,type){
+        var res = confirm('确认申请退单么？');
+        if (res) {
+            window.location.href = 'return_progress.html?orderNo=' + orderNo + '&type=' + type
+        } else {
+        }
+    }
+
+     // tab切换效果
+	$('.top_tab li a').click(function(){
+        var type = $(this).attr('type');
+        $('.top_tab li a').removeClass('current')
+        $(this).addClass('current')
+        if(type == 0){
+            // 点击全部
+            $('.order_li').show();
+            returnOrder_hide()
+        }else if(type == 4){
+            // 退货订单
+            $('.order_li').hide();
+            $('.4').show();
+        }else{
+            // 获取该显示item_list的类型
+            $('.order_li').hide();
+            $('.'+type).show();
+        }
+	 })
+
+    function Return(){
+        window.location.href = 'my.html'
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>个人中心</title>
+<link rel="Stylesheet" href="css/style.css" type="text/css" />
+<link rel="Stylesheet" href="css/public/font-awesome.min.css" type="text/css" />
+<link rel="Stylesheet" href="css/user.css" type="text/css" />
+<!-- jQuery -->
+<script type="text/javascript" src="js/public/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/public/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/public/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/yxMobileSlider.js"></script>
+</head>
+
+<body class="wrap_bg">
+
+<div id="container" class="thewidth100">
+
+<!--header-->
+    <div class="header_bg clearfix thewidth100 hei"> 
+        <div class="header">
+        <div class="f_l" onclick="Return()"><i class="icon-angle-left"></i><span>返回</span></div>
+        <div class="title">找回密码</div>
+        <div class="f_r"><i class="ion_you"></i></div>
+        </div>
+    </div>
+<!--------------------------------------[ header ]-------------------------------------->
+
+<!--------------------------------------[ banner ]-------------------------------------->
+<!--wrap-->
+    <div class=" thewidth100 pa_b8 shouji">
+        <div class="clearfix mimass">
+            <div class="f_l wb50">验证身份</div>
+            <div class="f_r wb50 red_bg">重置密码</div>
+        </div>
+        <div class="user_li lis_bot">
+            <ul>
+                <li class="lis_bob">
+                    <span style="width:7.5rem;">设置新密码</span>
+                    <input type="password" name="" value="" placeholder="6-20位数字和字母组合">
+                </li>
+                <li class="lis_bob">
+                    <span style="width:7.5rem;">确定密码</span>
+                    <input type="password" name="" value="" placeholder="请再次输入密码">
+                </li>
+            </ul>
+        </div>
+        <div class="ma_t1 tuiqu">
+            <div class="row">
+                <button  class="red_bg">确定</button>
+            </div>
+        </div>
+    </div>
+<!--/wrap-->
+
+</div>
+<script type="text/javascript">  
+var wait=60;  
+function time(o) {  
+    if (wait == 0) {  
+        o.removeAttribute("disabled");            
+        o.value="免费获取验证码";  
+        wait = 60;  
+    } else {  
+        o.setAttribute("disabled", true);  
+        $(o).html("重新发送(" + wait + ")");
+        wait--;  
+        setTimeout(function() {  
+            time(o)  
+        },   
+        1000)  
+    }  
+}  
+$(".btns").click(function(){time(this);});  
+</script>  
+</body>
+</html>

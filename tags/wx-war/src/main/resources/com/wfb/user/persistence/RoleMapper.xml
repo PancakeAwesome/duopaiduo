@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wfb.user.persistence.RoleMapper">
+	
+	<insert id="save" parameterType="RoleModel">
+		insert into t_role(roleName,actionIds)values(#{roleName},#{actionIds})
+	</insert>
+	
+	<insert id="update" parameterType="RoleModel">
+		update t_role set actionIds= #{actionIds} where roleId = #{roleId}
+	</insert>
+	
+	<select id="getPageList" parameterType="RoleModel" resultType="RoleModel">
+		select roleId,roleName,actionIds from t_role
+	</select>
+	
+	<select id="getById" parameterType="int" resultType="RoleModel">
+		select roleId,roleName,actionIds from t_role where roleId = #{entityId}
+	</select>
+	
+	<delete id="remove" parameterType="int" >
+		delete from t_role where roleId = #{entityId}
+	</delete>
+	
+	
+	<select id="getActionName" parameterType="int" resultType="String" >
+		select moduleName from t_action  where actionId= #{actionId}
+	</select>
+	
+	
+	
+	
+</mapper>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dicts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dictType dictTypeId="gender" dictTypeName="性别">
+		<dictEntry dictId="male" dictName="男"/>
+		<dictEntry dictId="female" dictName="女"/>
+	</dictType>
+	
+	<dictType dictTypeId="education" dictTypeName="学历">
+		<dictEntry dictId="1" dictName="无"/>
+		<dictEntry dictId="2" dictName="小学"/>
+		<dictEntry dictId="3" dictName="初中"/>
+		<dictEntry dictId="4" dictName="中专/高"/>
+		<dictEntry dictId="5" dictName="专科"/>
+		<dictEntry dictId="6" dictName="本科"/>
+		<dictEntry dictId="7" dictName="硕士研究生"/>
+		<dictEntry dictId="8" dictName="博士研究生"/>
+	</dictType>
+	
+	<dictType dictTypeId="wedding" dictTypeName="婚姻状况">
+		<dictEntry dictId="1" dictName="未婚"/>
+		<dictEntry dictId="2" dictName="已婚"/>
+		<dictEntry dictId="3" dictName="离异"/>
+		<dictEntry dictId="4" dictName="丧偶"/>
+	</dictType>
+	
+	<dictType dictTypeId="iaeDetailType" dictTypeName="交易明细类型">
+		<dictEntry dictId="1" dictName="充值"/>
+		<dictEntry dictId="2" dictName="投标冻结"/>
+		<dictEntry dictId="3" dictName="投标资金解冻"/>
+		<dictEntry dictId="4" dictName="借款拨入"/>
+		<dictEntry dictId="5" dictName="投资放款"/>
+		<dictEntry dictId="6" dictName="还款充值"/>
+		<dictEntry dictId="7" dictName="还利息款"/>
+		<dictEntry dictId="8" dictName="利息到账"/>
+		<dictEntry dictId="9" dictName="还本金款"/>
+		<dictEntry dictId="10" dictName="本金到账"/>
+		<dictEntry dictId="11" dictName="提现冻结"/>
+		<dictEntry dictId="12" dictName="提现"/>
+		<dictEntry dictId="13" dictName="邀请奖励"/>
+		<dictEntry dictId="14" dictName="提现手续费冻结"/>
+		<dictEntry dictId="15" dictName="提现手续费"/>
+		<dictEntry dictId="16" dictName="注册奖励"/>
+		<dictEntry dictId="17" dictName="首投奖励"/>
+		<dictEntry dictId="18" dictName="微信转发奖励"/>
+	</dictType>
+	
+	<dictType dictTypeId="iaeDetailTypeAffect" dictTypeName="交易明细价格前缀">
+		<dictEntry dictId="1" dictName="+"/>
+		<dictEntry dictId="8" dictName="+"/>
+		<dictEntry dictId="10" dictName="+"/>
+		<dictEntry dictId="13" dictName="+"/>
+		<dictEntry dictId="16" dictName="+"/>
+		<dictEntry dictId="17" dictName="+"/>
+		<dictEntry dictId="18" dictName="+"/>
+		<dictEntry dictId="5" dictName="-"/>
+		<dictEntry dictId="12" dictName="-"/>
+		<dictEntry dictId="15" dictName="-"/>
+		<dictEntry dictId="2" dictName=""/>
+		<dictEntry dictId="11" dictName=""/>
+		<dictEntry dictId="3" dictName=""/>
+	</dictType>
+	
+	<dictType dictTypeId="userReturnPlanType" dictTypeName="用户回款计划类型">
+		<dictEntry dictId="1" dictName="利息"/>
+		<dictEntry dictId="2" dictName="本金"/>
+	</dictType>
+</dicts>

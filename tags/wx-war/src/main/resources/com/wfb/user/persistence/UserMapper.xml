@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wfb.user.persistence.UserMapper">
+	<select id="getUserDetail" resultType="User">
+		select u.userId, u.userName, u.sex, left(u.birthday, 10) birthday, 
+			u.height, u.weight, u.paymentPassword, u.salt, 
+			u.email, u.emailStatus, u.telephone, u.integral, u.register, 
+			left(u.createTime, 16) createTime,u.availAsset, u.logoUrl
+		from t_user u
+		where u.userId = #{userId}
+		group by u.userId 
+	</select>
+</mapper>

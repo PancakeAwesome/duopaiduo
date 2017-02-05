@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wfb.appoint.persistence.AppointMapper">
+
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id"
+		parameterType="AppointModel">
+		insert into t_appoint
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="dotId != null">
+				dot_id,
+			</if>
+			<if test="dotName != null">
+				dot_name,
+			</if>
+			<if test="currentDate != null">
+				current_day,
+			</if>
+			<if test="appointDay != null">
+				appoint_day,
+			</if>
+			<if test="isCancel != null">
+				is_cancel,
+			</if>
+			<if test="personNum != null">
+				person_num
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id},
+			</if>
+			<if test="dotId != null">
+				#{dotId},
+			</if>
+			<if test="dotName != null">
+				#{dotName},
+			</if>
+			<if test="currentDate != null">
+				#{currentDate},
+			</if>
+			<if test="appointDay != null">
+				#{appointDay},
+			</if>
+			<if test="isCancel != null">
+				#{isCancel},
+			</if>
+			<if test="personNum != null">
+				#{personNum}
+			</if>
+		</trim>
+	</insert>
+	
+	<select id="getAppoint" resultType="AppointModel">
+		select id,dot_id as dotId,dot_name as dotName,current_day as currentDate,appoint_day as appointDay,
+		is_cancel as isCancel,person_num personNum from t_appoint
+		where 1=1
+		<if test="dotName != null">
+			and dot_name = #{dotName} 
+		</if>   
+	</select>
+	
+	<select id="getAppointModel" resultType="AppointModel">
+		select id,dot_id as dotId,dot_name as dotName,current_day as currentDate,appoint_day as appointDay,
+		is_cancel as isCancel,person_num personNum from t_appoint
+		where 1=1
+		<if test="dotId != null">
+			and dot_id = #{dotId} 
+		</if>   
+	</select>
+</mapper>

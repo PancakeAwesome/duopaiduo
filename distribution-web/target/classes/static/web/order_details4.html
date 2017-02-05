@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>订单详情-取消订单</title>
+<link rel="Stylesheet" href="css/style.css" type="text/css" />
+<link rel="Stylesheet" href="css/public/font-awesome.min.css" type="text/css" />
+<link rel="Stylesheet" href="css/user.css" type="text/css" />
+<!-- jQuery -->
+<script type="text/javascript" src="js/public/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/public/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/public/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/yxMobileSlider.js"></script>
+</head>
+
+<body class="wrap_bg">
+
+<div id="container" class="thewidth100">
+
+<!--header-->
+    <div class="header_bg clearfix thewidth100 hei"> 
+        <div class="header">
+        <div class="f_l" onclick="Return()"><i class="icon-angle-left"></i><span>返回</span></div>
+        <div class="title">订单详情</div>
+        <div class="f_r"><i class="ion_you"></i></div>
+        </div>
+    </div>
+<!--------------------------------------[ header ]-------------------------------------->
+
+<!--------------------------------------[ banner ]-------------------------------------->
+<!--wrap-->
+    <div class=" thewidth100 pa_b8">
+        <div class="state red_bg">
+            当前订单状态：<span id='state'></span>
+        </div>
+        <div class="details_qx row">
+            <h5>选择取消订单理由</h5>
+            <ul>
+                <li class="current">买错了</li>
+                <li>信息填写错误，重新买</li>
+                <li>付款遇到问题</li>
+                <li>我不想买了</li>
+                <li>其他</li>
+            </ul>
+        </div>
+        <div class="clearfix states row">
+            <button type="" class="btn red_bg bai" onclick="close_order()">确定</button>
+        </div>
+    </div>
+<!--/wrap-->
+</div>
+<!-- <div id="confirms" class="tan none">
+    <div class=" ta_c fs_2">提示</div>
+    <div class="lis_bob row">您确定要取消订单吗</div>
+    <div class="mui-flex ta_c">
+        <a href="javascript:layer.closeAll();;" class="call lis_bor">取消</a>
+        <a href="javascript:return_order()" class="call red">确定</a>
+    </div>
+</div> -->
+<script>
+    var type = getvl('type')
+    var orderNo = getvl('orderNo')
+    var applyRemark = ''
+
+    // $(function(){
+    //     if(returnType == 1){
+    //         $('#state').text('已收货')
+    //     }else if(returnType == 3){
+    //         $('#state').text('待收货')
+    //     }
+    // })
+
+    $('button').click(function(){
+        layer.open({
+          type: 1,
+          title: false,
+          area:'80%',
+          closeBtn: 0,
+          shadeClose: true,
+          content: $('#confirms')
+        });
+    });
+
+    $('.details_qx').find('li').click(function(){
+        if( ! $(this).hasClass('current')){
+            $('.details_qx').find('li').removeClass('current');
+            $(this).addClass('current');
+        }
+    });
+
+    function remark(){
+        var remark = ''
+        $('ul li').each(function(){
+            if($(this).hasClass('current')){
+                remark = $(this).text()  
+            }
+        })
+        return remark
+    }
+
+    function close_order(){
+        // 取消订单接口
+        var param = new Object()
+        param.orderNo = orderNo
+        param.cancelReason = remark()
+
+        console.log(param.cancelReason)
+
+        param = JSON.stringify(param)
+
+        param = base64encode(utf16to8(param));
+        console.log(param);
+
+        var AJAXPost = new Ajax('',{
+            url: '/order/cancelOrder',
+            param:param ,
+            type:'post',
+            callback : function(res) {
+                /* res要求传送orderNo */
+                // orderNo = res.data;
+                console.log('请求成功');
+                console.log(res);
+                if(!res.data){
+                    console.log('error');
+                }else{
+                    alert('关闭成功！');
+                    if(type == 2){
+                        // 取消退货
+                        window.location.href = 'order_cancel.html'
+                    }else{
+                        window.location.href = 'my_order.html'
+                    }
+                }
+            }
+        });
+    }
+
+</script>
+</body>
+</html>
+
+   

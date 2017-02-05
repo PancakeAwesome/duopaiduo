@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>酒业微分销系统——后台管理</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../dist/css//font-awesome.min.css">
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+  
+  <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<script src="../../dist/js/app.min.js"></script>
+<script src="../../dist/js/demo.js"></script>
+<script src="../../layer/layer.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../js/dataGrid.js"></script>
+
+  
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+    <a href="index2.html" class="logo">
+      <span class="logo-mini">admin</span>
+      <span class="logo-lg">后台管理</span>
+    </a>
+    <nav class="navbar navbar-static-top">
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+
+
+
+
+    </nav>
+  </header>
+  <!-- <aside class="main-sidebar">
+    sidebar: style can be found in sidebar.less
+    <section class="sidebar">
+     
+     
+      <ul class="sidebar-menu">
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>首页</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 报表</a></li>
+          </ul>
+        </li>
+        
+        
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>分销管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i> 经销商详情</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 添加经销商</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 业务员管理</a></li>
+          </ul>
+          
+        </li>
+        
+        
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>商品管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            <li><a href="admin/item/itemList.html"><i class="fa fa-circle-o"></i> 商品管理</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 添加商品</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 分类管理</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 添加分类</a></li>
+            
+          </ul>
+          
+        </li>
+        
+        
+        
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>订单管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 订单列表</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 评价列表</a></li>
+          </ul>
+          
+        </li>
+        
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>用户管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            	<li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 用户列表</a></li>
+          </ul>
+          
+        </li>
+      </ul>
+    </section>
+  </aside> -->
+	  <aside class="main-sidebar">
+    <section class="sidebar">
+     
+     
+      <ul class="sidebar-menu">
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>首页</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 报表</a></li>
+          </ul>
+        </li>
+        
+        
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>分销管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i> 经销商详情</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 添加经销商</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 业务员管理</a></li>
+          </ul>
+          
+        </li>
+        
+        
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>商品管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            <li><a href="../item/itemList.html"><i class="fa fa-circle-o"></i> 商品管理</a></li>
+            <li><a href="../item/categoryList.html"><i class="fa fa-circle-o"></i> 分类管理</a></li>
+            
+          </ul>
+          
+        </li>
+        
+        
+        
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>订单管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 订单列表</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 评价列表</a></li>
+          </ul>
+          
+        </li>
+        
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>用户管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            	<li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 用户列表</a></li>
+          </ul>
+          
+        </li>
+        
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>系统基础数据</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            	<li><a href="DefrayList.html"><i class="fa fa-circle-o"></i> 物流公司维护</a></li>
+            	<li><a href="defrayList.html"><i class="fa fa-circle-o"></i> 支付方式维护</a></li>
+            	<li><a href="dispatchingList.html"><i class="fa fa-circle-o"></i> 配送方式维护</a></li>
+            	<li><a href="invoiceTypeList.html"><i class="fa fa-circle-o"></i> 发票类型维护</a></li>
+            	<li><a href="paymentTypeList.html"><i class="fa fa-circle-o"></i> 支付类型维护</a></li>
+          </ul>
+          
+        </li>
+        
+        
+      </ul>
+    </section>
+  </aside>
+  <div class="content-wrapper">
+		<section class="content">
+		<div class="box box-primary">
+			<div class="box-body">
+		    </div>
+				<table style="width:100%" class="table table-bordered table-striped dataTable">
+					<thead>
+						<tr>
+							
+							<th>编号</th>
+							<th>名称</th>
+							<th>状态</th>
+							<th>操作</th>
+							
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+	</section>
+
+  </div>
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2014-2016 <a href="http://www.digirun.cn/">南京码动信息科技有限公司</a>.</strong> All rights reserved.
+  </footer>
+
+</div>
+
+<div id="edit" style="width:98%;display: none;" >
+	<form class="form-horizontal">
+	<input  name="id" hidden="true" style="display: none;">
+              <div class="box-body">
+	                <div class="form-group ">
+	                  <label  class="col-sm-2 control-label">名称</label>
+	
+	                  <div class="col-sm-6">
+	                    <input class="form-control"   placeholder="" name="name">
+	                  </div>
+	                </div>
+	                <div class="form-group">
+	                  <label class="col-sm-2 control-label">状态</label>
+	                  <div class="col-sm-6">
+	                   	<div class="radio" style="float: left;"> <input type="radio" name="status" id="staus1" value="1"  checked="checked"> 可用</div>
+	                    <div class="radio" style="float: left; margin-left: 40px;"> <input type="radio" name="status" id="staus2" value="2">  禁用</div>
+	                  </div>
+	                </div>
+              </div>
+              
+              <!-- /.box-footer -->
+            </form>
+</div>
+
+
+
+<script>
+	$(function() {
+		
+		var commonDataGrid = new CommonDataGrid($(".dataTable"), {
+			"idKey":"id",
+			"url":'/order_paymentType/getPaymentTypes',
+			"type":"get",
+			"fromDom":$("#edit"),
+			"paging":false,
+			"ordering":false,
+			"info":false,
+			"detailObj":{
+				"url":"/order_paymentType/getPaymentTypeById",
+				"type":"GET"
+			},
+			"deleteObj":{
+				"url":"/order_paymentType/delPaymentTypeById",
+				"type":"GET"
+			},
+			"saveObj":{
+				"url":"/order_paymentType/savePaymentType",
+				"type":"POST"
+			},
+			"columnDefs":[{
+				"data" : "id",
+				"targets":0
+			},{
+				"data" : "name",
+				"targets":1
+			},{
+				"data" : "status",
+				"targets":2,
+				"render":function(data,type){
+					if(data==1)return "可用";
+					else return "已删除";
+				}
+			}],
+			
+			
+		});
+		commonDataGrid.show();
+	})
+	
+	
+	
+	
+	
+	
+
+</script>
+</body>
+</html>

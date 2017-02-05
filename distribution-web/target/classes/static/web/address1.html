@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>个人中心</title>
+<link rel="Stylesheet" href="css/style.css" type="text/css" />
+<link rel="Stylesheet" href="css/public/font-awesome.min.css" type="text/css" />
+<link rel="Stylesheet" href="css/user.css" type="text/css" />
+<!-- jQuery -->
+<script type="text/javascript" src="js/public/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/public/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/public/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/LinkageSelect.js"></script>
+<script type="text/javascript" src="js/yxMobileSlider.js"></script>
+</head>
+
+<body class="wrap_bg">
+
+<div id="container" class="thewidth100">
+
+<!--header-->
+    <div class="header_bg clearfix thewidth100 hei"> 
+        <div class="header">
+        <div class="f_l" onclick="Return()"><i class="icon-angle-left"></i><span>返回</span></div>
+        <div class="title">编辑收货地址</div>
+        <div class="f_r"><i class="ion_you"></i></div>
+        </div>
+    </div>
+<!--------------------------------------[ header ]-------------------------------------->
+
+<!--------------------------------------[ banner ]-------------------------------------->
+<!--wrap-->
+    <div class=" thewidth100 pa_b8">
+        <div class="my_user_li lis_bot">
+            <ul>
+                <li class="lis_bob">
+                <input id='name' type="text" name="" value="" placeholder="收货人姓名">
+                </li>
+                <li class="lis_bob">
+                <input id='phone' type="text" name="" value="" placeholder="手机号码">
+                </li>
+                <li class="lis_bob" style="border-bottom: 0;padding:0">
+                    <!-- 省、市、区  -->
+                    <!-- <i class="f_r ma_l1 c_999 icon-angle-right"></i> -->
+                    <!-- <span id='pro_cit_cou' class="f_r c_999"></span> -->
+                    <!-- 蒙版 -->
+                    <!-- <div class="mask-ui"></div> -->
+                    <div id='area_dom' class="">
+                        <div class="col-xs-4" style="border-bottom: 1px solid #dcdcdc;">
+                            <div class="row">
+                                <select class="thewidth100" id="province" name="province">
+                                    <option>省</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-4" style="border-bottom: 1px solid #dcdcdc;">
+                            <div class="row">
+                                <select class="thewidth100" id="city" name="city">
+                                    <option>市</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-4" style="border-bottom: 1px solid #dcdcdc;">
+                            <div class="row">
+                                <select class="thewidth100" id="county" name="county">
+                                    <option>区</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- <li class="lis_bob">
+                    街道
+                    <i class="f_r ma_l1 c_999 icon-angle-right"></i>
+                    <span class="f_r c_999">城关镇</span>
+                </li> -->
+                <li class="lis_bob">
+                <textarea id='address' name=""  class="" style="" placeholder='详细地址'></textarea>
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+<!--/wrap-->
+</div>
+<script>
+    // 查看页面类型
+    // var type = getvl('type')
+    var id = getvl('addId')
+
+    var userId = 2
+    var provinceId = 0
+    var provinceName = ''
+    var cityId = 0
+    var cityName = ''
+    var countyId = 0
+    var countyName = ''
+    // var postCode = ''
+    var userName = ''
+    var phone = ''
+    var address = ''
+    // 1新增2编辑
+
+    $(function(){
+        if(id == ''){
+            // 新增页面
+        }else{
+            // 编辑页面
+            get_add(id)
+        }
+
+        // $('#province').change(function(e){
+        //     provinceId = $(this).attr('value');
+        //     provinceName = $(this).text();
+        // })
+        // $('#city').change(function(e){
+        //     cityId = $(this).attr('value');
+        //     cityName = $(this).text();
+        // })
+        // $('#county').change(function(e){
+        //     countyId = $(this).attr('value');
+        //     countyName = $(this).text();
+        // })
+    })
+
+    function get_add(id){
+        // 获得用户地址信息
+        var AJAXPost = new Ajax('',{
+            url: '/order_UserOrderAddress/getUserOrderAddressById?id='+id,
+            type:'get',
+            callback : function(res) {
+                /* res要求传送orderNo */
+                user_addresses = res.data;
+                console.log('请求成功');
+                console.log(res);
+                var recevier = user_addresses.userName;
+                var address = user_addresses.address;
+                var phone_number = user_addresses.phone;
+                var provinceName = user_addresses.provinceName;
+                var provinceName = user_addresses.cityName;
+                var provinceName = user_addresses.countyName;
+
+                /* 填写地址信息 */
+                $('#name').val(recevier)    
+                $('#phone').val(phone_number)
+                $('#pro_cit_cou').text(provinceName+provinceName+provinceName)
+                $('#address').val(address)
+            }
+        });
+    }
+
+    // 三级联动
+    // 省市区
+    var $areaDom = $('#area_dom')
+    var areaSelect = new LinkageSelect($areaDom, {
+        url : '/order/getAreas', //数据源
+        id : 'id', //key属性名
+        name : 'fName', //value属性名
+        parentNameDomName : 'province', //第一层name （父节点name）
+        childrenDomName : 'city', // //第二层name （子节点name）
+        nextChildrenDomName : 'county', //第三层name （第三层节点name）
+        isArea : true,
+    });
+    areaSelect.getParentValue(); //初始化父节点数据
+    $areaDom.find('[name="province"]').on("change", function() { //改变第二层数据
+        areaSelect.getChildrenValue();
+    })
+
+    $areaDom.find('[name="city"]').on("change", function() { //改变第三层数据
+        areaSelect.getNextChildrenValue();
+    })
+
+    function Return(){
+        // 保存用户地址信息
+        var param = new Object()
+        if (id != null) {
+            param.Id = id
+        }
+        
+        param.userId = userId
+        param.provinceId = parseInt($('#province').val())
+        param.provinceName = $("#province").find("option:selected").text()
+        param.cityId = parseInt($('#city').val())
+        param.cityName = $("#city").find("option:selected").text()
+        param.countyId = parseInt($('#county').val())
+        param.countyName = $("#county").find("option:selected").text()
+        param.userName = $('#name').val()
+        param.phone = $('#phone').val()
+        param.address = $('#address').val()
+
+        param = JSON.stringify(param)
+
+        // console.log(param)
+
+        param = base64encode(utf16to8(param))
+
+        // console.log(param)
+
+        var AJAXPost = new Ajax('',{
+            url: '/order_UserOrderAddress/saveUserOrderAddress',
+            param:param ,
+            type:'post',
+            callback : function(res) {
+                /* res要求传送orderNo */
+                // orderNo = res.data;
+                console.log('请求成功');
+                console.log(res);
+                if(!res.data){
+                    console.log('error');
+                }else{
+                    alert('成功保存地址！');
+                    window.location.href = 'address.html'
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

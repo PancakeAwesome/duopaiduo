@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>个人中心</title>
+<link rel="Stylesheet" href="css/style.css" type="text/css" />
+<link rel="Stylesheet" href="css/public/font-awesome.min.css" type="text/css" />
+<link rel="Stylesheet" href="css/login.css" type="text/css" />
+<!-- jQuery -->
+<script type="text/javascript" src="js/public/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/public/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/public/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/yxMobileSlider.js"></script>
+</head>
+
+<body class="wrap_bg">
+
+<div id="container" class="thewidth100">
+
+<!--header-->
+    <div class="header_bg clearfix thewidth100 hei"> 
+        <div class="header">
+        <div class="f_l" onclick="Return()"><i class="icon-angle-left"></i><span>返回</span></div>
+        <div class="title">添加业务员</div>
+        <div class="f_r"><i class="ion_you"></i></div>
+        </div>
+    </div>
+<!--------------------------------------[ header ]-------------------------------------->
+<!--------------------------------------[ banner ]-------------------------------------->
+<!--wrap-->
+    <div class=" thewidth100 ">
+        <div class="addywyan lis_bot lis_bob">
+            <div class='lis_bob  mui-flex ma_t1'>
+                <div class="call mw_7"><span class="red">*</span>业务员帐号 </div>
+                <div class="call">
+                    <input type="text" class="thewidth100" name="" value="" placeholder="请填写业务员的手机号码（必填）">
+                </div>
+            </div>
+            <div class='lis_bob  mui-flex'>
+                <div class="call mw_7"><span class="red">*</span>密码</div>
+                <div class="call">
+                    <input type="text" class="thewidth100" name="" value="" placeholder="6-20位数字和字母组合（必填）">
+                </div>
+            </div>
+        </div>
+        <div class="addywyan lis_bot lis_bob ma_t1">         
+            <div class='lis_bob  mui-flex'>
+                <div class="call mw_7"><span class="red">*</span>真实姓名</div>
+                <div class="call">
+                    <input type="text" class="thewidth100" name="" value="" placeholder="填写真实姓名（必填）">
+                </div>
+            </div>
+            <div class="mui-flex">
+                 <div class="call mw_7"><span class="red">*</span>性别</div>
+                <div class="call danxuan">
+                    <span class="f_r ma_l2  "><a></a>女</span>
+                    <span class="f_r"><a></a>男</span>
+                </div>
+            </div>
+        </div>
+        <div class=" tuiqu row">
+
+            <div class="xuanz"><span class='xz'></span>我已经阅读并接受<a href="javascript:;" class="red">《多拍多酒类分销系统协议》</a></div>
+            <div class="ma_t1">
+                <div class="row"><button class="red_bg" >完成</button></div>
+            </div>
+            
+        </div>
+    </div>
+<!--/wrap-->
+</div>
+<script>
+    $('.xuanz').click(function(){
+        var xa=$(this).find('.xz');
+        if(xa.hasClass('xz1')){
+            xa.removeClass('xz1');
+        }else{
+            xa.addClass('xz1');
+        }
+    });
+    $('.danxuan').find('span').click(function(){
+        if( ! $(this).hasClass('current') ){
+            $('.danxuan').find('a').removeClass('current');
+            $(this).find('a').addClass('current');
+        }
+    });
+</script>
+</body>
+</html>

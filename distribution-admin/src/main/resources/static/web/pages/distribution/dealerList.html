@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>酒业微分销系统——后台管理</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../dist/css//font-awesome.min.css">
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+  
+  <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<script src="../../dist/js/app.min.js"></script>
+<script src="../../dist/js/demo.js"></script>
+<script src="../../layer/layer.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../js/linkageSelect.js"></script>
+<script src="../../js/dataGrid.js"></script>
+<style type="text/css">
+
+.fl{margin-left: -15px;}
+.fl a{display: block; padding:10px 20px; border-bottom: 1px rgb(228, 228, 228) solid; color: #333;}
+.fl img {
+    width: 20px;
+    float: right;
+}
+.fr div {
+    margin: 3px 0;
+}
+.fr div input {
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+}
+.fl a:hover,.fl a.visited{background: #f5f5f5;}
+</style>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+    <a href="index2.html" class="logo">
+      <span class="logo-mini">admin</span>
+      <span class="logo-lg">后台管理</span>
+    </a>
+    <nav class="navbar navbar-static-top">
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+
+
+
+
+    </nav>
+  </header>
+  <!-- <aside class="main-sidebar">
+    sidebar: style can be found in sidebar.less
+    <section class="sidebar">
+     
+     
+      <ul class="sidebar-menu">
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>首页</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 报表</a></li>
+          </ul>
+        </li>
+        
+        
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>分销管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i> 经销商详情</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 添加经销商</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 业务员管理</a></li>
+          </ul>
+          
+        </li>
+        
+        
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>商品管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            <li><a href="admin/item/itemList.html"><i class="fa fa-circle-o"></i> 商品管理</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 添加商品</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 分类管理</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 添加分类</a></li>
+            
+          </ul>
+          
+        </li>
+        
+        
+        
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>订单管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 订单列表</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 评价列表</a></li>
+          </ul>
+          
+        </li>
+        
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>用户管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            	<li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 用户列表</a></li>
+          </ul>
+          
+        </li>
+      </ul>
+    </section>
+  </aside> -->
+	  <aside class="main-sidebar">
+    <section class="sidebar">
+     
+     
+      <ul class="sidebar-menu">
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>首页</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 报表</a></li>
+          </ul>
+        </li>
+        
+        
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>分销管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            <li><a href="dealerList.html"><i class="fa fa-circle-o"></i> 经销商管理</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 业务员管理</a></li>
+          </ul>
+          
+        </li>
+        
+        
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>商品管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            <li><a href="../item/itemList.html"><i class="fa fa-circle-o"></i> 商品管理</a></li>
+            <li><a href="../item/categoryList.html"><i class="fa fa-circle-o"></i>  分类管理</a></li>
+            
+          </ul>
+          
+        </li>
+        
+        
+        
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>订单管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            <li><a href="../order/orderList.html"><i class="fa fa-circle-o"></i> 订单列表</a></li>
+            <li><a href="../order/returnOrderList.html"><i class="fa fa-circle-o"></i> 退货列表</a></li>
+            
+          </ul>
+          
+        </li>
+        
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>用户管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            	<li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 用户列表</a></li>
+          </ul>
+          
+        </li>
+        
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>系统基础数据</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            	<li><a href="../system/deliveryList.html"><i class="fa fa-circle-o"></i> 物流公司维护</a></li>
+            	<li><a href="../system/defrayList.html"><i class="fa fa-circle-o"></i> 支付方式维护</a></li>
+            	<li><a href="../system/dispatchingList.html"><i class="fa fa-circle-o"></i> 配送方式维护</a></li>
+            	<li><a href="../system/invoiceTypeList.html"><i class="fa fa-circle-o"></i> 发票类型维护</a></li>
+            	<li><a href="../system/paymentTypeList.html"><i class="fa fa-circle-o"></i> 支付类型维护</a></li>
+          </ul>
+          
+        </li>
+        
+        
+      </ul>
+    </section>
+  </aside>
+  <div class="content-wrapper">
+		<section class="content">
+		<div class="box box-primary">
+			<div class="box-body">
+		    </div>
+				<table style="width:100%" class="table table-bordered table-striped dataTable">
+					<thead>
+						<tr>
+							
+							<th>用户ID</th>
+							<th>昵称</th>
+							<th>本月销售</th>
+							<th>本月提成</th>
+							<th>业务员数量</th>
+							<th>操作</th>
+							
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+	</section>
+
+  </div>
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2014-2016 <a href="http://www.digirun.cn/">南京码动信息科技有限公司</a>.</strong> All rights reserved.
+  </footer>
+
+</div>
+
+<div id="edit" style="width:98%; display: none; " >
+	<form class="form-horizontal">
+	
+	<section class="well clearfix" style="padding: 5px 19px;">
+		<h5 class="ra-well-title">
+			<span class="k-icon k-i-arrow-e"></span> 资料
+		</h5>
+   </section>             
+ <div class="form-horizontal form-widgets col-sm-6 clearfix">
+      
+      
+      		<div class="form-group ">
+	           <label  class="col-sm-4 control-label">用户ID：</label>
+	           <div class="col-sm-8">
+	             <input class="form-control"   placeholder="" name="username">
+	           </div>
+         	</div>
+            
+            
+       		<div class="form-group">
+				<label class="col-sm-4 control-label">密码：</label>
+				<div class="col-sm-8">
+	                <input class="form-control" type="password"  placeholder="" name="password">
+	             </div>
+			</div>
+
+            
+            <div class="form-group ">
+              <label  class="col-sm-4 control-label">姓名：</label>
+              <div class="col-sm-8">
+                <input class="form-control"   placeholder="" name="name">
+              </div>
+            </div>
+            
+            
+            <div class="form-group">
+			  <label class="col-sm-4 control-label">所在地：</label>
+				<div class="col-sm-8" id="areaSel">
+					<select style='width: 30%' class="form-css" name="provinceId" id="province">
+						<option value="0">选择省</option>
+					</select>
+					<select style='width: 30%' class="form-css" name="cityId" id="city">
+						<option value="0">选择市</option>
+					</select>
+		
+				</div>
+			</div>
+     </div>
+             
+    <div class="clearfix"></div>          
+     
+     
+     <section class="well clearfix" style="padding: 5px 19px;margin-bottom: 0;">
+		<h5 class="ra-well-title">
+			<span class="k-icon k-i-arrow-e"></span> 商品库
+		</h5>
+   </section>        
+    
+     <div class="form-horizontal form-widgets col-sm-12 clearfix">
+      
+      <div class="fl" style="float: left;width: 30%;border-right: 1px rgb(228, 228, 228) solid;" id="cateDIV">
+      	
+      </div>
+      <div style="float: right;width: 65%">
+		<div class="form-group" style="">
+			<div class="col-sm-8 col-md-12 fr" id="itemDIV">
+				 
+				
+																		
+			</div>
+		</div>
+		  
+      </div>
+      		
+    </div>       
+    <div class="clearfix"></div>     
+              <!-- /.box-footer -->
+   </form>
+</div>
+<br><br><br><br>
+
+
+<script>
+var $fromDom=$("#edit");
+var itemIds=[];
+var itemIdsALL=[];
+var datatable;
+	$(function() {
+		var $areaDom = $('#areaSel');
+		
+		// 省市区
+		var areaSelect = new LinkageSelect($areaDom, {
+			url: '/order/getAreas',  //数据源
+			id: 'id',   //key属性名
+			name: 'fName', //value属性名
+			parentNameDomName: 'provinceId', //第一层name （父节点name）
+			childrenDomName : 'cityId', // //第二层name （子节点name）
+		});
+		areaSelect.getParentValue();  //初始化父节点数据
+		
+		$areaDom.find('[name="provinceId"]').on("change",function(){  //改变第二层数据
+			areaSelect.getChildrenValue();
+		})
+		
+		
+		 var cartPost = new Ajax('',{
+				url: '/item/getAllCategorys',
+				type:'GET',
+				callback : function(rsp) {
+					console.log(rsp);
+					var $cateHtml ='';
+					$.each(rsp.data,function(i,obj){
+						if(i==0){
+							$cateHtml= $('<a href="javascript:;" class="visited">'+obj.cateZHName+' <img alt="" src="../../u109.png"></a>');
+						}else{
+							$cateHtml= $('<a href="javascript:;">'+obj.cateZHName+' <img alt="" src="../../u109.png"></a>');
+						}
+						
+						
+						$cateHtml.on("click",function(){
+							
+							var cartPost = new Ajax('',{
+								url: '/item/getItemsByCategoryId?categoryId='+obj.id,
+								type:'GET',
+								
+								callback : function(rsp) {
+									$("#itemDIV").html('');
+									$.each(rsp.data,function(j,obj2){
+										console.log(obj2);
+										
+										
+										var $itemHtml = $('<input value="'+obj2.id+'" id="ck'+obj2.id+'"  type="checkbox" name="itemIds" >'+obj2.itemName+'&nbsp;&nbsp;&nbsp;&nbsp;原价:¥'+obj2.defaultPrice+' &nbsp;&nbsp;&nbsp;&nbsp;分销价:¥'+obj2.brokerage+' 	 &nbsp;&nbsp;&nbsp;&nbsp;提成比例:'+obj2.percentage+'%<div> </div>');
+										$itemHtml.on('click',function(){
+											if($(this).is(':checked')){
+												itemIds.push(obj2.id);
+												
+											}else{
+												for(var i in itemIds){
+													if(itemIds[i] == obj2.id){
+														itemIds.splice(i,1);
+														break;
+													} 
+												}
+											}
+										})
+										
+										$("#itemDIV").append($itemHtml);
+										
+										
+										for(var i in itemIds){
+											if(itemIds[i] == obj2.id){
+												$itemHtml.prop("checked",true); 
+												break;
+											} 
+										}
+									})
+									//$("#itemDIV").append($('<div style="margin-top: 30px;"> <input value="1" id="ckAll"  type="checkbox" name="orderNo" >全选 </div>'));
+									
+									$('#ckAll').click(function(){
+										if($(this).is(':checked')){
+											$(".fr input").prop("checked",true); 
+										}else{
+											$(".fr input").prop("checked",false); 
+										}
+									})
+								}
+						 	});
+							
+						})
+						$("#cateDIV").append($cateHtml);
+						
+						if(i==0){
+							$cateHtml.click();
+						}
+					})
+					
+					
+					
+					$('.fl').find('a').click(function(){
+						$('.fl').find('a').removeClass('visited');
+						$(this).addClass('visited')
+					})
+				}
+		 	}); 
+		
+		var param = base64encode(utf16to8(JSON.stringify({"userId":100})));
+		datatable = $(".dataTable").DataTable({
+			"ajax" : {
+				"url" : "/order/getOrders",
+				"contentType": "application/json",
+			    "type": "POST",
+			    "data":{"dataGridParam":param}
+			},
+			"dom":
+				"<'row'<'col-sm-12'<'toolbar-rgt'>>>" +
+				"<'row'<'col-sm-12'tr>>" +
+				"<'row'<'col-sm-5'i><'col-sm-7'p>>",
+			"paging":   false,
+		    "ordering": false,
+		    "info":     false,
+		    "searching":false,
+			"columnDefs" : [ {
+				"data" : "orderNo",
+				"targets":0
+			}, {
+				"data" : "userId",
+				"targets":1
+			},{
+				"data" : "userId",
+				"targets":2
+			},{
+				"data" : "userId",
+				"targets":3
+			},{
+				"data" : "userId",
+				"targets":4
+			},{
+				"data":"handle",
+				"targets":5,
+				"orderable":false,
+				"render":function(data,type,row){
+					var _html = "<a title='查看' onclick='query("+row.orderNo+")' class='btn btn-default btn-xs'><i class='fa fa-search'></i></a>&nbsp;";
+					return _html;
+				}
+			} ],
+			"language" : {
+				"sProcessing" : "处理中...",
+				"sLengthMenu" : "显示 _MENU_ 项结果",
+				"sZeroRecords" : "没有匹配结果",
+				"sInfo" : "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+				"sInfoEmpty" : "显示第 0 至 0 项结果，共 0 项",
+				"sInfoFiltered" : "(由 _MAX_ 项结果过滤)",
+				"sInfoPostFix" : "",
+				"sSearch" : "搜索:",
+				"sUrl" : "",
+				"sEmptyTable" : "表中数据为空",
+				"sLoadingRecords" : "载入中...",
+				"sInfoThousands" : ",",
+				"oPaginate" : {
+					"sFirst" : "首页",
+					"sPrevious" : "上页",
+					"sNext" : "下页",
+					"sLast" : "末页"
+				},
+				"oAria" : {
+					"sSortAscending" : ": 以升序排列此列",
+					"sSortDescending" : ": 以降序排列此列"
+				}
+			},
+			
+		});
+		$("#DataTables_Table_0_length").remove();
+		 $(".toolbar-rgt").html('<div align="left"><a onclick="showFrom(0);" class="btn btn-primary">新增 </a> ');
+		//commonDataGrid.show();
+		
+		var formBtn = $('<div class="box-footer"></div>');
+				var cancelBtn = $('<button   class="btn btn-default">取消</button>');
+				var subBtn = $('<input type="button" name="queren" class="btn btn-info pull-right" value="确认"></input>');
+				
+				subBtn.on("click",function(){
+					var  p = $fromDom.find('form').serializeJson();
+					if(p.id==""){
+						p.id=null;
+					}
+					p.itemIds = itemIds.join();
+					p.provinceName = $("#province  option:selected").text();
+					p.cityName = $("#city  option:selected").text();
+					
+					new Ajax('',{
+						url: '/dealer/saveDealer',
+						type:"POST",
+						param:base64encode(utf16to8(JSON.stringify(p))),
+						//param:JSON.stringify(p),
+						callback : function(rsp) {
+							layer.closeAll();
+							//self.reloadTable($dom);
+						}
+				 	}); 
+					
+				})
+				$fromDom.find('form').append(formBtn.append(cancelBtn).append(subBtn));
+		
+	})
+	
+
+	function showFrom(id,type){
+	
+		if("query"==type){
+			$fromDom.find('[name="queren"]').css("display","none");
+		}else{
+			$fromDom.find('[name="queren"]').css("display","block");
+		}
+		var index = layer.open({
+	        type: 1,
+	        title: "编辑",
+	        shadeClose: true,
+	        maxmin:true,
+	        area:['100%','100%'],
+	        content: $fromDom
+	    });
+		
+		/* var cartPost = new Ajax('',{
+			url: allObj.detailObj.url+"?"+allObj.idKey +"="+id,
+			type:allObj.detailObj.type,
+			callback : function(rsp) {
+				var form = new Form(allObj.fromDom.find('form'),{
+	        		data : rsp.data
+	        	});
+	        	form.formEdit();
+			}
+	 	}); */
+		layer.full(index);
+	}
+	
+
+
+
+
+</script>
+</body>
+</html>

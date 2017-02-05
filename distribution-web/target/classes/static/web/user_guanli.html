@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>个人中心</title>
+<link rel="Stylesheet" href="css/style.css" type="text/css" />
+<link rel="Stylesheet" href="css/public/font-awesome.min.css" type="text/css" />
+<link rel="Stylesheet" href="css/user.css" type="text/css" />
+<!-- jQuery -->
+<script type="text/javascript" src="js/public/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/public/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/public/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/yxMobileSlider.js"></script>
+</head>
+
+<body class="wrap_bg">
+
+<div id="container" class="thewidth100">
+
+<!--header-->
+    <div class="header_bg clearfix thewidth100 hei"> 
+        <div class="header">
+        <div class="f_l" onclick="Return()"><i class="icon-angle-left"></i><span>返回</span></div>
+        <div class="title">账号管理</div>
+        <div class="f_r"><i class="ion_you"></i></div>
+        </div>
+    </div>
+<!--------------------------------------[ header ]-------------------------------------->
+
+<!--------------------------------------[ banner ]-------------------------------------->
+<!--wrap-->
+    <div class=" thewidth100 pa_b8">
+        <div class="my_user_li lis_bot">
+            <ul>
+                <li class="lis_bob tuxiang">
+                    头像 
+                    <i class="f_r ma_l1 c_999 icon-angle-right"></i>
+                    <span class="f_r  c_999"><img class="imgas" src="images/user_03.jpg" alt=""></span>
+                </li>
+                <li class="lis_bob nicheng">
+                    昵称
+                    <i class="f_r ma_l1 c_999 icon-angle-right"></i>
+                    <span class="f_r c_999">小丸子</span>
+                </li>
+            </ul>
+        </div>
+        <div class="my_user_li lis_bot">
+            <ul>
+                <li class="lis_bob">
+                <a href="my_mima.html">
+                    修改密码
+                    <i class="f_r ma_l1 c_999 icon-angle-right"></i>
+                </a>
+                </li>
+                <li class="lis_bob">
+                <a href="my_shouji.html">
+                    绑定手机
+                    <i class="f_r ma_l1 c_999 icon-angle-right"></i>
+                    <span class="f_r c_999"></span>
+                </a>
+                </li>
+            </ul>
+        </div>
+        <div class="my_user_li lis_bot">
+            <ul>
+                <li class="lis_bob">
+                    绑定推广人
+                    <i class="f_r ma_l1 c_999 icon-angle-right"></i>
+                    <span class="f_r c_999">请输入推广码</span>
+                </li>
+               
+            </ul>
+        </div>
+    </div>
+<!--/wrap-->
+
+</div>
+<div id="confirms" class="tan none">
+    <div class=" ta_c fs_2">修改昵称</div>
+    <div class="lis_bob row ta_c"><input class="wa_c80" type="text" name="" value="" placeholder=""></div>
+    <div class="mui-flex ta_c">
+        <a href="javascript:layer.closeAll();;" class="call lis_bor">取消</a>
+        <a href="javascript:;" class="call red">确定</a>
+    </div>
+</div>
+<div id="confs" class="tan none ma_b2">
+    <div class="lis_bob row fs_2">修改图像</div>
+    <div class="row "><input class="pa_t1 bo1" type="file" name="" value="" placeholder=""></div>
+</div>
+<script>
+    $('.nicheng').click(function(){
+        layer.open({
+          type: 1,
+          title: false,
+          area:'80%',
+          closeBtn: 0,
+          shadeClose: true,
+          content: $('#confirms')
+        });
+    });
+     $('.tuxiang').click(function(){
+        layer.open({
+          type: 1,
+          title: false,
+          area:'80%',
+          closeBtn: 0,
+          shadeClose: true,
+          content: $('#confs')
+        });
+    });
+</script>
+</body>
+</html>

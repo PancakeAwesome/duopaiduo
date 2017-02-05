@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>商品详情</title>
+<link rel="Stylesheet" href="css/style.css" type="text/css" />
+<link rel="Stylesheet" href="css/public/font-awesome.min.css" type="text/css" />
+<link rel="stylesheet" href="css/product.css" type="text/css" >
+<!-- jQuery -->
+<script type="text/javascript" src="js/public/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/public/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/public/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/yxMobileSlider.js"></script>
+<script type="text/javascript">
+$(function() {
+	var insertHtml = "";
+	var itemDetail;
+	
+	var AJAXPost = new Ajax('', {
+		url : '/item/getItem?id='+getvl("id"),
+		type : 'get',
+		callback : function(res) {
+			itemDetail = res.data;
+			console.log(itemDetail);
+			$("h5").html(itemDetail.itemName);
+			//$(".f_l").html(itemDetail.defaultStock);
+			//$('#item_data').append(insertHtml);
+		}
+	});
+});
+
+
+</script>
+</head>
+<body class="wrap_bg">
+
+<div id="container" class="thewidth100">
+
+<!--header-->
+    <div class="header_bg clearfix thewidth100 "> 
+        <div class="header hei">
+        <div class="f_l" onclick="Return()"><i class="icon-angle-left"></i><span>返回</span></div>
+        <div class="title">商品详情</div>
+        <div class="f_r"><i class="ion_you"></i></div>
+        </div>
+    </div>
+<!--------------------------------------[ header ]-------------------------------------->
+<!-- banner -->
+<div class="banner">
+    <div class="slider">
+        <ul>
+            <li><a href="javascript:;" target="_blank"><img src="images/sp.jpg" alt="网站建设团队"></a></li>
+            <li><a href="javascript:;" target="_blank"><img src="images/sp.jpg" alt="网页特效集锦"></a></li>
+            <li><a href="javascript:;" target="_blank"><img src="images/sp.jpg" alt="JS代码素材库"></a></li>
+        </ul>
+    </div>
+</div>
+<!--------------------------------------[ banner ]-------------------------------------->
+<!--wrap-->
+    <div class=" thewidth100 pa_b8">
+        <div class="mui-flex bai_bg p1_1">
+            <div class="call">
+                <div class="row">
+                    <h5 id="itemName"></h5>
+                    <p class="red fs_2">¥299.00</p>
+                    <div class="clearfix">
+                        <span class="f_l">销量：213</span>
+                        <span class="f_r">物流：顺丰包邮</span>
+                    </div>
+                </div>
+            </div>
+            <div class="call fs">
+                <div>
+                    <span></span>
+                    分享
+                </div>
+            </div>
+        </div>
+        <div class="mui-flex row product">
+            <div class="call">
+            <img src="images/public/sp_02.png"><span>品质保障</span>
+            </div>
+            <div class="call">
+            <img src="images/public/sp_03.png"><span>顺丰包邮</span>
+            </div>
+        </div>
+        <div class="bai_bg clearfix row product1">
+            <div class="f_l">购买数量：</div>
+            <div class="f_r">
+                <div class="jiliang clearfix">
+                    <span class="f_l">-</span> 
+                    <input type="text"  class="jl" data-max="10"   name="" id="amount" value="1"  placeholder="" > 
+                    <span class="f_r">+</span>
+                </div>
+            </div>
+        </div>
+        <div class="product mui-flex ">
+            <div class="call ta_c current"><a href="product.html">详情</a></div>
+            <div class="call ta_c"><a href="product1.html">规格</a></div>
+            <div class="call ta_c"><a href="product2.html">评价（10）</a></div>
+        </div>
+        <div class="content bai_bg">
+            <img src="images/sp.jpg" width="100%" alt="">
+        </div>
+    </div>
+<!--/wrap-->
+
+
+
+<!--------------------------------------[ footer ]-------------------------------------->
+    <div class="footer_bg thewidth100">
+        <div class="footer1 thewidth">
+            <div class="mui-flex">
+                <div class="call call1">
+                 <a href="shopping.html">
+	                <div class="divs divs-4"></div>
+                                                 购物车
+                </a>  
+                </div>
+                <div class="call call3" id="addCart">加入购物车</div>
+                <div class="call call2">立即购买</div>
+            </div>
+        </div>
+    </div>
+<!--/footer-->
+
+</div>
+
+<script>
+
+
+$('.jiliang span.f_l').click(function(){
+	var nam = parseInt($(this).siblings('.jl').val());
+	if(nam > 0){
+		nam = nam-1;
+	}
+	$(this).siblings('.jl').val(nam);
+})
+$('.jiliang span.f_r').click(function(){
+	var nam = parseInt($(this).siblings('.jl').val());
+	var max = parseInt($(this).siblings('.jl').attr('data-max'));
+	if(nam < max){
+		nam = nam + 1;
+	}else{
+		alert('已超出库存！')
+	}
+	$(this).siblings('.jl').val(nam);
+})
+
+
+
+
+    $(".slider").yxMobileSlider({width:750,height:610,during:5000})
+   $(function(){
+	     $("#addCart").click(function(){
+		     var json = {
+		     "itemPrice" : $("#itemPrice").val(),
+		     "itemAmount": $("#amount").val(),
+		     "itemId":getvl("id"),
+		     "itemPic":"http://baidu.com",
+		     "itemName":$("h5").html()
+		     };
+		     console.log(JSON.stringify(json));
+		    // param=  base64encode(JSON.stringify(json));
+		    /* var AJAXPost = new Ajax('', {
+		    	 url: globalurl+'/fulltext/shopping-car/15295552013',
+			     type : 'PUT',
+			     param:JSON.stringify(json),
+			     callback : function(res) {
+			     console.log(res);
+			     }
+			    });*/
+			    
+			    $.ajax({
+			    	contentType:"application/json",
+			    	url: globalurl+'/fulltext/shopping-car/15295552013',
+			    	type:"POST",
+			    	data:JSON.stringify(json),
+			    	dataType:"json",
+			    	success:function(resp){
+			    		console.log(resp);
+			    	}
+			    })
+		     });
+     });
+
+$(function(){
+	  $("input").keyup(function(){
+  	    if($(this).val() >10){
+  	    	alert("ss");
+  	    }
+	  });
+	});
+
+
+ 
+
+    
+    
+</script>
+
+</body>
+</html>

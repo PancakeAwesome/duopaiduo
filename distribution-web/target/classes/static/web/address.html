@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>地址管理</title>
+<link rel="Stylesheet" href="css/style.css" type="text/css" />
+<link rel="Stylesheet" href="css/public/font-awesome.min.css" type="text/css" />
+<link rel="Stylesheet" href="css/user.css" type="text/css" />
+<!-- jQuery -->
+<script type="text/javascript" src="js/public/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/public/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/public/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/yxMobileSlider.js"></script>
+</head>
+
+<body class="wrap_bg">
+
+<div id="container" class="thewidth100">
+
+<!--header-->
+    <div class="header_bg clearfix thewidth100 hei"> 
+        <div class="header">
+        <div class="f_l" onclick="Return()"><i class="icon-angle-left"></i><span>返回</span></div>
+        <div class="title">地址管理</div>
+        <div class="f_r"><i class="ion_you"></i></div>
+        </div>
+    </div>
+<!--------------------------------------[ header ]-------------------------------------->
+
+<!--------------------------------------[ banner ]-------------------------------------->
+<!--wrap-->
+    <div id='address_box' class=" thewidth100 pa_b8">
+        <!-- <div class="address">
+            <div  class="row">
+                <h5>收货人：张三丰 <span class="f_r">18205563235</span></h5>
+            </div>
+            <div class="order_lib row c_999">
+                <p>江苏省南京市秦淮区健康南路新低西村2幢102号1103室1103 室村2幢10</p>
+            </div>
+            <div class="clearfix row">
+                <div class="f_l defaults default">设为默认地址</div>
+
+                <button class="f_r" type="">删除</button>
+                <a href="address1.html" class="f_r">编辑</a>
+            </div>
+        </div>
+
+        <div class="address">
+            <div  class="row">
+                <h5>收货人：张三丰 <span class="f_r">18205563235</span></h5>
+            </div>
+            <div class="order_lib row c_999">
+                <p>江苏省南京市秦淮区健康南路新低西村2幢102号1103室1103 室村2幢10</p>
+            </div>
+            <div class="clearfix row">
+                <div class="f_l defaults">设为默认地址</div>
+
+                <button class="f_r" type="">删除</button>
+                <a href="address1.html" class="f_r">编辑</a>
+            </div>
+        </div>
+
+        <div class="address">
+            <div  class="row">
+                <h5>收货人：张三丰 <span class="f_r">18205563235</span></h5>
+            </div>
+            <div class="order_lib row c_999">
+                <p>江苏省南京市秦淮区健康南路新低西村2幢102号1103室1103 室村2幢10</p>
+            </div>
+            <div class="clearfix row">
+                <div class="f_l defaults">设为默认地址</div>
+
+                <button class="f_r" type="">删除</button>
+                <a href="address1.html" class="f_r">编辑</a>
+            </div>
+        </div>
+
+        <div class="address">
+            <div  class="row">
+                <h5>收货人：张三丰 <span class="f_r">18205563235</span></h5>
+            </div>
+            <div class="order_lib row c_999">
+                <p>江苏省南京市秦淮区健康南路新低西村2幢102号1103室1103 室村2幢10</p>
+            </div>
+            <div class="clearfix row">
+                <div class="f_l defaults">设为默认地址</div>
+
+                <button class="f_r" type="">删除</button>
+                <a href="address1.html" class="f_r">编辑</a>
+            </div>
+        </div> -->
+    </div>
+<!--/wrap-->
+<!--------------------------------------[ footer ]-------------------------------------->
+    <div class="footer_bg thewidth100">
+        <div class="footer thewidth red_bg addressd">
+            <a  href="address1.html">+新增收货地址</a>
+        </div>
+    </div>
+<!--/footer-->
+</div>
+<!-- div id="confirms" class="tan none">
+    <div class=" ta_c fs_2">提示</div>
+    <div class="lis_bob row">确认删除此收货地址吗?</div>
+    <div class="mui-flex ta_c">
+        <a href="javascript:layer.closeAll();;" class="call lis_bor">取消</a>
+        <a href="javascript:;" class="call red">确定</a>
+    </div>
+</div> -->
+<script>
+    // fake
+    var userId = 2;
+
+    $('button').click(function(){
+        layer.open({
+          type: 1,
+          title: false,
+          area:'80%',
+          closeBtn: 0,
+          shadeClose: true,
+          content: $('#confirms')
+        });
+    });
+
+    // 修改默认地址
+    function is_def(){
+        $('.address').find('.defaults').click(function(){
+            if( ! $(this).hasClass('default') ){
+                $('.address').find('.defaults').removeClass('default');
+                $(this).addClass('default');
+            }
+        });
+    }
+    
+
+    $(function(){
+        // console.log(userId)
+        // var param = base64encode('{"userId":'+userId+'}');
+        // console.log(param)
+            /* 获取用户所有订单地址 */
+        var AJAXPost = new Ajax('',{
+            url: '/order_UserOrderAddress/getUserOrderAddresss?userId='+userId,
+            async:false,
+            type:'get',
+            callback : function(res) {
+                /* res要求传送orderNo */
+                var user_addresses = res.data;
+                console.log('请求成功');
+                console.log(res);
+                /* 返回来的data是一个对象数组*/
+                /* 解析用户地址对象数组 */
+                $.each(user_addresses,function(index,user_address){
+                    var name = user_address.userName;
+                    var address = user_address.address;
+                    var phone_number = user_address.phone;
+                    userOrderAddressId = user_address.id;
+
+                    if(user_address.status != 2){
+                        // 用户地址可用
+                        var add_box = $('<div>')
+                        $(add_box).addClass('address')
+                        $(add_box).attr('id',userOrderAddressId)
+                        $(add_box).appendTo($('#address_box'))
+
+                        var top = $('<div>')
+                        $(top).addClass('row')
+                        $(top).appendTo($(add_box))
+
+                        var h5 = $('<h5>')
+                        $(h5).appendTo($(top))
+
+                        var recevier = $('<span>')
+                        $(recevier).text('收货人：'+name)
+                        $(recevier).appendTo($(h5))
+
+                        var phone = $('<span>')
+                        $(phone).addClass('f_r')
+                        $(phone).text(phone_number)
+                        $(phone).appendTo($(h5))
+
+                        var mid = $('<div>')
+                        $(mid).addClass('order_lib row c_999')
+                        $(mid).appendTo($(add_box))
+
+                        var address_p = $('<p>')
+                        $(address_p).text(address)
+                        $(address_p).appendTo($(mid))
+
+                        var bo = $('<div>')
+                        $(bo).addClass('clearfix row')
+                        $(bo).appendTo($(add_box))
+
+                        var defaul = $('<div>')
+                        $(defaul).text('设为默认地址')
+                        $(defaul).addClass('f_l defaults') 
+                        if(user_address.isDef == 2){
+                            /* 默认地址 */
+                            $(defaul).addClass('default') 
+                        }
+                        $(defaul).appendTo($(bo))
+
+                        var del = $('<button>')
+                        $(del).addClass('f_r')
+                        $(del).attr('id','del')
+                        $(del).text('删除')
+                        $(del).appendTo($(bo))
+
+                        var edit = $('<a>')
+                        $(edit).text('编辑')
+                        $(edit).addClass('f_r')
+                        $(edit).attr('href','address1.html?addId='+userOrderAddressId)
+                        // 1新增2编辑
+                        $(edit).appendTo($(bo))
+                    }
+                })
+                $('body').show();
+                confirm_del_add();
+                is_def();
+            }
+        });
+    })
+
+    function confirm_del_add(){
+        // 删除地址
+        $('.address').find('#del').click(function(){
+            var addId = $(this).parents('.address').attr('id')
+            var res = confirm('确定要删除么？')
+            if (res) {
+                del_add(addId);
+            }
+        })
+    }
+
+    function del_add(addId){
+        var AJAXPost = new Ajax('',{
+            url: '/order_UserOrderAddress/delUserOrderAddressById?id='+addId,
+            type:'get',
+            callback : function(res) {
+                /* res要求传送orderNo */
+                var result = res.data;
+                console.log('请求成功');
+                console.log(res);
+                if(!result){
+                    console.log(error)
+                }else{
+                    location.reload()
+                }
+             }   
+        });
+    }
+
+    function Return(){
+        var add_id = $('.address').find('.default').parents('.address').attr('id')
+        update_def(add_id)
+    }
+
+    function update_def(add_id){
+        // 修改默认地址
+        if(add_id != ''){
+            var param = base64encode(utf16to8('{"id":'+add_id+'}'))
+            console.log(param)
+            var AJAXPost = new Ajax('',{
+                url: '/order_UserOrderAddress/updIsDef',
+                param:param,
+                type:'post',
+                callback : function(res) {
+                    /* res要求传送orderNo */
+                    var result = res.data;
+                    console.log('请求成功');
+                    console.log(res);
+                    if(!result){
+                        console.log(error)
+                    }else{
+                        window.location.href = 'my.html'
+                    }
+                 }   
+            });
+        }else{
+            window.location.href = 'my.html'
+        }
+    }
+</script>
+</body>
+</html>

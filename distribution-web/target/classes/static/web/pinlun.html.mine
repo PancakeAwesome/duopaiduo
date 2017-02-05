@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>订单详情-评论</title>
+<link rel="Stylesheet" href="css/style.css" type="text/css" />
+<link rel="Stylesheet" href="css/public/font-awesome.min.css" type="text/css" />
+<link rel="Stylesheet" href="css/user.css" type="text/css" />
+<!-- jQuery -->
+<script type="text/javascript" src="js/public/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/public/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/public/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/yxMobileSlider.js"></script>
+</head>
+
+<body class="wrap_bg">
+
+<div id="container" class="thewidth100">
+
+<!--header-->
+    <div class="header_bg clearfix thewidth100 hei"> 
+        <div class="header">
+        <div class="f_l" onclick="Return()"><i class="icon-angle-left"></i><span>返回</span></div>
+        <div class="title">评论列表</div>
+        <div class="f_r"><i class="ion_you"></i></div>
+        </div>
+    </div>
+<!--------------------------------------[ header ]-------------------------------------->
+
+<!--------------------------------------[ banner ]-------------------------------------->
+<!--wrap-->
+    <div class=" thewidth100 pa_b8">
+        <div id='item_list'>
+            <!-- <div class="order_li ">
+                <div class=" mui-flex">
+                    <div class="call lil">
+                        <img class="lis_bo1" src="images/shangping.jpg">
+                    </div>
+                    <div class="call lir">
+                        <div class="title">古井贡酒老玻贡50度750ml*6瓶大瓶自饮酒</div>
+                        <div class="stage">
+                            <span class="red">￥89.00</span>
+                            <span class="f_r"> 数量：2</span>
+                        </div>
+                        <div class=" clearfix">
+                            <div class="f_l xin">
+                                <i class="icon-star red"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix">
+                    <textarea  class="thewidth100 lis_bo1" onfocus="if(value=='评论') {value=''}" onblur="if(value=='') {value='评论'}">评论</textarea>
+                </div>
+            </div> -->
+        </div>
+        <div class="tijiao clearfix ta_c ma_t1">
+           <button class="btn red_bg wb50" style="color:#fff" onclick="remark_submit_cli()">提交</button> 
+        </div>
+        
+    </div>
+<!--/wrap-->
+</div>
+<script>
+    var orderItems = new Array();/* 购买的商品id跟数量itemIdquantity */
+    var AJAXPost = null;
+    var userId = 2;/* fake  */
+    var orderNo = getvl('orderNo');
+    var delivery = null
+    
+    /* saveOrder接口参数 */
+    // var itemId= 0; 
+    var quantity= 0;
+    var orderItems = new Array()
+    var remarkDetails = new Array()
+    
+    $(function(){
+
+        // var param = base64encode('{"orderNo":'+orderNo+'}')
+        var AJAXPost = new Ajax('',{
+            url: '/order/getOrderDetail?orderNo='+orderNo,
+            // async:false,
+            type:'get',
+            callback : function(res) {
+                /* res要求传送orderNo */
+                var order = res.data;
+                console.log('请求成功');
+                console.log(res);
+                /* 返回值data是一个json对象 */
+                /* order_detail是一个对象数组 */
+                var order_details = order.orderdetail;
+                
+                $.each(order_details,function(index,order_detail){
+                    /* fake */
+                    var innerHtml1 = ''
+                    var innerHtml2 = ''
+                    var itemName = '老白干';
+                    var itemImg = 'images/shangping.jpg';
+                    /* var itemName = order_detail.itemName;
+                    var itemImg = order_detail.itemImg; */
+                    
+                    var price = order_detail.price;
+                    var quantity = order_detail.quantity;
+                    var id = order_detail.id;
+                    
+                    /* 拼装json数组对象供saveOrder使用 */
+                    var orderItem = new Object();
+                    orderItem.itemId = id;
+                    orderItem.quantity = quantity;
+                    orderItems.push(orderItem);
+                    console.log(orderItem);         
+                    
+                    /* 开始插入商品item */
+                    var item = $('<div>');
+                    $(item).addClass('order_li item');
+                    $(item).attr('id',id);
+                    $(item).appendTo($('#item_list'));
+
+                    var top = $('<div>');
+                    $(top).addClass('mui-flex');
+                    $(top).attr('id',id);
+                    $(top).appendTo($(item));
+
+                    var l = $('<div>');
+                    $(l).addClass('call lil');
+                    $(l).appendTo($(top));
+
+                    var img_box = $('<img>');
+                    $(img_box).addClass('lis_bo1');
+                    $(img_box).attr('src',itemImg)
+                    $(img_box).appendTo($(l));
+
+                    var r = $('<div>');
+                    $(r).addClass('call lir');
+                    $(r).appendTo($(top));
+
+                    var title = $('<div>');
+                    $(title).addClass('title');
+                    $(title).text(itemName);
+                    $(title).appendTo($(r));
+
+                    var pr_qu = $('<div>');
+                    $(pr_qu).addClass('stage');
+                    $(pr_qu).appendTo($(r));
+
+                    var prices = $('<span>');
+                    $(prices).addClass('red');
+                    $(prices).text('￥'+price);
+                    $(prices).appendTo($(pr_qu));
+
+                    var quantities = $('<span>');
+                    $(quantities).addClass('f_r');
+                    $(quantities).text('数量：'+quantity);
+                    $(quantities).appendTo($(pr_qu));
+
+                    var star = $('<div>');
+                    $(star).addClass('clearfix');
+                    $(star).appendTo($(r));
+
+                    innerHtml1 += '<div class="f_l xin ma_l1">'
+                                    +'<i class="icon-star red"></i>'
+                                    +'<i class="icon-star"></i>'
+                                    +'<i class="icon-star"></i>'
+                                    +'<i class="icon-star"></i>'
+                                    +'<i class="icon-star"></i>'
+                                +'</div>'
+                    $(star).append(innerHtml1)
+
+                    var bo = $('<div>');
+                    $(bo).addClass('clearfix');
+                    $(bo).appendTo($(item));
+
+                    innerHtml2 = '<textarea  class="thewidth100 lis_bo1"></textarea>'
+                    $(bo).append(innerHtml2)
+                })
+                // $('body').show()
+                // remark_submit_cli()
+                $('.xin').find('i').click(function(e){
+                    $(this).siblings('i').each(function(){
+                        $(this).removeClass('red');
+                    });
+                    $(this).addClass('red').prevAll('i').addClass('red');
+                });
+            }
+        });
+    })
+    
+    function remark_submit_cli(){
+        // 提交评价
+        // 增加评价要求过滤条件
+        param = getForm()
+        if(param != ''){
+            var AJAXPost = new Ajax('',{
+                url: '/order/commentOrder',
+                // async:false,
+                type:'post',
+                param:param,
+                callback : function(res) {
+                    /* res要求传送orderNo */
+                    var result = res.data;
+                    console.log('请求成功');
+                    console.log(res);
+                    if(!result){
+                        console.log('error')
+                    }else{
+                        alert('评价成功')
+                        window.location.href = 'my_order.html'
+                    }
+                }               
+            });
+        }else{
+            alert('请输入内容！')
+        }    
+    }
+
+    function getForm(){
+        // 获取评论
+        var i = 1
+        $('textarea').each(function(){
+            if($(this).val() == ''){
+                return i = 0
+            }
+        })
+        if(i){
+            var itemId = 0
+            var buyerReview = 0
+            var buyerContent = ''
+            $('.item').each(function(){
+                var remarkDetail = new Object()
+                itemId = $(this).attr('id')
+                buyerReview = star_mark(itemId)
+                buyerContent = $(this).find('textarea').val()
+                remarkDetail.itemId = itemId
+                remarkDetail.buyerReview = buyerReview
+                remarkDetail.buyerContent = buyerContent
+                remarkDetails.push(remarkDetail)
+            })
+
+            var param = new Object()
+
+            param.orderNo = orderNo
+            param.remarkDetails = remarkDetails
+
+            param = JSON.stringify(param)
+
+            param = base64encode(param)
+            console.log(param)
+            return param
+        }else{
+            return param = ''
+        }
+    }
+
+    function star_mark(itemId){
+        // 计算星级
+        var i = 0
+        $('.xin i').each(function(){
+            if(($(this).hasClass('red'))&&($(this).parents('.item').attr('id')== itemId)){
+                i++
+            }
+        })
+        return i
+    }
+</script>
+</body>
+</html>
+
+   

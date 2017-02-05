@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>个人中心</title>
+<link rel="Stylesheet" href="css/style.css" type="text/css" />
+<link rel="Stylesheet" href="css/public/font-awesome.min.css"
+	type="text/css" />
+<link rel="Stylesheet" href="css/login.css" type="text/css" />
+<!-- jQuery -->
+<script type="text/javascript" src="js/public/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/public/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/public/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/yxMobileSlider.js"></script>
+</head>
+
+<body class="wrap_bg">
+
+	<div id="container" class="thewidth100">
+
+		<!--header-->
+		<div class="header_bg clearfix thewidth100 hei">
+			<div class="header">
+				<div class="f_l" onclick="Return()">
+					<i class="icon-angle-left"></i><span>返回</span>
+				</div>
+				<div class="title">注册</div>
+				<div class="f_r">
+					<i class="ion_you"></i>
+				</div>
+			</div>
+		</div>
+		<!--------------------------------------[ header ]-------------------------------------->
+		<!--------------------------------------[ banner ]-------------------------------------->
+		<!--wrap-->
+		<div class=" thewidth100 ">
+			<div class="register lis_bot lis_bob">
+				<div class='lis_bob'>
+					<span>账号</span><input type="text" id="username" name="" value=""
+						placeholder="请输入用户名或手机号">
+				</div>
+				<div class='lis_bob'>
+					<span>设置密码</span><input type="text" id="password" name="" value=""
+						placeholder="6-20位数字和字母组合">
+				</div>
+				<div class='lis_bob'>
+					<span>确认密码</span><input type="text" id="verifyPassword" name=""
+						value="" placeholder="请确认密码">
+				</div>
+				<div>
+					<span>推广人</span><input type="text" id="promoteCode" name=""
+						value="" placeholder="请输入推广码（非必填）">
+				</div>
+			</div>
+			<div class=" tuiqu row">
+
+				<div class="xuanz">
+					<span class='xz'></span>我已经阅读并接受<a href="javascript:;" class="red">《多拍多酒类分销系统协议》</a>
+				</div>
+				<div class="ma_t1">
+					<div class="row">
+						<button class="red_bg" id="register">注册</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!--/wrap-->
+	</div>
+	<script>
+		$('.xuanz').click(function() {
+			var xa = $(this).find('.xz');
+			if (xa.hasClass('xz1')) {
+				xa.removeClass('xz1');
+			} else {
+				xa.addClass('xz1');
+			}
+		});
+		$('#register').click(function() {
+			var json = {
+				"username" : $("#username").val(),
+				"password" : $("#password").val(),
+				"promoter" : $("#promoteCode").val(),
+				"provinceId":"119",
+				"cityId":"320110",
+				"cityName":"徐州市",
+				"provinceName":"江苏省",
+				"userType":"1"
+			};
+			alert(json);
+			param = base64encode(JSON.stringify(json));
+			
+			var AJAXPost = new Ajax('', {
+				url : '/register',
+				type : 'post',
+				param : param,
+				callback : function(res) {
+					alert(res.message);
+
+					console.info(res);
+					//$('#item_data').append(insertHtml);
+				}
+			});
+		});
+	</script>
+
+
+</body>
+</html>

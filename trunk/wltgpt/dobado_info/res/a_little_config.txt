@@ -1,0 +1,4 @@
+jdbcUrl = jdbc:mysql://121.196.232.120/duopaiduo?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+user = root
+password = root
+devMode = true

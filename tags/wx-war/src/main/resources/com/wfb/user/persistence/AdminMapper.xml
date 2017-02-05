@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wfb.user.persistence.AdminMapper">
+	
+	<update id="update" parameterType="AdminModel">
+		update t_admin 
+		<set>
+			<if test="role != null">
+				roleId = #{role},
+			</if>
+			<if test="admin != null">
+				admin = #{admin},
+			</if>
+			<if test="password != null">
+				password = #{password},
+			</if>
+			<if test="adminType != null">
+				adminType = #{adminType},
+			</if>
+			<if test="adminName != null">
+				adminName = #{adminName},
+			</if>
+			<if test="isDel != null">
+				isDel = #{isDel},
+			</if>
+			<if test="addTime != null">
+				addTime = #{addTime},
+			</if>
+			<if test="creator != null">
+				creator = #{creator},
+			</if>
+			<if test="modTime != null">
+				modTime = #{modTime},
+			</if>
+			<if test="updater != null">
+				updater = #{updater}
+			</if>
+		</set>
+		where adminId = #{adminId} 
+	</update>
+	
+	<insert id="insert" useGeneratedKeys="true" keyProperty="adminId"
+		parameterType="AdminModel">
+		insert into t_admin
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="adminId != null">
+				adminId,
+			</if>
+			<if test="role != null">
+				roleId,
+			</if>
+			<if test="admin != null">
+				admin,
+			</if>
+			<if test="password != null">
+				password,
+			</if>
+			<if test="adminType != null">
+				adminType,
+			</if>
+			<if test="adminName != null">
+				adminName,
+			</if>
+			<if test="isDel != null">
+				isDel,
+			</if>
+			<if test="addTime != null">
+				addTime,
+			</if>
+			<if test="creator != null">
+				creator,
+			</if>
+			<if test="modTime != null">
+				modTime,
+			</if>
+			<if test="updater != null">
+				updater
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="adminId != null">
+				#{adminId},
+			</if>
+			<if test="role != null">
+				#{role},
+			</if>
+			<if test="admin != null">
+				#{admin},
+			</if>
+			<if test="password != null">
+				#{password},
+			</if>
+			<if test="adminType != null">
+				#{adminType},
+			</if>
+			<if test="adminName != null">
+				#{adminName},
+			</if>
+			<if test="isDel != null">
+				#{isDel},
+			</if>
+			<if test="addTime != null">
+				#{addTime},
+			</if>
+			<if test="creator != null">
+				#{creator},
+			</if>
+			<if test="modTime != null">
+				#{modTime},
+			</if>
+			<if test="updater != null">
+				#{updater}
+			</if>
+		</trim>
+	</insert>
+	
+	<select id="getAdminDetail" resultType="AdminModel">
+		select admin.adminId, admin.roleId as role, role.roleName, 
+			admin.admin, admin.adminName, admin.isDel, admin.password, 
+			left(admin.addTime, 19) as addTime, creator, adminType, 
+			left(admin.modTime, 19) as modTime, updater 
+		from t_admin admin 
+		left join t_role role on admin.roleId = role.roleId 
+		where adminId = #{adminId}
+	</select>
+	
+	<select id="getAdmins" resultType="AdminModel">
+		select admin.adminId, admin.roleId as role, role.roleName, 
+			admin.admin, admin.adminName, 
+			left(admin.addTime, 19) as addTime, 
+			left(admin.modTime, 19) as modTime 
+		from t_admin admin 
+		left join t_role role on admin.roleId = role.roleId 
+		where 1 = 1 and isDel = 1 
+		<if test="condition != null">
+			 and admin.admin like concat('%',#{condition},'%') 
+		</if>
+	</select>
+	
+	<select id="adminUserLogin" resultType="AdminModel">
+		select admin.adminId, admin.roleId as role, role.roleName, adminType, 
+			role.actionIds roles, admin.admin, admin.adminName, 
+			admin.isDel, admin.password
+		from t_admin admin 
+		left join t_role role on admin.roleId = role.roleId 
+		where admin = #{admin}
+	</select>
+	
+	<select id="getByAdmin" resultType="int">
+		select count(adminId) from t_admin
+		where admin = #{admin}
+	</select>
+
+	<update id="remove">
+		update t_admin 
+		set isDel = 2 
+		where adminId = #{entityId}
+	</update>
+
+	<!-- <select id="getAdminByType" resultType="String"> 
+		 	select group_concat(adminId) as userIds 
+		 	from t_admin where isDEl = 1 and adminType = #{adminType} 
+		 </select> -->
+	
+	<select id="getIdByAdmin" resultType="String">
+		select group_concat(adminId) as userIds 
+		from t_admin
+		where isDEl = 1 and adminType = #{adminType} and 
+			admin in 
+		<foreach collection="admins" item="admin" index="index"
+			open="(" separator=","  close=")">
+			#{admin}
+		</foreach>
+	</select>
+	
+	<select id="getFranUserIds" resultType="String">
+		select group_concat(adminId) as userIds 
+		from t_admin 
+		where adminType = 1
+	</select>
+	
+	<select id="getLogisUserIds" resultType="String">
+		select group_concat(adminId) as userIds 
+		from t_admin 
+		where adminType = 2
+	</select>
+	
+</mapper>

@@ -1,0 +1,575 @@
+@charset "utf-8";
+  /* CSS Document*/
+  /* S Reset*/
+  html,body,header,nav,footer,article,section,form,fieldset,p,div,ul,ol,li,h1,h2,h3,h4,h5,h6 {
+  -webkit-text-size-adjust:none;
+}
+/*改变文字大小*/
+  
+a {
+  background: transparent;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  outline: none;
+}
+a:hover {
+  text-decoration:none;
+  /*-moz-transition:all .3s ease;
+  -webkit-transition:all .3s ease;
+  -o-transition:all .3s ease;
+  transition:all .3s ease;*/
+}
+::selection {
+  background: #E78D00;
+  color: #fff;
+}
+::-moz-selection {
+  background: #E78D00;
+  color: #fff;
+}
+.clearBoth {
+  clear: both;
+}
+.clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+}
+.clearfix {
+  _zoom: 1;
+}
+* + html .clearfix {
+  overflow: auto;
+}
+/* E Reset*/
+  
+* html,
+* html body {
+  background-image: url(about:blank);
+  background-attachment: fixed;
+}
+body {
+  color: #333;
+  line-height: 20px;
+  font: 12px 'Microsoft YaHei', "hiragino sans gb", '黑体', '宋体', Arial, Lucida Grande, Tahoma, sans-serif;
+  background: #d9d9d9;
+}
+* {
+  font-family: 'Microsoft YaHei', "hiragino sans gb", '黑体', '宋体', Arial, Lucida Grande, Tahoma, sans-serif;
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  /* Firefox*/
+  -webkit-box-sizing:border-box;
+  /* Safari*/
+  margin: 0;
+  padding: 0;
+}
+.f_l {
+  float: left;
+}
+.f_r {
+  float: right;
+}
+.ta_l{
+  text-align: left;
+}
+.ta_r{
+  text-align: right;
+}
+.none {
+  display: none;
+}
+.the_btn {
+  border: 0 none;
+  cursor: pointer;
+}
+.thewidth {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  background: #Fff;
+  padding-bottom: 50px;
+}
+.thewidth100 {
+  width: 100%;
+}
+.mb10 {
+  margin-bottom: 1.0rem;
+}
+.mb15 {
+  margin-bottom: 1.5rem;
+}
+.mb20 {
+  margin-bottom: 2.0rem;
+}
+.mb25 {
+  margin-bottom: 2.5rem;
+}
+.wb10 {
+  width: 10%;
+}
+.wb15 {
+  width: 15%;
+}
+.wb20 {
+  width: 20%;
+}
+.wb25 {
+  width: 25%;
+}
+.wb30 {
+  width: 30%;
+}
+.wb35 {
+  width: 35%;
+}
+.wb40 {
+  width: 40%;
+}
+.wb50 {
+  width: 50%;
+}
+.ba_g {
+  background: #69cde4;
+}
+
+.ma_t1{margin-top: 7px;}
+/*****************************************/
+  /****************[ HEADER ]***************/
+  /*****************************************/
+  header h1 {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.2em;
+  position: relative;
+}
+header {
+  padding: 10px 0;
+}
+.share {
+  position: absolute;
+  right: 15px;
+  background: url(../images/share.png) no-repeat;
+  display: block;
+  width: 20px;
+  height: 20px;
+  top: 2px;
+  background-size: 15px;
+}
+nav {
+  margin:0 auto;
+  padding:0;
+  width:100%;
+  position:fixed;
+  left:0;
+  bottom:0;
+  -webkit-animation:fadeInUpBig 1s 0.2s ease both;
+  -moz-animation:fadeInUpBig 1s 0.2s ease both;
+}
+nav ul {
+  margin:0 auto;
+  padding:0 0;
+  height:45px;
+  width:100%;
+  background:#e30;
+  overflow:hidden;
+}
+nav ul li {
+  width:33.3%;
+  float:left;
+  text-align:center;
+  list-style: none;
+}
+nav ul li a {
+  display:block;
+  line-height:45px;
+  width:100%;
+  color:#fff;
+  font-size:0.8em;
+}
+nav ul li a strong {
+  display:block;
+  position: relative;
+  top:10px;
+  left:0;
+  font-weight:normal;
+}
+nav ul.Transverse {
+  position:relative;
+}
+nav ul.Transverse li a {
+  border-right:1px dotted #f66;
+}
+nav ul.Transverse li:last-child a {
+  border-right:0px;
+}
+nav ul.Transverse li a strong {
+  display:inline;
+  position: inherit;
+  font-weight:normal;
+  line-height:45px;
+  font-size:14px;
+}
+/*
+nav ul.Transverse li:nth-child(1) a strong {
+  background:url("home.png") left center no-repeat;
+  background-size: 28px 28px;
+}
+nav ul.Transverse li:nth-child(2) a strong {
+  background:url("call.png") left center no-repeat;
+  background-size: 28px 28px;
+}
+nav ul.Transverse li:nth-child(3) a strong {
+  background:url("sms.png") left center no-repeat;
+  background-size: 28px 28px;
+}
+nav ul.Transverse li:nth-child(1) a.home strong {
+  background:url("home.png") left center no-repeat;
+  background-size: 28px 28px;
+}
+nav ul.Transverse li span {
+  color:#333
+}*/
+  /*****************************************/
+  /*****************[ BODY ]****************/
+  /*****************************************/
+  .img {
+  background: #fff;
+  color: #000;
+}
+.img img {
+  width: 100%;
+}
+input,
+select,
+textarea {
+  font:100% Microsoft YaHei,\5FAE\8F6F\96C5\9ED1,SimSun,\5B8B\4F53,Arial,Verdana;
+}
+em {
+  font-style:normal;
+  color:#F00;
+  margin-right:5px;
+}
+img {
+  border:0 none;
+  vertical-align:middle;
+}
+.red {
+  color:#F00;
+}
+#order {
+  margin:0 auto;
+}
+.warp {
+  width:auto;
+  height:100%;
+}
+.title {
+  height:36px;
+  line-height:36px;
+  color:#FFF;
+  font-size:18px;
+  vertical-align:middle;
+  margin-bottom:10px;
+  padding-left:8px;
+}
+.warp label.bdxx {
+  float:left;
+  display:inline;
+  overflow:hidden;
+  width:24%;
+  _width:23%;
+  text-align:right;
+  padding-right:2%;
+}
+.warp label.bdxxcp {
+  float:left;
+  display:block;
+  width:95%;
+  height:20px;
+  line-height:20px;
+  padding-left:5%;
+}
+.dxbox,.xlbox,.textbox,.text2box,.text3box {
+  float:left;
+  display:inline;
+  overflow:hidden;
+  width:74%;
+  _width:73%;
+}
+.dxboxcp {
+  float:left;
+  display:block;
+  width:85%;
+  padding:0 5% 0 10%;
+  margin-top:8px;
+  font-weight:bold;
+  font-size:14px;
+  line-height:1.7em;
+}
+.dxbox,.text2box,.text3box {
+  line-height:1.5em;
+}
+.bdbox {
+  float:left;
+  width:100%;
+  margin-bottom:10px;
+  *margin-bottom:7px;
+}
+.dxboxcp label {
+  margin-left:6px;
+  cursor:pointer;
+}
+.dxbox label {
+  margin-left:6px;
+  margin-right:4px;
+  cursor:pointer;
+}
+.textbox input {
+  width:90%;
+  font-size:16px;
+  color:#666;
+  padding:3px 5px;
+  _padding:2px 5px;
+}
+.text3box #showprice {
+  clear:both;
+  display:inline;
+  font-family:Arial,Verdana;
+  font-size:14px;
+  font-weight:bold;
+  color:#F60;
+  margin:0 5px;
+}
+.xlbox select.cpxl {
+  font-size:16px;
+  width:96%;
+  height:28px;
+  border:1px solid #a0a0a0;
+  background:#FCFCFC;
+}
+.xlbox select.dqxl {
+  width:29.4%;
+  height:26px;
+  border:1px solid #a0a0a0;
+}
+.text2box textarea {
+  width:90%;
+  height:80px;
+  padding:4px 5px;
+  background:#FFF;
+}
+.text3box input {
+  width:40px;
+  font:16px Arial;
+  color:#666;
+  font-weight:bold;
+  text-align:center;
+  vertical-align:middle;
+  margin-right:8px;
+  padding:4px 5px 3px;
+  background:#FFF;
+}
+.text3box .code {
+  width:100px;
+  height:29px;
+}
+.text3box a {
+  font-size:12px;
+  margin-left:6px;
+}
+.subbox {
+  width:100%;
+  float:left;
+  text-align:center;
+  padding-bottom:10px;
+}
+.subbox input {
+  width:200px;
+  height:36px;
+  line-height:36px;
+  color:#FFF;
+  font-size:18px;
+  vertical-align:middle;
+  cursor:pointer;
+  border:0;
+}
+#fahuo {
+  width:100%;
+  font-size:12px;
+  line-height:200%;
+  background:#EFEFEF;
+  text-align:left;
+  border-top:1px solid #DDDDDD;
+}
+#fahuo ul {
+  padding:10px;
+  height:105px;
+  overflow:hidden;
+}
+#fahuo span {
+  color:#0C3;
+}
+#order {
+  width:100%;
+  #fcfcfc;
+}
+.kehui{ padding:0 15px;}
+.kehui p{
+    padding: 10px;
+    margin-bottom:10px;
+    border: 1px solid;
+}
+.kehui a {
+    color: #fff;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+    background: coral;
+    padding: 6px;
+    border-radius: 5px;
+}
+.subbox input {
+  background-color: #ff5600;
+  display: block;
+  line-height:100%;
+  margin: 5px auto;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #333;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.buy {
+  text-align: center;
+  padding:0 0 10px 0;
+}
+.buy li {
+  float: right;
+  list-style: none;
+  width: 25%;
+  text-align: center;
+}
+.buy>div {
+  position: relative;
+}
+.row1 {
+  padding: 10px 0;
+  border-bottom: 1px #fefefe solid;
+  line-height: 25px;
+}
+.row1 strong {
+  position: absolute;
+  bottom: 20px;
+  left: 10%;
+}
+.buy .djs {
+  width: 60%;
+  float: right;
+}
+.row2 {
+  padding: 20px 0;
+}
+.row2 span {
+  font-size: 14px;
+}
+.row2 samp {
+  font-size: 12px;
+  margin-left: 2px;
+}
+.buy strong {
+  font-size: 14px;
+}
+.buy a {
+  color: #fff;
+  width: 80%;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  padding: 5px;
+  background: coral;
+  border-radius: 3px;
+}
+.penlun,.diqiehuan {
+  width: 100%;
+  font-size: 12px;
+  line-height: 200%;
+  background: #EFEFEF;
+  text-align: left;
+  border-top: 1px solid #DDDDDD;
+}
+.diqiehuan .diqiehuans {
+  overflow: hidden;
+  height: 110px;
+  padding: 10px 15px;
+}
+.penlun {
+  overflow: hidden;
+  height: 210px;
+  position: relative;
+}
+.penlun .diqiehuans {
+  padding:0 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
+}
+.diqiehuan i {
+  display: none;
+}
+.penlun .diqiehuans div{
+    width: 100%;
+    background: #fff;
+    margin:10px 0;
+    padding: 5px 10px;
+}
+.penlun .diqiehuans span {
+    display: block;
+    font-size: 14px;
+}
+footer center{margin:10px 0;}
+
+
+.fudong{max-width: 640px; width: 100%; margin:0 auto; overflow: hidden; z-index: 99999;}
+.fudong .diqiehuans{
+    background: rgba(255, 86, 0,0.4);
+    height: 23px;
+    padding: 4px 10px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+.fudong .diqiehuans div{
+    float: left;
+    margin: 0 10px;
+}
+h4 {
+    padding: 10px 15px;
+}
+.fudongs{height: 23px;width: 100%;}
+
+.success p{ margin:5px 20px;}
+.success h4{text-align: center; font-size: 20px; padding:30px 0;}
+.success img{
+  width: 40px;
+  margin: -3px 10px 0 0;
+}
+.success a{
+    display: block;
+    width: 100px;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 8px 22px;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+
+.bdsharebuttonbox a{ width: 47%;}
+.bdsharebuttonbox{padding: 10px}

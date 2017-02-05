@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>推广信息</title>
+<link rel="Stylesheet" href="css/style.css" type="text/css" />
+<link rel="Stylesheet" href="css/public/font-awesome.min.css" type="text/css" />
+<link rel="Stylesheet" href="css/user.css" type="text/css" />
+<!-- jQuery -->
+<script type="text/javascript" src="js/public/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/public/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/public/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+</head>
+
+<body class="wrap_bg">
+
+<div id="container" class="thewidth100">
+
+<!--header-->
+    <div class="header_bg clearfix thewidth100 hei"> 
+        <div class="header">
+        <div class="f_l" onclick="Return()"><i class="icon-angle-left"></i><span>返回</span></div>
+        <div class="title">推广信息</div>
+        <div class="f_r"><i class="ion_you"></i></div>
+        </div>
+    </div>
+<!--------------------------------------[ header ]-------------------------------------->
+
+<!--------------------------------------[ banner ]-------------------------------------->
+<!--wrap-->
+    <div class=" thewidth100 pa_b8">
+        <div class="outputs clearfix">
+            <span class="f_l">推广码</span> <span class="f_r">235JKOSDG</span>
+        </div>
+        <div class="outputs ma_t1">
+            <div class="clearfix"><span class="f_l">推广二维码</span></div>
+            <div class="ma_t1" id="output"></div>
+            <div class="ma_t1 ">
+                <button class="btn red_bg">分享二维码</button>
+            </div>
+        </div>
+    </div>
+<!--/wrap-->
+
+
+</div>
+<script>
+$('#output').qrcode({
+    render    : "canvas",//也可以替换为table
+    width   : 150,
+    height  : 150,
+    text    : "235JKOSDG"
+}); 
+</script>
+</body>
+</html>

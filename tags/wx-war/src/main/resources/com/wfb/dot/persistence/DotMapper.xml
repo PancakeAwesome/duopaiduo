@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wfb.dot.persistence.DotMapper">
+	<resultMap id="BaseResultMap" type="com.wfb.dot.model.DotModel" >
+	    <id column="ID" property="id" jdbcType="INTEGER" />
+	    <result column="CITYNAME" property="cityName" jdbcType="VARCHAR" />
+	    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+	    <result column="DOTNAME" property="dotName" jdbcType="VARCHAR" />
+	    <result column="TELEPHONE" property="telephone" jdbcType="BIGINT" />
+	    <result column="appoint_day" property="appointDay" jdbcType="INTEGER" />
+	    <result column="is_cancel" property="isCancel" jdbcType="INTEGER" />
+  	</resultMap>
+  	
+	<insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id"
+		parameterType="DotModel">
+		insert into t_dot
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="cityName != null">
+				cityname,
+			</if>
+			<if test="address != null">
+				address,
+			</if>
+			<if test="dotName != null">
+				dotname,
+			</if>
+			<if test="telephone != null">
+				telephone
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id},
+			</if>
+			<if test="cityName != null">
+				#{cityName},
+			</if>
+			<if test="address != null">
+				#{address},
+			</if>
+			<if test="dotName != null">
+				#{dotName},
+			</if>
+			<if test="telephone != null">
+				#{telephone}
+			</if>
+		</trim>
+	</insert>
+	
+	<select id="getDot" resultType="DotModel">
+		select id,cityName,address,dotName,telephone from t_dot
+		where 1 = 1
+		<if test="dotName != null">
+			and dotname = #{dotName} 
+		</if>  
+	</select>
+	
+	<select id="getAllDot" resultType="DotModel">
+		select id,cityName,address,dotName,telephone from t_dot  
+	</select>
+	
+	<select id="getDotModelById" resultType="DotModel">
+		select id,cityName,address,dotName,telephone from t_dot where id = #{dotId} 
+	</select>
+	
+	<select id="getDotByCityName" resultType="DotModel">
+		select id,cityname,address,dotname,telephone from t_dot 
+		where 1 = 1
+		<if test="cityName != null">
+			and cityname like '%' || #{cityName,jdbcType=VARCHAR} || '%'
+		</if>  
+	</select>
+	<select id="getDotByCityCode" resultMap="BaseResultMap">
+		select id,cityname,address,dotname,telephone,appoint_day,is_cancel from t_dot 
+		where 1 = 1
+		<if test="code != null">
+			and code =  #{code} 
+		</if>  
+	</select>
+</mapper>

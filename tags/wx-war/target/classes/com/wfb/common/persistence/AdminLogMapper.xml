@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wfb.common.persistence.AdminLogMapper">
+
+	<insert id="saveAdminLog" parameterType="AdminLogModel">
+		insert into t_admin_log
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="adminId != null">
+				adminId,
+			</if>
+			<if test="event != null">
+				event,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				createTime
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id},
+			</if>
+			<if test="adminId != null">
+				#{adminId},
+			</if>
+			<if test="event != null">
+				#{event},
+			</if>
+			<if test="remark != null">
+				#{remark},
+			</if>
+			<if test="createTime != null">
+				#{createTime}
+			</if>
+		</trim>
+	</insert>
+
+	<select id="getAdminLogs" resultType="AdminLogModel">
+		select aLog.id, aLog.adminId, admin.adminName, 
+			aLog.event, aLog.remark, role.roleName,
+			left(createTime, 19) createTime 
+		from t_admin_log aLog
+		left join t_admin admin on aLog.adminId = admin.adminId
+		left join t_role role on admin.roleId = role.roleId
+		<if test="adminName != null">
+			and admin.adminName like CONCAT('%',#{adminName},'%' )
+		</if>
+		<if test="adminId != null">
+			and aLog.adminId = #{adminId}
+		</if>
+		<if test="beginTime != null">
+			and left(createTime,10) >= #{beginTime}
+		</if>
+		<if test="endTime != null">
+			and #{endTime} >= left(createTime,10)
+		</if>
+		order by createTime desc
+	</select>
+	
+</mapper>

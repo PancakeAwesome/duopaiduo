@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Built-By: Administrator
+Build-Jdk: 1.8.0_25
+Specification-Title: platform-core
+Specification-Version: 1.0-SNAPSHOT
+Specification-Vendor: tdztjr-it
+Implementation-Title: platform-core
+Implementation-Version: 1.0-SNAPSHOT
+Implementation-Vendor-Id: com.platform
+Implementation-Vendor: tdztjr-it
+Created-By: Maven Integration for Eclipse
+

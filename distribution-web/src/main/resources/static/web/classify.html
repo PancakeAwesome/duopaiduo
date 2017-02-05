@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>分类</title>
+<link rel="Stylesheet" href="css/style.css" type="text/css" />
+<link rel="Stylesheet" href="css/public/font-awesome.min.css"
+	type="text/css" />
+<link rel="Stylesheet" href="css/within.css" type="text/css" />
+<!-- jQuery -->
+<script type="text/javascript" src="js/public/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/public/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/public/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+
+<script type="text/javascript">
+	var insertHtml = "";
+	$(function() {
+
+		var AJAXPost = new Ajax('', {
+			url : '/item/getAllCategorys',
+			type : 'get',
+			callback : function(res) {
+				var category = res.data;
+				console.log(category);
+				$.each(category, function(i, obj) {
+					
+					insertHtml += '<div class="lis clearfix">'
+										+'<a href="classify1.html?categoryId='+obj.id+'">'
+							           +' <div class="col-xs-3 bai_bg">'
+							            +   ' <span class="classify"style=" background: url('+obj.logo+') no-repeat center center; background-size: 2rem;" ></span>'
+							            +'</div>'
+							           +' <div class="col-xs-9 lis_bg lis_bob row">'
+							             +'   <span>'+obj.cateZHName+'</span>'
+							              +'  <i class="f_r icon-angle-right"></i>'
+							           +' </div>'    
+							        +'</a>'
+							      +'</div>';
+							
+				});
+		
+				$('#category').append(insertHtml);
+			}
+		});
+	});
+</script>
+</head>
+
+<body class="wrap_bg">
+
+	<div id="container" class="thewidth100">
+
+		<!--header-->
+		<div class="header_bg clearfix thewidth100 hei">
+			<div class="header">
+				<div class="f_l" onclick="Return()">
+					<i class="icon-angle-left"></i><span>返回</span>
+				</div>
+				<div class="title">分类</div>
+				<div class="f_r">
+					<i class="ion_you"></i>
+				</div>
+			</div>
+		</div>
+		<!--------------------------------------[ header ]-------------------------------------->
+
+		<!--------------------------------------[  wrap ]-------------------------------------->
+
+		<div class=" thewidth100 pa_b8 clearfix " id="category">
+		
+		</div>
+
+		<!--------------------------------------[ wrap ]-------------------------------------->
+
+		<!--------------------------------------[ footer ]-------------------------------------->
+		<div class="footer_bg thewidth100">
+			<div class="footer thewidth">
+				<ul>
+					<li><a href="index.html">
+							<div class="divs-1"></div>
+							<p>首页</p>
+					</a>
+					</li>
+					<li class="current"><a href="classify.html">
+							<div class="divs-2"></div>
+							<p>分类</p>
+					</a></li>
+					<li class="center"><a href="privilege.html">
+							<div class="divs-3">
+								<div>
+									<div class="center_z">
+										<span></span>
+									</div>
+
+								</div>
+							</div>
+							<p>特惠频道</p>
+					</a></li>
+					<li><a href="shopping.html">
+							<div class="divs-4"></div>
+							<p>购物车</p>
+					</a></li>
+					<li><a href="my.html">
+							<div class="divs-5"></div>
+							<p>我的</p>
+					</a></li>
+				</ul>
+
+			</div>
+		</div>
+		<!--/footer-->
+
+	</div>
+
+</body>
+</html>

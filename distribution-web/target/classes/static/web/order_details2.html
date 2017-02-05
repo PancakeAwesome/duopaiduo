@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>订单详情-待收货</title>
+<link rel="Stylesheet" href="css/style.css" type="text/css" />
+<link rel="Stylesheet" href="css/public/font-awesome.min.css" type="text/css" />
+<link rel="Stylesheet" href="css/user.css" type="text/css" />
+<!-- jQuery -->
+<script type="text/javascript" src="js/public/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/public/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/public/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/yxMobileSlider.js"></script>
+</head>
+
+<body class="wrap_bg">
+
+<div id="container" class="thewidth100">
+
+<!--header-->
+    <div class="header_bg clearfix thewidth100 hei"> 
+        <div class="header">
+        <div class="f_l" onclick="Return()"><i class="icon-angle-left"></i><span>返回</span></div>
+        <div class="title">订单详情</div>
+        <div class="f_r"><i class="ion_you"></i></div>
+        </div>
+    </div>
+<!--------------------------------------[ header ]-------------------------------------->
+
+<!--------------------------------------[ banner ]-------------------------------------->
+<!--wrap-->
+    <div class=" thewidth100 pa_b8">
+        <div class="state red_bg">
+            当前订单状态：<span id='order_status1'>待收货</span> <a id='order_status2' href="javascript:confirm_order();" class="pay">确认收货</a>
+        </div>
+        <div class="details bai_bg">
+            <div>
+                <h5>收货人：<span id='add_name'>张三丰</span>                  
+                <span id='phone' class="f_r">18205563235</span></h5>
+                <p id='address' class="c_999">江苏省南京市秦淮区健康南路新低西村2幢102号1103室 1103室</p>
+            </div>
+            <div class="wuliu">
+                <h5 onclick="delivery_show()" style="color: red;
+    border: 1px solid grey;
+    width: 20%;">物流追踪</h5>
+                <!-- <div class="wulius">
+                    <div class="mui-flex current">
+                        <div class="call wl_l">
+                            <div></div>
+                        </div>
+                        <div class="call wl_r c_999 lis_bob">[南京市]已签收，感谢使用顺丰快递，期待再次为 您服务<p>2016.05.26 16:30:22</p></div>
+                    </div>
+                    <div class="mui-flex">
+                        <div class="call wl_l">
+                            <div></div>
+                        </div>
+                        <div class="call wl_r c_999">【南京市】南京转运中心  已发出<p>2016.05.26 16:30:22</p></div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div id='item_list' class="order_li ">
+            <h5>订单号：<span id='orderNo'>HSLBG20160523</span> </h5>
+            <!-- <div class=" mui-flex">
+                <div class="call lil">
+                    <img class="lis_bo1" src="images/shangping.jpg">
+                </div>
+                <div class="call lir">
+                    <div id='item_name' class="title">古井贡酒老玻贡50度750ml*6瓶大瓶自饮酒</div>
+                    <div class="stage">
+                        <span id='price' class="red">￥89.00</span>
+                        <span id='quantity' class="f_r"> 数量：2</span>
+                    </div>
+                    <div id='addTime' class="c_999">下单时间：2016.05.23</div>
+                </div>
+            </div> -->
+        </div>
+        
+        <div class="fyqd">
+            <ul>
+                <li>商品金额：<span id='amount' class="f_r red">￥224.00</span></li>
+                <li>物流费用：<span id='freightAmount' class="f_r red">￥0.00</span></li>
+                <li>订单应付金额：<span id='total_pay' class="f_r red">￥224.00</span></li>
+            </ul>
+        </div>
+        <div class="clearfix states">
+            <div class="col-xs-6">
+                <a href="javascript:" onclick="return_or()" class="btn">取消订单</a>
+            </div>
+            <div class="col-xs-6" style="float:right">
+                <button type="" style="color:#fff" onclick="confirm_order()" class="red_bg red btn">确认收货</button>
+            </div>
+        </div>
+    </div>
+<!--/wrap-->
+</div>
+<div id="confirms" class="tan none">
+    <div class=" ta_c fs_2">提示</div>
+    <div class="lis_bob row">您已成功收取货物</div>
+    <div class="mui-flex ta_c">
+        <a href="javascript:;" class="call lis_bor" onclick="turn_remark()">查看订单</a>
+        <a href="javascript:;" class="call red" onclick="turn_remark()">立即评价</a>
+    </div>
+</div>
+<script>
+//评价框
+function pinjia(){
+    layer.open({
+        type: 1, //page层
+        title: false,
+        closeBtn:true,
+        shade: 0.6, //遮罩透明度
+        area: '78%',
+        offset: ['120px', '12%'],
+        shadeClose :true,
+        moveType: 0, //拖拽风格，0是默认，1是传统拖动
+        shift: 5, //0-6的动画形式，-1不开启
+        content:$('#zifumima')
+    });  
+    $('.xin').find('i').click(function(){
+        $('.xin').find('i').each(function(){
+            $(this).removeClass('red');
+        });
+        $(this).addClass('red').prevAll('i').addClass('red');
+        //$('.mon').val($('.tan').find('i.red').length);
+    });
+}
+
+</script>
+<div id="zifumima" class="tan none">
+    <div class=" clearfix lis_bob">
+        <div class="f_l xin ma_l1">
+            <i class="icon-star red"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+        </div>
+        
+    </div>
+    <div class="clearfix ma_t1 p_01">
+            <textarea  onfocus="if(value=='评论') {value=''}" onblur="if(value=='') {value='评论'}">评论</textarea>
+        </div>
+    <div class="tijiao clearfix ta_c">
+       <button class="btn">提交</button> 
+    </div>
+    
+</div>
+<script>
+    function confirm(){
+        layer.open({
+          type: 1,
+          title: false,
+          area:'80%',
+          closeBtn: 0,
+          shadeClose: true,
+          content: $('#confirms')
+        });
+    }
+
+    var orderItems = new Array();/* 购买的商品id跟数量itemIdquantity */
+    var AJAXPost = null;
+    var userId = 2;/* fake  */
+    var orderNo = getvl('orderNo');
+
+    var delivery = null
+    var deliveryId = 0
+    var deliveryName = ''
+    
+    /* saveOrder接口参数 */
+    var itemId= 0; 
+    var quantity= 0;
+    var orderItems = new Array();
+    var orderDetailId = new Array()
+
+    $(function(){
+        // var param = base64encode('{"orderNo":'+orderNo+'}')
+        AJAXPost = new Ajax('',{
+            url: '/order/getOrderDetail?orderNo='+orderNo,
+            // async:false,
+            type:'get',
+            callback : function(res) {
+                /* res要求传送orderNo */
+                var order = res.data;
+                console.log('请求成功');
+                console.log(res);
+                /* 返回值data是一个json对象 */
+                /* order_detail是一个对象数组 */
+                var order_details = order.orderdetail;
+                
+                var freightAmount = order.freightAmount;
+
+                delivery = order.delivery
+                deliveryId = delivery.id
+                deliveryName = delivery.name
+
+                $('#amount').text('￥'+order.amount);
+                $('#freightAmount').text('￥'+freightAmount);
+                var total_payment = parseInt(order.amount)+parseInt(freightAmount);
+                $('#total_pay').text('共计：￥'+total_payment);
+
+                $('#add_name').text(order.userOrderAddress.userName);
+                $('#phone').text(order.userOrderAddress.phone);
+                $('#address').text(order.userOrderAddress.address);
+
+                $('#orderNo').text(orderNo)
+                $.each(order_details,function(index,order_detail){
+                    /* fake */
+                    var itemName = '老白干';
+                    var itemImg = 'images/shangping.jpg';
+                    /* var itemName = order_detail.itemName;
+                    var itemImg = order_detail.itemImg; */
+                    
+                    var price = order_detail.price;
+                    var quantity = order_detail.quantity;
+                    var id = order_detail.id;
+                    
+                    /* 拼装json数组对象供saveOrder使用 */
+                    var orderItem = new Object();
+                    orderItem.itemId = id;
+                    orderItem.quantity = quantity;
+                    orderItems.push(orderItem);
+                    console.log(orderItem);    
+
+                    orderDetailId.push(id)   
+                    
+                    /* 开始插入商品item */
+                    var item = $('<div>');
+                    $(item).addClass('mui-flex');
+                    $(item).addClass('item');
+                    $(item).appendTo($('#item_list'));
+                    order
+                    var img_box = $('<div>');
+                    $(img_box).addClass('call');
+                    $(img_box).addClass('lil');
+                    $(img_box).appendTo($(item));
+                    
+                    var img = $('<img>');
+                    $(img).addClass('lis_bo1');
+                    $(img).attr('src',itemImg);/* url问题?*/
+                    $(img).appendTo($(img_box));
+                    
+                    var detail = $('<div>');
+                    $(detail).addClass('call');
+                    $(detail).addClass('lir');
+                    $(detail).appendTo($(item));
+                    
+                    var title = $('<div>');
+                    $(title).addClass('title');
+                    $(title).text(itemName);
+                    $(title).appendTo($(detail));
+                    
+                    var li = $('<div>');
+                    $(li).addClass('stage');
+                    $(li).appendTo($(detail));
+                    
+                    var prices = $('<span>');
+                    $(prices).addClass('red');
+                    $(prices).text('￥'+price);
+                    $(prices).appendTo($(li));
+                    
+                    var quantities = $('<span>');
+                    $(quantities).addClass('ma_l2');
+                    $(quantities).text('×'+quantity);
+                    $(quantities).appendTo($(li));
+                })
+                // orderItems = JSON.stringify(orderItems);
+                $('body').show(); 
+            }
+        });
+    })
+
+    function confirm_order(orderNo){
+        // 出现弹窗效果
+        var res = confirm('确认收货么？');
+        if (res) {
+            confirm_acc_order(orderNo);
+        } else {
+        }
+    } 
+
+    function confirm_acc_order(orderNo){
+        // 确认收货接口
+        var param = base64encode(utf16to8('{"orderNo":'+orderNo+'}'));
+        console.log(param);
+        var AJAXPost = new Ajax('',{
+            url: '/order/takeOrder',
+            param:param ,
+            type:'post',
+            callback : function(res) {
+                /* res要求传送orderNo */
+                // orderNo = res.data;
+                console.log('请求成功');
+                console.log(res);
+                if(!res.data){
+                    console.log('error');
+                }else{
+                    alert('确认收货成功！');
+                    location.reload();
+                }
+            }
+        });
+    }
+
+    function return_or(){
+        var orderDetailIds = orderDetailId.join(',')
+        window.location.href = 'order_details4.html?type=3&orderDetailIds='+orderDetailIds+'&orderNo'+orderNo
+    }
+
+    function turn_remark(){
+        window.location.href = 'order_details3.html?orderNo=' + orderNo
+    }
+
+    function delivery_show(){
+        layer.open({
+          type: 2,
+          area: ['350px', '500px'],
+          fix: false, //不固定
+          maxmin: true,
+          content: 'http://m.kuaidi100.com/index_all.html?type='+deliveryName+'&postid='+deliveryId
+        });
+    }
+</script>
+</body>
+</html>
+
+   

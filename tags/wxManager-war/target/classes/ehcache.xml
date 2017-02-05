@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<ehcache updateCheck="false" name="user_activate_cache">
+	<!-- http://ehcache.org/ehcache.xml -->
+	<diskStore path="java.io.tmpdir/ehcache" />
+
+	<!-- DefaultCache setting. -->
+	<defaultCache
+			maxEntriesLocalHeap="1000"
+			maxEntriesLocalDisk="10000"
+			eternal="false"
+			overflowToDisk="true"
+			timeToIdleSeconds="1800"
+			timeToLiveSeconds="1800"
+			diskPersistent="true"
+			maxBytesLocalDisk="1024000000"/>
+	
+	<!-- Special objects setting. -->
+	<cache	
+			name="user_activate_cache"   
+			maxElementsInMemory="10000"
+			eternal="false"
+			overflowToDisk="false"
+			timeToIdleSeconds="1800"
+			timeToLiveSeconds="1800"
+			diskPersistent="true"
+			maxBytesLocalDisk="10240000">
+        
+        <bootstrapCacheLoaderFactory
+			class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+			properties="bootstrapAsynchronously=fales"/>
+		 
+	</cache>
+	
+	<cache	
+			name="user_token_cache"   
+			maxElementsInMemory="10000"
+			eternal="false"
+			overflowToDisk="false"
+			timeToIdleSeconds="3000"
+			timeToLiveSeconds="6000"
+			diskPersistent="true"
+			maxBytesLocalDisk="10240000">
+        
+        <bootstrapCacheLoaderFactory
+			class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+			properties="bootstrapAsynchronously=fales"/>
+		 
+	</cache>
+	
+	<cache	
+			name="order_cart"   
+			maxElementsInMemory="10000"
+			eternal="false"
+			overflowToDisk="false"
+			timeToIdleSeconds="1800"
+			timeToLiveSeconds="1800"
+			diskPersistent="true"
+			maxBytesLocalDisk="10240000">
+        
+        <bootstrapCacheLoaderFactory
+			class="net.sf.ehcache.store.DiskStoreBootstrapCacheLoaderFactory"
+			properties="bootstrapAsynchronously=fales"/>
+		 
+	</cache>
+			
+	<!-- name  Cache的名称，必须是唯一的(ehcache会把这个cache放到HashMap里)。 -->
+	<!-- maxElementsInMemory 在内存中缓存的element的最大数目  -->
+	<!-- maxElementsOnDisk 在磁盘上缓存的element的最大数目，默认值为0，表示不限制。 -->
+	<!-- eternal 设定缓存的elements是否永远不过期。如果为true，则缓存的数据始终有效，如果为false那么还要根据timeToIdleSeconds，timeToLiveSeconds判断。  -->
+	<!-- overflowToDisk  如果内存中数据超过内存限制，是否要缓存到磁盘上。 -->
+	<!-- timeToIdleSeconds：  对象空闲时间，指对象在多长时间没有被访问就会失效。只对eternal为false的有效。默认值0，表示一直可以访问。 -->
+	<!-- timeToLiveSeconds：  对象存活时间，指对象从创建到失效所需要的时间。只对eternal为false的有效。默认值0，表示一直可以访问。 -->
+	<!-- diskPersistent：  是否在磁盘上持久化。指重启jvm后，数据是否有效。默认为false。 -->
+
+
+</ehcache>

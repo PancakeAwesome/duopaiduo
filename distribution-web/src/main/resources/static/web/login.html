@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>个人中心</title>
+<link rel="Stylesheet" href="css/style.css" type="text/css" />
+<link rel="Stylesheet" href="css/public/font-awesome.min.css"
+	type="text/css" />
+<link rel="Stylesheet" href="css/login.css" type="text/css" />
+<!-- jQuery -->
+<script type="text/javascript" src="js/public/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/public/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/public/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/yxMobileSlider.js"></script>
+</head>
+
+<body class="body_bg">
+
+	<div id="container" class="thewidth100">
+
+		<!--header-->
+		<div class="clearfix thewidth100 hei">
+			<div class="header c_bg">
+				<div class="f_l" onclick="Return()">
+					<i class="icon-angle-left"></i><span>返回</span>
+				</div>
+				<div class="title">个人中心</div>
+				<div class="f_r">
+					<i class="ion_you"></i>
+				</div>
+			</div>
+		</div>
+		<!--------------------------------------[ header ]-------------------------------------->
+
+		<!--------------------------------------[ banner ]-------------------------------------->
+		<!--wrap-->
+		<div class=" thewidth100 ">
+
+			<div class="logo">
+				<img src="images/public/logo_03.png">
+				<p>精品酒水 超高品质</p>
+			</div>
+			<div class="shuru">
+				<div class="clearfix">
+					<div class="logo1"></div>
+					<input class="yonghu" type="text" id="username" name=""
+						value="" placeholder="用户帐号">
+				</div>
+				<div class="clearfix">
+					<div class="logo2"></div>
+					<input class="mima" type="text" id="password" name=""
+						value="" placeholder="密码（6位以上）">
+				</div>
+				<div class="tuiqu">
+					<button class="red_bg" id="login">登录</button>
+				</div>
+				<div>
+					<a href="my_mima.html" class="f_l">忘记密码</a> <a href="register.html"
+						class="f_r">立即注册</a>
+				</div>
+			</div>
+		</div>
+		<!--/wrap-->
+
+
+	</div>
+
+</body>
+<script>
+/* 	var yonghu='';
+	 var mima='';
+	 $('.yonghu').focus(function(){
+	 yonghu=$('.yonghu').val();
+	 if(yonghu=='用户帐号'){
+	 $('.yonghu').val('');
+	 }
+	 });
+	 $('.yonghu').blur(function(){
+	 yonghu=$('.yonghu').val();
+	 if(yonghu==''){
+	 $('.yonghu').val('用户帐号') 
+	 }
+	 });
+	 $('.mima').focus(function(){
+	 mima=$('.mima').val();
+	 if(mima=='密码（6位以上）'){
+	 $('.mima').val('').attr('type','password');
+
+	 }
+	 });
+	 $('.mima').blur(function(){
+	 mima=$('.mima').val();
+	 if(mima==''){
+	 $('.mima').val('密码（6位以上）').attr('type','text');
+	 }
+	 });
+	 $('.tuiqu').find('button').click(function(){
+	 window.location.href="index.html"
+	 });  */
+
+	//点击登陆按钮触发事件
+	$("#login").click(function() {
+		var json = {
+			"username" : $("#username").val(),
+			"password" : $("#password").val()
+		};
+
+		param = base64encode(JSON.stringify(json));
+
+		var AJAXPost = new Ajax('', {
+			url : '/login',
+			type : 'post',
+			param : param,
+			callback : function(res) {
+     			if(res.code==0){
+     				console.log(res);
+     				 globalUserId = res.data.userId;
+     				 promoterId = res.data.promoterId;
+     				 window.location.href="index.html"
+     			}else{
+     				alert(res.message);
+     				return;
+     			}
+			}
+		});
+	});
+</script>
+</html>

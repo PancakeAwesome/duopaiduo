@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>购物车</title>
+<link rel="Stylesheet" href="css/style.css" type="text/css" />
+<link rel="Stylesheet" href="css/public/font-awesome.min.css" type="text/css" />
+<link rel="Stylesheet" href="css/within.css" type="text/css" />
+<!-- jQuery -->
+<script type="text/javascript" src="js/public/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/public/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/public/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+</head>
+<script type="text/javascript">
+
+ $(function(){ 
+/* 	 $.get(globalurl+'/fulltext/shopping-car/15295552013',function(res){
+		 console.dir(res);
+	 },'json');
+	  */
+	 
+	var innerHtml="";
+	var AJAXPost = new Ajax('',{
+		url: globalurl+'/fulltext/shopping-car/15295552013',
+		type:'get',
+		callback : function(res) {
+			console.log(res);
+		
+			  $.each(res.items,function(index,obj){
+				
+				innerHtml+=  '<div class="lis_bob clearfix" >'
+					               +'<div class="clearfix">'
+						               +'<div class="col-xs-4">'
+						                 +'<div class="lis_bo1">'
+						                 +'<a href="'+obj.itemUrl+'" >'
+						                      +'<img src="images/shangping.jpg" alt="" width="100%"></a>'
+						                      +'<div><a href="javascript:;" id="'+obj.itemId+'"></a></div>'
+						                 +'</div>'
+						               +'</div>'
+						               +'<div class="col-xs-8">'
+						                    +'<p>'+obj.itemName+'</p>'
+						                    +'<span class="dj red">￥'+obj.itemPrice+'</span>'
+						                    +'<i></i>'
+						               +'</div>'
+					               +'</div>'
+						           +'<div class="clearfix">'
+						               +'<div class="col-xs-4"></div>'
+						               +'<div class="jg col-xs-8">'
+						                 +'<div class="f_l jiliang clearfix">'
+						                       +'<span class="f_l">-</span>'
+						                       +'<input type="text"  class="jl" data-max="'+obj.itemAmount+'"  class="f_l" name="" value="1" placeholder="">' 
+						                        +'<span class="f_r">+</span>'
+						                 +'</div>'
+						                  + '<span class="f_r red">小计：￥'+ obj.itemAmount*obj.itemPrice+'</span>'
+						                +'</div>'
+						            +'</div>'
+					    +'</div>'
+			});  
+			$("#item_list").append(innerHtml); 
+			$('.shopping').find('a').click(function(){
+			    if( ! $(this).hasClass('pitchOn') ){
+			        $(this).addClass('pitchOn');
+			    }else{
+			        $(this).removeClass('pitchOn');
+			        $('.closing').find('a').removeClass('pitchOn'); 
+			    }
+			});
+			$('.jiliang span.f_l').click(function(){
+				var nam = parseInt($(this).siblings('.jl').val());
+				if(nam > 0){
+					nam = nam-1;
+				}
+				$(this).siblings('.jl').val(nam);
+			})
+			$('.jiliang span.f_r').click(function(){
+				var nam = parseInt($(this).siblings('.jl').val());
+				var max = parseInt($(this).siblings('.jl').attr('data-max'));
+				if(nam < max){
+					nam = nam + 1;
+				}else{
+					alert('已超出库存！')
+				}
+				$(this).siblings('.jl').val(nam);
+			}) 
+		}
+	});
+	}); 
+ 
+
+</script>
+<body class="wrap_bg">
+
+<div id="container" class="thewidth100">
+
+<!--header-->
+    <div class="header_bg clearfix thewidth100 hei"> 
+        <div class="header">
+        <div class="f_l" onclick="Return()"><i class="icon-angle-left"></i><span>返回</span></div>
+        <div class="title">购物车</div>
+        <div class="f_r"><i class="ion_you"></i></div>
+        </div>
+    </div>
+<!--------------------------------------[ header ]-------------------------------------->
+<!--------------------------------------[  wrap ]-------------------------------------->
+
+    <div class=" thewidth100 pa_b9 clearfix ma_t1 shopping">
+        <div class="tw_lis lis_bot bai_bg" id="item_list">
+           
+
+        </div>
+    </div>
+
+<!--------------------------------------[ wrap ]-------------------------------------->
+<div class="closing lis_bot">
+    <div class="f_l"><a href="javascript:;"></a></div>
+    <div class="f_l fs_2"><i class="icon-trash c_999"></i><span id="deleteItemsFromCart">删除</span></div>
+    <div class="f_r"><bottom onclick="balance();" class="red_bg">结算</bottom></div>
+    <div class="f_r ps">
+        <p id='total_payment' class="red">合计：￥100.00</p>
+        <p id='freightAmount' class="c_999">( 不含运费 )</p>
+    </div>
+</div>
+<!--------------------------------------[ footer ]-------------------------------------->
+    <div class="footer_bg thewidth100">
+        <div class="footer thewidth">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <div class="divs-1"></div>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="classify.html">
+                        <div class="divs-2"></div>
+                        <p>分类</p>
+                    </a>
+                </li>
+                <li class="center">
+                    <a href="privilege.html">
+                        <div class="divs-3">
+                            <div>
+                                <div class="center_z">
+                                    <span></span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <p>特惠频道</p>
+                    </a>
+                </li>
+                <li class="current">
+                    <a href="shopping.html">
+                        <div class="divs-4"></div>
+                        <p>购物车</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="my.html">
+                        <div class="divs-5"></div>
+                        <p>我的</p>
+                    </a>
+                </li>
+            </ul>
+        
+        </div>
+    </div>
+<!--/footer-->
+
+</div>
+</body>
+
+<script>
+
+$('.shopping').find('a').click(function(){
+    if( ! $(this).hasClass('pitchOn') ){
+        $(this).addClass('pitchOn');
+    }else{
+        $(this).removeClass('pitchOn');
+        $('.closing').find('a').removeClass('pitchOn'); 
+    }
+});
+$('.closing').find('a').click(function(){
+    if( ! $(this).hasClass('pitchOn') ){
+        $(this).addClass('pitchOn');
+       $('.shopping').find('a').addClass('pitchOn'); 
+    }else{
+        $(this).removeClass('pitchOn');
+       $('.shopping').find('a').removeClass('pitchOn'); 
+    }
+});
+
+/* 获取选中的checkbox中的itemid */
+function getCheckId(){
+	var checkList= new Array() ;
+	checkList = $('.pitchOn').attr('id');
+		console.log(checkList);
+	return checkList;
+}
+
+/* 获取选中的checkbox中的mount */
+function getCheckMount(){
+	var checkList= new Array() ;
+	checkList = $('.pitchOn').parent('.lis_bob').find('.jl').val();
+		
+	return checkList;
+}
+
+	/* 生成订单 */
+	var userId = 1;/* fake */
+	var source = 2;/* 订单来源0pc端 1app端2mobile端3pad端 */
+	var freightAmount = 0.00;/* 运费 */
+	/* var freightAmount = $('#freightAmount').val(); */
+	var orderItems = new Array();/* 购买的商品id跟数量itemIdquantity */
+	var dispatchingId = 1;
+
+    function getCheckItem(){
+        // 获取itemid
+        var itemList = new Array();
+        $('.lis_bo1 a').each(function(index,obj){
+            if($(this).hasClass('pitchOn')){
+                // 选中
+                var id = $(this).attr('id');
+                var quantity = $(this).parents('.lis_bob').find('.jl').val();
+                var item = new Object();
+                item.id = id;
+                item.quantity = quantity;
+                itemList.push(item);
+            }
+        })
+        return itemList;
+    }
+	
+	var orderNo = null;/* 获取接口传回来的orderNo，并将其传送给下个页面 */
+	function balance(){
+        var orderItems = getCheckItem();
+        console.log(orderItems);
+        // alert(orderItems);
+        // orderItems = JSON.stringify(orderItems);
+
+        var param = new Object();
+        param.userId = userId;
+        param.source = source;
+        param.freightAmount = freightAmount;
+        param.dispatchingId = dispatchingId;
+        param.orderItems = orderItems;
+       
+        param = JSON.stringify(param);
+       
+        param = base64encode(param);
+		// var param = base64encode('{"userId":'+userId+',"source":'+source+',"freightAmount":'+freightAmount+',"dispatchingId":'+dispatchingId+',"orderItems":[{"itemId":1212,"quantity":1212},{"itemId":12122,"quantity":212}]}');
+        
+		var AJAXPost = new Ajax('',{
+			url: '/order/saveOrder',
+			param:param ,
+			type:'post',
+			callback : function(res) {
+				/* res要求传送orderNo */
+				orderNo = res.data;
+				console.log('请求成功');
+				console.log(res);
+                // alert(orderNo);
+				/* alert(res); */
+				turn(orderNo);
+			}
+		});
+	}
+	
+	function turn(orderNo){
+		// window.location.href = 'confirm_order.html';
+		window.location.href = 'confirm_order.html?orderNo=' + orderNo; 
+	}
+	
+	/**
+	 *将"我的购物车中商品删掉"
+	 *进入"我的购物车",将不需要的（参见淘宝的购物车中删除商品）商品从"我的购物车"中删除掉
+	 *“删除”是指在“我的购物车”页面不在显示该商品，但是在所有商品中还是会展示（除非商品下架）
+	 *
+	 *param:userId(用户id)、itemId(商品id)
+	 **/
+	
+	$(function(){
+		$("#deleteItemsFromCart").click(function(){
+			var itemId = new Array();
+			 $('.pitchOn').each(function(i,obj){
+				 itemId.push(obj.id);
+			});
+			if(itemId.length==0){
+				alert("尚未选取要删除的商品!");
+				return;
+			}
+			var json ={
+			  "itemId":itemId
+			}
+			
+			alert(JSON.stringify(json));
+			 var AJAXPost = new Ajax('', {
+	    		url : globalurl+'/fulltext/shopping-car/remove/15295552013',
+	    		type : 'get',
+	    	 	param:"itemId="+itemId,
+	    		callback : function(res) {
+	    			console.log(res);
+	    		}
+	    	});  
+		})
+	});
+	
+	
+</script>
+</html>

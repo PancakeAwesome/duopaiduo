@@ -1,0 +1,151 @@
+.index1 {margin: 20px 0;}
+.index1 .item a img{width: 790px; height: 329px;}
+.index1 .carousel-caption{bottom: 0;left: 0; width: 100%; background-color:rgba(0, 0, 0, 0.5);height: 40px;padding: 8px;text-align: left;}
+.index1 .carousel-indicators{text-align: right;margin-left: -12%;margin-top: 33px;bottom: 0px;}
+.index1 .f_r h4 a{font-size: 18px; color: #2e2e2e; font-weight: 800; overflow: hidden;height: 20px;display: block;}
+.index1 .f_r h4 {margin-bottom: 22px;margin-top: 0px;}
+.index1 .f_r p a{font-size: 16px; color: #7e7e7e;height: 24px;display: block;overflow: hidden;}
+.index1 .f_r li{padding: 10px 0; width: 375px;}
+
+.index2>div{width: 375px; float: left; margin-right: 37px;}
+.index2 .index2_r{margin-right: 0;}
+.article img{ float: left;}
+.dongtai_2 img,.index2>div.index2_l img{ height: 100px; width: 120px;}
+.index3_r .article img{ width: 120px; height: 120px;}
+.index3 .f_r .article h3,.index2>div.index2_l h3{margin-bottom: 15px;}
+.article{margin: 20px 0;}
+
+.index3 .f_r .dongtai_2 .article a:hover p,.picture a:hover div,.index3 .f_r  a:hover,.index3 .f_r a:hover p,.index1 .f_r p a:hover,.index1 .f_r h4 a:hover,.index2 .article a:hover,.article a:hover p{color: #147dc9;}
+.dongtai_1 p,.index3 .f_r .dongtai_2 .article p,.index3 .f_r .article p,.index2 .article p{
+    color: #666;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 0;
+    line-height: 22px;
+    height: 45px;
+ }
+ .index3 .f_r .article p{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    height: 65px;
+ }
+.index2 .article h4.img{padding: 5px 0 0 10px; font-weight: 800;}
+.index3 .article h4{
+    padding: 5px 0 0 5px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 24px;
+ }
+.index3 .article p,.index2 .article p.img{padding-left: 10px;}
+.index2 .article,.index3 .article {margin: 11px 0;}
+.index2 #jiuwenhuahtm .article,.index2 #jiuzxunhtm .article{margin: 9px 0;}
+
+.index2 .index2_r .table{margin: 0;}
+.index2 .index2_r td.b_lan{width: 66px; color: #fff;}
+.index2 .index2_r td.b_lan span{    display: block;}
+.index2 .table>tbody>tr>td,.index2  .table>tbody>tr>th,.index2  .table>tfoot>tr>td,.index2  .table>tfoot>tr>th,.index2  .table>thead>tr>td,.index2  .table>thead>tr>th{    border-bottom: 2px solid #fff; padding: 24px 0 25px;}
+.index2 .index2_r td img{border: solid 1px #d6d6d6;}
+.index2 .index2_r td summary{margin-top: 5px;}
+.picture a div,.index2 .carousel-caption {
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 311px;
+    padding-top: 9px;
+    background: #000000;
+    background: -moz-linear-gradient(top,  rgba(249, 249, 249, 0.01) 0%, #000000 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(249, 249, 249, 0.01)), color-stop(100%,#000000));
+    background: -webkit-linear-gradient(top,  rgba(249, 249, 249, 0.01) 0%,#000000 100%);
+    background: -o-linear-gradient(top,  rgba(249, 249, 249, 0.01) 0%,#000000 100%);
+    background: -ms-linear-gradient(top,  rgba(249, 249, 249, 0.01) 0%,#000000 100%);
+    background: linear-gradient(to bottom, rgba(249, 249, 249, 0.01) 0%,#000000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(249, 249, 249, 0.01)', endColorstr='#000000',GradientType=0 );
+}
+:root .index2 .carousel-caption {filter:none;}
+.index2 ol.carousel-indicators {
+    top: 10px;
+    right: 15px;
+    left: auto;
+    text-align: right;
+    height: 20px;
+}
+.index2 .item a img{ width: 100%;height: 350px;}
+.index3{margin-top: 40px;}
+.index3>.f_l{width: 790px;}
+.index_con>div,.index3>.f_r{width: 375px;}
+
+.index_con>.f_l>div{margin:10px 0;}
+.wd48{ width: 48%;}
+.picture{position: relative;}
+.picture a div{
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    text-align: center;
+    color: #fff;
+    padding-bottom: 7px;
+    font-size: 18px;
+}
+
+.picture a img{ width: 100% }
+.cla li{list-style-type: disc;margin:10px 0;    position: relative;}
+.cla li a{
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+
+    line-clamp: 1;
+    height: 21px;
+    position: absolute;
+    top: 0;
+ }
+ .cla h5{font-size: 18px;}
+.cla .picture{margin:4px 0 20px;}
+.cla .picture div{font-size: 14px;}
+.cla .picture a img{height: 105px;}
+.cla { border-bottom: #f6f6f6 solid 1px; padding: 10px 0 0;}
+.cla.bo_0{border-bottom: 0;}
+.cla ul {padding-left: 23px;    margin-top: 17px;}
+.index_con h5{font-size: 18px; color: #000;position: relative;}
+.index_con h5 span,.spanbei{background-color: #147dc9;padding: 3px 5px;color: #fff;}
+
+.podcast{margin-top: -16px;}
+.podcast .picture { margin-top: 17px;}
+.podcast .picture a img{ width: 100%;height: 350px;}
+.podcast .picture a div { font-size: 12px;}
+.podcast .picture a img.play{width: 70px;height: 70px;position: absolute;top: 145px;left: 145px;display: none;}
+.chart{padding: 10px 0; margin: 0 -4px;}
+.chart .picture {margin: 3px;}
+
+.dongtai_1 summary{
+    color: #7e7e7e; 
+    font-size: 14px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+.dongtai_1 a:hover summary{color: #147dc9;}
+.dongtai_1 .article{padding: 10px 0; margin: 0; border-bottom:#EAEAEA solid 1px; }
+
+.dongtai_2 .article{margin: 20px 0;}
+
+.dongtai_1 h4, .index3 .f_r .dongtai_2 .article h4, .index3 .f_r .article h4, .index2 .article h4{
+    font-size: 16px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.article div {
+    padding: 0 0 0 140px;
+}

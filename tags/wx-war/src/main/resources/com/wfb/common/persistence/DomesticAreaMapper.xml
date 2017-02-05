@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wfb.common.persistence.DomesticAreaMapper" >
+  <resultMap id="BaseResultMap" type="com.wfb.common.model.DomesticArea" >
+    <id column="f_id" property="fId" jdbcType="INTEGER" />
+    <result column="f_name" property="fName" jdbcType="VARCHAR" />
+    <result column="f_nid" property="fNid" jdbcType="VARCHAR" />
+    <result column="f_pid" property="fPid" jdbcType="INTEGER" />
+    <result column="f_domain" property="fDomain" jdbcType="VARCHAR" />
+    <result column="f_order" property="fOrder" jdbcType="SMALLINT" />
+    <result column="f_area_code" property="fAreaCode" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    f_id, f_name, f_nid, f_pid, f_domain, f_order, f_area_code
+  </sql>
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_domestic_area
+    where f_id = #{fId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByPid" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+  	select
+  	<include refid="Base_Column_List"/>
+  	from t_domestic_area
+  	where f_pid =#{pid,jdbcType=INTEGER}
+  </select>
+</mapper>

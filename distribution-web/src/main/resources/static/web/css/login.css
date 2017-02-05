@@ -1,0 +1,88 @@
+.body_bg{background:url(../images/public/Login.jpg) no-repeat scroll; background-size: 100%; }
+.logo{margin: 9rem auto 3rem; width: 50%;text-align: center;}
+.logo img{width: 100%; margin-bottom: 1rem;max-width: 15rem;}
+.logo p{font-size: 2.5rem;color: #fff; text-align: center;}
+.shuru{ width: 80%; margin: 0 auto;}
+.shuru input[type="text"],.shuru input[type="password"]{
+    width: 75%;
+    height: 3.5rem;
+    padding: .5rem;
+    border: 0;
+    border-radius: .4rem;
+    background-color: rgba(0, 0, 0, 0);
+    float: left;
+}
+.shuru >div{
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.22);
+    margin: 0 0 1rem;
+    border-radius: .4rem;
+
+}
+.logo1,.logo2{
+    background: url(../images/public/logoi_03.png) no-repeat; 
+    width: 3.5rem;
+    height: 3.5rem;
+    float: left;
+    background-position: 4px;
+    background-position: .7rem;
+    background-size: 2rem;
+}
+.logo2{background-image:url(../images/public/logoi_06.png); }
+
+
+.tuiqu{margin-top: 1.5rem;}
+.tuiqu button{
+    display: block; 
+    padding: .8rem; 
+    text-align: center; 
+    width: 100%; 
+    margin: 0 auto; 
+    font-size: 2.2rem; 
+    color: #fff; 
+    border-radius: .2rem;
+    border:0;
+}
+
+.shuru a{color: #fff;}
+
+
+.register{background:#fff; margin-top: 1.5rem; padding-left: 1rem;}
+.register div{height: 4rem; font-size: 1.6rem;}
+.register span{width: 8rem; float: left; display: block; line-height: 4rem;padding-left: 1rem;}
+.register input{
+    float: left;
+    border: 0;
+    width: 66%;
+    height: 3.9rem;
+}
+
+.xz{
+    background: url(../images/public/zc_03.jpg) no-repeat center scroll;
+    width: 1.2rem;
+    height: 1.2rem;
+    display: block;
+    float: left;
+    background-size: 1.2rem;
+    margin-right: .1rem;
+    position: relative;
+    top: .04rem;
+}
+.xz1{background-image: url(../images/public/zc1_03.jpg);}
+
+.danxuan a{
+    display: block;
+    float: left;
+    margin-right: .5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 1.5rem;
+    position: relative;
+    top: -.1rem;
+}
+.danxuan a.current{
+    background: url(../images/public/gwc_07.jpg) no-repeat;
+    background-size: 1.5rem 1.5rem;
+    border: 0;
+}

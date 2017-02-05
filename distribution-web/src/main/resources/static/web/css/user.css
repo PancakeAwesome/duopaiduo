@@ -1,0 +1,404 @@
+.user_t{background: #fc3239; height: 13rem;}
+.user_t img{
+    width: 100%;
+    border-radius: 100%;
+    max-width: 8rem;
+    border: .2rem solid #fff;
+}
+.user_t div.col-xs-4{
+    text-align: center;
+}
+.user_t a>div{height: 13rem; line-height: 12rem}
+.user_t .toux{margin-right: -10px;}
+.user_t div .xixi{
+    line-height: 1rem;
+    height: 5rem; 
+    margin-top: 3.5rem;
+    color: #fff; 
+    position: relative;
+}
+.user_t div .xixi h5{font-weight: 900;font-size: 2.1rem;}
+.user_t div .xixi i{
+    position: absolute;
+    right: 0;
+    top: 1.5rem;
+    font-size: 4rem;
+}
+.user_t h5{margin: 0 0 .5rem;}
+.user_t .hui{ 
+    position: relative;
+    border-radius: 100%;
+    background: #fbca04;
+    -moz-box-shadow: 1px 2px 3px #e34054;
+    box-shadow: 1px 2px 3px #e34054;
+    padding: 0px 3px;
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+    float: left;
+}
+.user_t .hui1{
+    font-size: 2.6rem;
+    position: relative;
+    top: 0;
+    left: -3px;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: url(../images/public/user_03.png) no-repeat;
+    background-position: 2px 6px;
+    background-size: 12px;
+}
+.user_t .hui2{   
+    font-size: 1rem;
+    font-family: serif;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+}
+.my_user_li{margin-top: 1.5rem; background: #fff;}
+.user_li{margin-top: 1.5rem; background: #fff; padding-left: 1rem;}
+.my_user_li li{
+    line-height: 4rem;
+    padding: 0 1.5rem;
+}
+.user_li li{
+    padding-right: 1.5rem;
+    line-height: 4rem;
+}
+.my_user_li i,.user_li li i{
+    font-size: 2.6rem;
+    margin-top: 1.2rem;
+}
+.my_user_li input,.my_user_li textarea{/*line-height: 0;*/ border: none;padding: .5rem .3rem;}
+.my_user_li textarea{width: 100%;}
+.my_user_li a{display: block;}
+.usera{
+    display: block;
+     padding-left: 3rem;
+     background: url(../images/public/user.png) no-repeat left scroll; 
+     font-size:1.8rem;
+     background-size: 2.5rem; 
+     background-position:0 -.4rem;
+ }
+.usera1{background-position:0 -5rem;}
+.usera2{background-position:0 -9.5rem}
+.usera3{background-position:0 -15.5rem;}
+.usera4{background-position:0 -20.15rem;}
+
+.tuiqu {text-align: center;}
+.tuiqu botton,.tuiqu a{
+    display: block; 
+    padding: .8rem !important; 
+    text-align: center; 
+    width: 100%; 
+    margin: 0 auto !important; 
+    font-size: 2.2rem; 
+    color: #fff; 
+    border-radius: .2rem !important;
+} 
+
+.weidenglu{line-height: 1rem !important; width: 40%; margin: 1rem auto 0; text-align: center;}
+.weidenglu .toux{margin: 0;}
+.weidenglu .toux img{width: 80%; height: 80%;}
+.weidenglu a{
+    padding: 5px 10px;
+    margin-top: 10px;
+    background: #feb5b0;
+}
+
+
+
+
+
+.order_nav1{height: 4rem; }
+.order_nav{background: #fff; height: 4rem;line-height: 4rem; text-align: center; position: fixed; top: 5rem; width: 100%; z-index: 9999;}
+.order_nav li{float: left; width: 20%;}
+.order_nav a:hover,
+.order_nav a.current{
+    color: #fc2a2a; 
+    border-bottom: 1px #fc2a2a solid;
+    padding: 1.3rem .2rem;  
+    text-decoration:none;
+}
+
+.order_li{background: #fff; padding: 0 0 0 1rem; margin-top: 1rem;}
+.order_li>a:hover{color: #000;text-decoration:none;}
+.order_lib{border-bottom: 1px #e8e7e7 dashed;}
+.confirm h5,.order_li h5{padding: 1rem 1rem 0 0;}
+.confirm .mui-flex,.order_li .mui-flex{padding:.5rem 1rem 1rem 0;}
+.confirm .mui-flex,.confirm h5{margin: 0 1rem 1rem 1rem;}
+.lil_l{max-width: 2rem;}
+.lil_l a{
+    height: 1.5rem;
+    width: 1.5rem;
+    display: block;
+    margin-top: -1rem;
+    border-radius: 1.5rem;
+    border: 1px solid #dcdcdc;
+    margin: 3rem 0;
+}
+.lil_l a.pitchOn{    
+    background: url(../images/public/gwc_07.jpg) no-repeat center scroll;
+    background-size: 1.5rem;
+}
+.lil{max-width: 8rem; }
+.lil img{width: 90%;height: 7.5rem;}
+.lir {height:7.5rem; position: relative; }
+.lir .stage{height:2.5rem;; line-height:2.5rem;;}
+.lir .c_999{position: absolute; bottom: 0;}
+.row a{
+    float: right;
+    padding: .5rem 1.5rem;
+    margin:.5rem 0 .5rem 1rem;
+    border: 1px #e8e7e7 solid;
+    border-radius: .2rem;
+}
+.tuiqu button{
+    padding: 1rem 1.5rem;
+    margin:.5rem 0 .5rem 1rem;
+    border: 1px #e8e7e7 solid;
+    border-radius: .2rem;
+    width: 100%;
+    color: #fff;
+    font-size: 1.8rem;
+}
+.order_li .row a:hover,.order_li .row a.current{
+    background: #fc2a2a;color: #fff;  
+    text-decoration:none;
+}
+
+.state{height: 4rem; line-height: 4rem; padding: 0 1.5rem; color: #fff;}
+.state a{
+    border: 1px #fff solid;
+    border-radius: 3px;
+    color: #fff;
+    padding: .2rem 1rem;
+    float: right;
+    line-height: 1.5rem;
+    margin: 1rem 0;
+}
+
+.details >div{
+    padding: 1px 1.5rem 1rem 4rem;
+    background: url(../images/public/details_03.jpg) no-repeat left scroll;
+    background-position: 1.5rem;
+    background-size: 1.8rem;
+}
+.details >div p{margin: 0;}
+.details >div.wuliu{background-image: url(../images/public/details_06.jpg); padding: 1px 1.5rem 1rem 4rem;    background-position: 1.5rem 1rem;}
+.wuliu .wl_l{ max-width: 2rem; }
+.wuliu .wl_l div{
+    width: 1rem;
+    height: 1rem;
+    background-color: #e5e5e5;
+    border-radius: 1rem;
+    margin: 0 auto;
+}
+.wulius {background: url(../images/public/wl_03.jpg) repeat-y;background-position: .2rem;}
+.wulius>div{margin-top: .5rem}
+.wuliu div.wl_r{padding-bottom: 1rem !important;}
+.wuliu .current,.wuliu .current .c_999{
+    color: #66c644;
+}
+.wuliu .current .wl_l div{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #66c644;
+    border-radius: 1.5rem;
+    border: .2rem solid #d0f7c3;
+}
+.fyqd{background-color: #fff;padding:0 1.5rem; margin-top: 1rem;}
+.fyqd li{height: 3.5rem; line-height: 3.5rem}
+
+.states{margin-top: 2rem;}
+.states button,.states a{border: 1px #d2d2d2 solid; width: 100%; background-color: #fff; padding: 1rem 0}
+.states button:hover,.states a:hover{color: #fff; background-color: #fc2a2a;}
+
+.details_qx {background-color: #fff;}
+.details_qx li{
+        padding: .5rem 0 .5rem 3rem;
+    background: url(../images/public/gwc_06.jpg) no-repeat center;
+    background-position: .5rem;
+    background-size: 1.65rem;
+}
+.details_qx li.current{background-image: url(../images/public/gwc_07.jpg);}
+
+.cancel{text-align: center;}
+.cancel img{margin: 5rem auto 1rem; width: 5rem;}
+
+.address{padding: 1rem 0; background: #fff; margin-top: 1rem;}
+.address a,.address button{ padding: .3rem .5rem; border: 1px solid #000; background: #fff; margin: 1rem 0 0 1rem;}
+.address .defaults {
+    background: url(../images/public/addr_07.jpg) no-repeat;
+    height: 1.5rem;
+    margin: 1rem 0 0;
+    background-size: 1.5rem;
+    padding:0 0 .5rem 2rem;
+}
+.address .default{background-image: url(../images/public/addr_03.jpg);}
+.addressd a{display: block; height: 5rem ;line-height: 5rem; text-align: center; color: #fff; font-size: 2.2rem;}
+
+.confirm_li ul li{line-height: 4rem; background: #fff; padding: 0 1.5rem;}
+.confirm_li ul li textarea{width: 70%; line-height: 1rem; padding:1.5rem 0;  text-align: left !important; border:0;}
+.confirm_li ul li i{font-size: 2.6rem;margin-top:1rem; color: #999; float: right; margin-left: 2rem;}
+.confirm_li ol li{background: #fdfdfd;}
+.confirm_li ol li input{line-height: 2rem; width: 100%; padding: .3rem .5rem}
+.confirm_li ol li a{
+    width: 1.5rem; 
+    height: 1.5rem; 
+    display: block; 
+    background: url(../images/public/gwc_06.jpg) no-repeat; 
+    background-size: 1.5rem; 
+    margin: 1.2rem 0;
+    float: right;
+}
+.confirm_li ol li a.current{background-image: url(../images/public/gwc_07.jpg);}
+
+.confirms div{line-height: 5.5rem; font-size: 2rem; text-align: right;}
+.confirms div.confirms_r{max-width: 40%; background: #fc2a2a; color: #fff; text-align: center;margin-left: 1rem;}
+.jingdu {padding: 1rem 1.5rem; height: 8rem; background: #fff;}
+.jingdu>div{width: 25%;height: 6rem;color: #eae9e9; float: left; text-align: center; position: relative;} 
+.jingdu div span{
+    width: 4rem; 
+    height: 4rem; 
+    display: block; 
+    background: #eae9e9; 
+    color: #bdbcbc; 
+    line-height: 4rem; 
+    margin: 0 auto; 
+    border-radius: 4rem;
+    font-size: 3rem;
+}
+.jingdu div p{color: #bdbcbc; margin:  .5rem 0}
+.jingdu>div div{
+    position: absolute;
+    top: 1.8rem;
+    height: .4rem;
+    background: #eae9e9;
+    width: 25%;
+    border-radius: .4rem;
+    right: -12.5%;
+}
+.jingdu .current span,.jingdu .current div{background-color: #fc2a2a; color: #fff;}
+.jingdu .current p{color: #fc2a2a;}
+
+.progress_li span.f_l,.progress_li{line-height: 4rem;}
+.progress_li span{font-size: 1.2rem;}
+.progress_li input[type="text"]{width: 40%; }
+.progress_li select{width: 60%;}
+.progress_li textarea{width: 60%; margin-top: 1rem;}
+.progress_li .form-control{line-height: 1rem; margin-left: 1rem;display: -webkit-inline-box;}
+.progress_li div{line-height: 1.6rem;}
+.progress_li div.f_l{width: 70%; margin-left: 1rem;}
+.progress_li  div.f_l img{width: 5rem; height: 5rem; margin: 1rem .3rem;}
+.progressa a.f_r{margin:-.5rem 1rem; padding: .5rem 1rem; background: #fc2a2a; color: #fff; border-radius: .2rem;}
+
+.ywyuan_t>div,.dealer_t>div{padding:2.5rem 1.5rem; background: #8179a2;color: #fff;}
+.dealer_t>div.f_r{background-color: #544973;}
+
+.ywyuan_t>div{ background-color: #fc3538;}
+.ywyuan_t>div.f_r{background-color: #f3171a;}
+.dealer_nav a{display: block;width: 25%; float: left; text-align: center;}
+.dealer_nav div{
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 1rem auto .8rem;
+    border-radius: 1rem;
+    background:#fb6568 url(../images/public/jxs_11.png) no-repeat center scroll;
+    background-size: 1.4rem;
+}
+.dealer_nav div.nav1{background-color: #67a5f8; background-image: url(../images/public/jxs_03.png);}
+.dealer_nav div.nav2{background-color: #ffac28; background-image: url(../images/public/jxs_06.png);}
+.dealer_nav div.nav3{background-color: #66dfaa; background-image: url(../images/public/jxs_08.png);}
+
+.tc_lis {margin-top: 1.5rem; position: relative;}
+.tc_lis h5{margin: 0; padding: .5rem 1rem;}
+.tc_lis .ta_c div{padding: 1rem 0;}
+.tc_lis img{
+    position: absolute;
+    width: 5.5rem;
+    right: 2rem;
+    top: 2rem;
+}
+.ywyuan_ts,.dealer_ts{background: #473775;line-height: 4rem; padding: 0 2rem; color: #fff;}
+.ywyuan_ts{background-color: #d4070a;}
+.ywyuan_xq .table>thead>tr>th{font-weight: 100;}
+.ywyuan_xq .table>tbody>tr>td,
+.ywyuan_xq .table>tbody>tr>th,
+.ywyuan_xq .table>tfoot>tr>td,
+.ywyuan_xq .table>tfoot>tr>th,
+.ywyuan_xq .table>thead>tr>td,
+.ywyuan_xq .table>thead>tr>th{text-align: center;}
+
+
+.outputs{padding: 1rem 1.5rem; background: #fff; text-align: center;}
+.outputs .btn{width: 50%;margin:1rem auto; color: #Fff;}
+
+
+#output{text-align: center;}
+#output canvas{width: 40%;}
+.imgas{    
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    top: -0.2rem;
+    border-radius: 2.5rem;
+}
+
+.shouji li span{
+    width: 6rem;
+    display: block;
+    float: left;
+}
+.shouji li input{
+    line-height: 2rem;
+    border: 0;
+}
+.shouji button.btn.f_r {
+    margin: .6rem 0;
+}
+.shouji button.btn.f_r:hover{color: #fff;}
+.mimass,.mimas{text-align: center; background-color: #ff6a6d;color: #fff;}
+.mimass div,.mimas div{padding: 1rem;}
+
+.payment1{ background-color: #5bb1f4;padding:1rem 1.5rem; color: #fff;}
+.payment1 div{background: url(../images/public/zfjm_01.png) no-repeat right center;    background-size: 6.5rem;}
+.payment2{background-color: #fff; margin-top: 1rem; }
+.payment2 h5{padding:1rem 1.5rem; margin:0;}
+.payment2>div{padding:1rem 1.5rem;}
+.payment2>div img{width: 9rem;}
+.payment2>div a{width: 1.5rem;
+    height: 1.5rem;
+    display: block;
+    background: url(../images/public/gwc_06.jpg) no-repeat;
+    background-size: 1.5rem;
+    margin: 1.2rem 0;
+    float: right;}
+.payment2>div a.current {
+    background-image: url(../images/public/gwc_07.jpg);
+}
+
+.xuanress .address{padding-right: 1rem;}
+.xuanress .address>div{padding-right: .5rem;
+    background: url(../images/public/gwc_06.jpg) no-repeat center right;
+    background-size: 1.6rem;
+}
+.xuanress .address.current>div {
+    background-image: url(../images/public/gwc_07.jpg);
+}
+.amount{
+    padding: .5rem 0.5rem;
+    margin: .5rem 0 .5rem 1rem;
+}
+/*mask ui*/
+.mask-ui{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.6);
+    display: none;
+}

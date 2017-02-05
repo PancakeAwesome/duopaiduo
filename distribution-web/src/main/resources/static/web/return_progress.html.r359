@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>申请退货</title>
+<link rel="Stylesheet" href="css/style.css" type="text/css" />
+<link rel="Stylesheet" href="css/public/font-awesome.min.css" type="text/css" />
+<link rel="Stylesheet" href="css/user.css" type="text/css" />
+<!-- jQuery -->
+<script type="text/javascript" src="js/public/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/public/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/public/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/yxMobileSlider.js"></script>
+</head>
+
+<body class="wrap_bg">
+<div id="container" class="thewidth100">
+<!--header-->
+    <div class="header_bg clearfix thewidth100 hei"> 
+        <div class="header">
+        <div class="f_l" onclick="Return()"><i class="icon-angle-left"></i><span>返回</span></div>
+        <div class="title">申请退货</div>
+        <div class="f_r"><i class="ion_you"></i></div>
+        </div>
+    </div>
+<!--------------------------------------[ header ]-------------------------------------->
+    
+<!--------------------------------------[ banner ]-------------------------------------->
+<!--wrap-->
+    <div class=" thewidth100 pa_b8">
+        <div class="jingdu">
+            <div class="current">
+                <span>1</span>
+                <p>退货申请</p>
+                <div></div>
+            </div>
+            <div>
+                <span>2</span>
+                <p>退货审核</p>
+                <div></div>
+            </div>
+            <div>
+                <span>3</span>
+                <p>填写物流号</p>
+                <div></div>
+            </div>
+            <div>
+                <span>4</span>
+                <p>退货成功</p>
+            </div>
+        </div>
+        <div class="order_li">
+            <h5>当前状态： <span class="red">待收货</span></h5>
+            <h5>退货商品:</h5>
+            <div class="lis_bob mui-flex">
+                <div class="call lil">
+                    <img class="lis_bo1" src="images/shangping.jpg">
+                </div>
+                <div class="call lir">
+                    <div class="title">古井贡酒老玻贡50度750ml*6瓶大瓶自饮酒</div>
+                    <div class="stage">
+                        <span class="red">￥89.00</span>
+                        <span class="ma_l2">x2</span>
+                    </div>
+                    <div class="c_999">
+                        <span class="f_l">退货数量</span>
+                        <div class="f_l ma_l1 jiliang clearfix">
+                            <span class="f_l">-</span> 
+                            <input type="text"  class="jl" data-max="2"  class="f_l" name="" value="1" placeholder="" disabled> 
+                            <span class="f_r">+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div  class="lis_bob progress_li">
+                退款金额:<input type="text" class="form-control" name="" value="" placeholder=""><span class="red">（最多89.00）</span>
+            </div>
+            <div  class="lis_bob progress_li">
+                退货理由:<select class="form-control">
+                          <option> </option>
+                          <option> </option>
+                          <option> </option>
+                          <option> </option>
+                          <option> </option>
+                        </select>
+            </div>
+            <div  class="lis_bob progress_li clearfix">
+                <span class="f_l">详细原因: </span><textarea rows="5" name=""class="form-control" ></textarea>
+            </div>
+            <div  class="lis_bob progress_li clearfix">
+                <span class="f_l">上传凭证: </span>
+                <div class="f_l">
+                    <input type="file" name="" value="" placeholder="">
+                </div>
+            </div>
+            <div  class="lis_bob progress_li clearfix">
+                退款说明: 
+                <div class="thewidth100">
+                    <p class="ma_l2">1、退货概不退还优惠券，现金券以及其他优惠产品</p>
+                    <p class="ma_l2">2、请与退款客服人员协商之后，再填写退款金额</p>
+                </div>
+            </div>
+        </div>
+         <div class="ma_t tuiqu">
+            <div class="row">
+                <a href="login.html" class="red_bg">提交</a>
+            </div>
+        </div>
+    </div>
+<!--/wrap-->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>选择收货地址</title>
+<link rel="Stylesheet" href="css/style.css" type="text/css" />
+<link rel="Stylesheet" href="css/public/font-awesome.min.css" type="text/css" />
+<link rel="Stylesheet" href="css/user.css" type="text/css" />
+<!-- jQuery -->
+<script type="text/javascript" src="js/public/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/public/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/public/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/yxMobileSlider.js"></script>
+</head>
+
+<body class="wrap_bg none">
+
+<div id="container" class="thewidth100">
+
+<!--header-->
+    <div class="header_bg clearfix thewidth100 hei"> 
+        <div class="header">
+        <div class="f_l" onclick="Return()"><i class="icon-angle-left"></i><span>返回</span></div>
+        <div class="title">选择收货地址</div>
+        <div class="f_r"><i class="ion_you ma_l1"></i></div>
+        <div class="f_r" style="margin-top: -1rem;"><a href="address.html" class="">管理</a></div>
+        </div>
+    </div>
+<!--------------------------------------[ header ]-------------------------------------->
+
+<!--------------------------------------[ banner ]-------------------------------------->
+<!--wrap-->
+    <!-- <div class=" thewidth100 pa_b8 xuanress">
+        <div class="address">
+            <div>
+                <div  class="row">
+                    <h5>收货人：张三丰 <span class="f_r">18205563235</span></h5>
+                </div>
+                <div class=" row c_999">
+                    <p>江苏省南京市秦淮区健康南路新低西村2幢102号1103室1103 室村2幢10</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+<!--/wrap-->
+</div>
+<script>
+    var userId =getvl('userId');
+    var orderNo =getvl('orderNo');
+    // 全局变量id
+    var id = '';
+
+    $(function(){
+        // console.log(userId)
+        // var param = base64encode('{"userId":'+userId+'}');
+        // console.log(param)
+            /* 获取用户所有订单地址 */
+        var AJAXPost = new Ajax('',{
+            url: '/order_UserOrderAddress/getUserOrderAddresss?userId='+userId,
+            async:false,
+            type:'get',
+            callback : function(res) {
+                /* res要求传送orderNo */
+                var user_addresses = res.data;
+                console.log('请求成功');
+                console.log(res);
+                /* 返回来的data是一个对象数组*/
+                /* 解析用户地址对象数组 */
+                $.each(user_addresses,function(index,user_address){
+                    var recevier = user_address.userName;
+                    var address = user_address.address;
+                    var phone_number = user_address.phone;
+                    var userOrderAddressId = user_address.id;
+
+                    var add = $('<div>');
+                    $(add).addClass('address');
+                    $(add).attr('id',userOrderAddressId);
+                    if(user_address.isDef == 2){
+                        /* 默认地址 */
+                        id = userOrderAddressId;
+                        $(add).addClass('current');
+                        $(add).prependTo($('.thewidth100'));
+                    }else{
+                        $(add).appendTo($('.thewidth100'));
+                    }
+                     
+                    var div = $('<div>');
+                    $(div).appendTo($(add)); 
+
+                    var top = $('<div>');
+                    $(top).addClass('row');
+                    $(top).appendTo($(div)); 
+
+                    var title = $('<h5>');
+                    $(title).appendTo($(top));
+
+                    var name = $('<span>');
+                    $(name).text('收货人：'+recevier);
+                    $(name).appendTo($(title));
+
+                    var phone = $('<span>');
+                    $(phone).addClass('f_r');
+                    $(phone).text(phone_number);
+                    $(phone).appendTo($(title));
+
+                    var bo = $('<div>');
+                    $(bo).addClass('row c_999');
+                    $(bo).appendTo($(div));
+
+                    var address_p = $('<p>');
+                    $(address_p).text(address);
+                    $(address_p).appendTo($(bo)); 
+                })
+                $('body').show();
+                add_pitch();
+            }
+        });
+    })
+
+    // 选择效果
+    function add_pitch(){
+        $('.xuanress').find('.address').click(function(){
+            if( ! $(this).hasClass('current') ){
+                $('.xuanress').find('.address').removeClass('current');
+                $(this).addClass('current');
+                id = $(this).attr('id');
+                turn(id,orderNo);
+            }
+        });
+    }
+
+    function Return(){
+        // id是全局变量
+        // window.location.href = 'confirm_order.html?addressId=' + id;
+        history.go(-1);
+    }
+
+    function turn(id,orderNo){
+        // id是全局变量
+        window.location.href = 'confirm_order.html?addressId=' + id+'&orderNo='+orderNo;
+        // history.go(-1);
+    }
+</script>
+</body>
+</html>

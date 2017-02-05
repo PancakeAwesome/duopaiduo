@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>申请退货</title>
+<link rel="Stylesheet" href="css/style.css" type="text/css" />
+<link rel="Stylesheet" href="css/public/font-awesome.min.css" type="text/css" />
+<link rel="Stylesheet" href="css/user.css" type="text/css" />
+<!-- jQuery -->
+<script type="text/javascript" src="js/public/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/public/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/public/layer/layer.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/yxMobileSlider.js"></script>
+</head>
+
+<body class="wrap_bg">
+<div id="container" class="thewidth100">
+<!--header-->
+    <div class="header_bg clearfix thewidth100 hei"> 
+        <div class="header">
+        <div class="f_l" onclick="Return()"><i class="icon-angle-left"></i><span>返回</span></div>
+        <div class="title">申请退货</div>
+        <div class="f_r"><i class="ion_you"></i></div>
+        </div>
+    </div>
+<!--------------------------------------[ header ]-------------------------------------->
+    
+<!--------------------------------------[ banner ]-------------------------------------->
+<!--wrap-->
+    <div class=" thewidth100 pa_b8">
+        <div class="jingdu">
+            <div class="current">
+                <span>1</span>
+                <p>退货申请</p>
+                <div></div>
+            </div>
+            <div>
+                <span>2</span>
+                <p>退货审核</p>
+                <div></div>
+            </div>
+            <div>
+                <span>3</span>
+                <p>填写物流号</p>
+                <div></div>
+            </div>
+            <div>
+                <span>4</span>
+                <p>退货成功</p>
+            </div>
+        </div>
+        <div class="order_li">
+            <h5>当前状态： <span class="red">待收货</span></h5>
+            <h5>退货商品:</h5>
+            <div id='item_list'>
+                <!-- <div class="lis_bob mui-flex">
+                    <div class="call lil_l">
+                        <a href="javascript:;" class="pitchOn"></a>
+                    </div>
+                    <div class="call lil">
+                        <img class="lis_bo1" src="images/shangping.jpg">
+
+                    </div>
+                    <div class="call lir">
+                        <div class="title">古井贡酒老玻贡50度750ml*6瓶大瓶自饮酒</div>
+                        <div class="stage">
+                            <span class="red">￥89.00</span>
+                            <span class="ma_l2">x2</span>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div  class="lis_bob progress_li">
+                退款金额:<input id='return_fund' type="text" class="form-control" name="" value="" placeholder=""><span class="red">（最多<span id='amount'>89.00</span>）</span>
+            </div>
+            <!-- <div  class="lis_bob progress_li">
+                退货理由:<select class="form-control">
+                          <option> </option>
+                          <option> </option>
+                          <option> </option>
+                          <option> </option>
+                          <option> </option>
+                        </select>
+            </div> -->
+            <div  class="lis_bob progress_li clearfix">
+                <span class="f_l">详细原因: </span><textarea rows="5" name=""class="form-control" ></textarea>
+            </div>
+            <div  class="lis_bob progress_li clearfix">
+                <span class="f_l">上传凭证: </span>
+                <div class="f_l">
+                    <input accept="image/*" type="file" name="" value="" placeholder="请上传图片">
+                </div>
+            </div>
+            <div  class="lis_bob progress_li clearfix">
+                退款说明: 
+                <div class="thewidth100">
+                    <p class="ma_l2">1、退货概不退还优惠券，现金券以及其他优惠产品</p>
+                    <p class="ma_l2">2、请与退款客服人员协商之后，再填写退款金额</p>
+                </div>
+            </div>
+        </div>
+         <div class="ma_t tuiqu">
+            <div class="row">
+                <a href="javascript:return_order()" class="red_bg">提交</a>
+            </div>
+        </div>
+    </div>
+<!--/wrap-->
+</div>
+<script>
+    var returnType = getvl('type')
+    // 1 待收货 3 已到货
+    var userId = 2
+    var orderDetailIds = getItemIds()
+    // 订单id多个逗号相隔
+    var returnOrderNo = getvl('orderNo')
+    var applyRemark = ''
+    var return_fund = 0
+    var amount = 0.00
+
+    // var param = base64encode('{"orderNo":'+orderNo+'}')
+    var AJAXPost = new Ajax('',{
+        url: '/order/getOrderDetail?orderNo='+returnOrderNo,
+        // async:false,
+        type:'get',
+        callback : function(res) {
+            /* res要求传送orderNo */
+            var order = res.data;
+            console.log('请求成功');
+            console.log(res);
+
+            var orderdetails = order.orderdetail;
+            amount = order.returnMoney
+
+            $('#amount').text(order.returnMoney);
+
+            $.each(orderdetails,function(index,order_detail){
+                /* fake */
+                var itemName = '老白干';
+                var itemImg = 'images/shangping.jpg';
+                /* var itemName = order_detail.itemName;
+                var itemImg = order_detail.itemImg; */
+                        
+                var price = order_detail.price;
+                var quantity = order_detail.quantity;
+                var id = order_detail.id;   
+                
+                /* 开始插入商品item */
+                var item = $('<div>');
+                $(item).addClass('mui-flex item lis_bob');
+                $(item).attr('id',id);
+                $(item).appendTo($('#item_list'));
+
+                var innerHtml = ''
+                innerHtml += '<div class="call lil_l">'
+                    + '<a href="javascript:;" class="pitchOn"></a>'
+                +'</div>'
+                $(item).append(innerHtml)
+
+                var img_box = $('<div>');
+                $(img_box).addClass('call');
+                $(img_box).addClass('lil');
+                $(img_box).appendTo($(item));
+                
+                var img = $('<img>');
+                $(img).addClass('lis_bo1');
+                $(img).attr('src',itemImg);/* url问题?*/
+                $(img).appendTo($(img_box));
+                
+                var detail = $('<div>');
+                $(detail).addClass('call');
+                $(detail).addClass('lir');
+                $(detail).appendTo($(item));
+                
+                var title = $('<div>');
+                $(title).addClass('title');
+                $(title).text(itemName);
+                $(title).appendTo($(detail));
+                
+                var li = $('<div>');
+                $(li).addClass('stage');
+                $(li).appendTo($(detail));
+                
+                var prices = $('<span>');
+                $(prices).addClass('red');
+                $(prices).text('￥'+price);
+                $(prices).appendTo($(li));
+                
+                var quantities = $('<span>');
+                $(quantities).addClass('ma_l2');
+                $(quantities).text('×'+quantity);
+                $(quantities).appendTo($(li));
+            })
+            // orderItems = JSON.stringify(orderItems);
+            $('body').show();
+            // getItemIds()
+            constrict()
+            $('.item').click(function(){
+                if( ! $(this).find('a').hasClass('pitchOn') ){
+                    $(this).find('a').addClass('pitchOn');
+                }else{
+                    $(this).find('a').removeClass('pitchOn');
+                }
+            }); 
+        }
+    });
+
+    function return_order(){
+        // 申请退货
+        if((parseFloat($('#return_fund').val()) > amount) || ($('textarea').val() == '') || ($('#return_fund').val() == '')){
+            alert('输入有误！')
+        }else{
+            orderDetailIds = getItemIds()
+            // orderDetailIds = [1,2,3]
+            orderDetailIds = orderDetailIds.join(',')
+            // alert(orderDetailIds)
+            // console.log(orderDetailIds)
+            var param = new Object()
+            param.userId = userId
+            param.orderDetailIds = orderDetailIds
+            param.returnOrderNo = returnOrderNo
+            param.returnType = returnType
+            param.applyRemark = $('textarea').val()
+            param.amount = $('#return_fund').val()
+            var img1Url
+            var img2Url
+            var img3Url
+            // console.log(param.applyRemark)
+
+            param = JSON.stringify(param)
+
+            param = base64encode(utf16to8(param));
+            console.log(param);
+            var AJAXPost = new Ajax('',{
+                url: '/order/refund',
+                param:param ,
+                type:'post',
+                callback : function(res) {
+                    /* res要求传送orderNo */
+                    // orderNo = res.data;
+                    console.log('请求成功');
+                    console.log(res);
+                    if(!res.data){
+                        console.log('error');
+                    }else{
+                        alert('申请退货成功！请等待审核！');
+                        // window.location.href = 'return_progress2.html?orderNo.html?orderNo=' + orderNo
+                        window.location.href = 'my_Return.html' 
+                    }
+                }
+            });
+        }
+    }
+
+
+    function getItemIds(){
+        var idList = new Array()
+        $('#item_list .lil_l a').each(function(){
+            if($(this).hasClass('pitchOn')){
+                var id = $(this).parents('.item').attr('id')
+                idList.push(id)
+            }
+        })
+        return idList
+    }
+
+    function constrict(){
+        if(parseFloat($('#return_fund').text()) > amount){
+            alert('输入金额有误！')
+        }
+    }
+
+</script>
+<script>
+    // $('.mui-flex').click(function(){
+    //     if( ! $(this).find('a').hasClass('pitchOn') ){
+    //         $(this).find('a').addClass('pitchOn');
+    //     }else{
+    //         $(this).find('a').removeClass('pitchOn');
+    //     }
+    // });
+</script>
+</body>
+</html>

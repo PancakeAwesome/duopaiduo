@@ -1,0 +1,42 @@
+.focus span.current{background-color: #ff0101;}
+.focus span{background-color: #e1dfdf;}
+.fs{max-width: 5.5rem;height: 9rem;}
+.fs span{
+    width: 1.8rem;
+    height: 1.8rem;
+    background: url(../images/public/sp_01.png) no-repeat center scroll;
+    display: block;
+    background-size: 1.8rem;
+    margin: 0 auto;
+}
+.fs div{
+    margin: 14px auto;
+    line-height: 2;
+    padding: 17px 10px;
+    text-align: center;
+    border-left: 1px #e5e5e5 solid;
+}
+.product1,.product {height: 4.5rem;line-height: 4rem;}
+.product img{width: 1.8rem; margin-right: .5rem;}
+.product span{position: relative; top: 2px;}
+.product1 div.jiliang{line-height: 15px;margin: 1rem 0;width: 8.2rem;}
+.product1 div.jiliang input{width: 4rem;}
+
+.product .current{border-bottom: 1px solid #fc3538;}
+.header_bg {
+    height: 4rem !important;
+}
+.p1_1,.content1 li{ padding: 1.2rem 1rem;}
+
+.content2 .tux{width: 4rem; height: 4rem; border: 1px #f0f0f0 solid;border-radius: 4rem;}
+.content2 .tux img{width: 3.8rem; height: 3.8rem;border-radius: 3.8rem;border: .2rem #fff solid; }
+.content2 .xin{
+    margin: 1.2rem .3rem;
+    font-size: 1.8rem;
+}
+.content2 .xin i{color: #999999}
+.content2 .xin i.red{color: #ff0101}
+.content2 .span{    margin:1.3rem 0;}
+.content2 .lis_bob{padding: 1.5rem 0;}
+.content3{font-size: 1.8rem; margin: .5rem 0 0;}
+.content3 img{width: 6rem; margin: .3rem; height: 6rem;}

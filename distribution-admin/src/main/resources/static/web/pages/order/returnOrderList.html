@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>酒业微分销系统——后台管理</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../dist/css//font-awesome.min.css">
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+  
+  <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<script src="../../dist/js/app.min.js"></script>
+<script src="../../dist/js/demo.js"></script>
+<script src="../../layer/layer.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../js/linkageSelect.js"></script>
+<script src="../../js/dataGrid.js"></script>
+
+  
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+    <a href="index2.html" class="logo">
+      <span class="logo-mini">admin</span>
+      <span class="logo-lg">后台管理</span>
+    </a>
+    <nav class="navbar navbar-static-top">
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+
+
+
+
+    </nav>
+  </header>
+  <!-- <aside class="main-sidebar">
+    sidebar: style can be found in sidebar.less
+    <section class="sidebar">
+     
+     
+      <ul class="sidebar-menu">
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>首页</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 报表</a></li>
+          </ul>
+        </li>
+        
+        
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>分销管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i> 经销商详情</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 添加经销商</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 业务员管理</a></li>
+          </ul>
+          
+        </li>
+        
+        
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>商品管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            <li><a href="admin/item/itemList.html"><i class="fa fa-circle-o"></i> 商品管理</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 添加商品</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 分类管理</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 添加分类</a></li>
+            
+          </ul>
+          
+        </li>
+        
+        
+        
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>订单管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 订单列表</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 评价列表</a></li>
+          </ul>
+          
+        </li>
+        
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>用户管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            	<li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 用户列表</a></li>
+          </ul>
+          
+        </li>
+      </ul>
+    </section>
+  </aside> -->
+	  <aside class="main-sidebar">
+    <section class="sidebar">
+     
+     
+      <ul class="sidebar-menu">
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>首页</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 报表</a></li>
+          </ul>
+        </li>
+        
+        
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>分销管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i> 经销商详情</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 添加经销商</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 业务员管理</a></li>
+          </ul>
+          
+        </li>
+        
+        
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>商品管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+             <li><a href="itemList.html"><i class="fa fa-circle-o"></i> 商品管理</a></li>
+            <li><a href="categoryList.html"><i class="fa fa-circle-o"></i> 分类管理</a></li>
+            
+          </ul>
+          
+        </li>
+        
+        
+        
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>订单管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            <li><a href="orderList.html"><i class="fa fa-circle-o"></i> 订单列表</a></li>
+            <li><a href="returnOrderList.html"><i class="fa fa-circle-o"></i> 退货订单</a></li>
+            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 评价列表</a></li>
+          </ul>
+          
+        </li>
+        
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>用户管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            	<li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 用户列表</a></li>
+          </ul>
+          
+        </li>
+        
+        
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>系统基础数据</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+           <ul class="treeview-menu">
+            	<li><a href="../system/deliveryList.html"><i class="fa fa-circle-o"></i> 物流公司维护</a></li>
+            	<li><a href="../system/defrayList.html"><i class="fa fa-circle-o"></i> 支付方式维护</a></li>
+            	<li><a href="../system/dispatchingList.html"><i class="fa fa-circle-o"></i> 配送方式维护</a></li>
+            	<li><a href="../system/invoiceTypeList.html"><i class="fa fa-circle-o"></i> 发票类型维护</a></li>
+            	<li><a href="../system/paymentTypeList.html"><i class="fa fa-circle-o"></i> 支付类型维护</a></li>
+          </ul>
+          
+        </li>
+        
+        
+      </ul>
+    </section>
+  </aside>
+  <div class="content-wrapper">
+		<section class="content">
+		<div class="box box-primary">
+			<div class="box-body">
+		    </div>
+				<table style="width:100%" class="table table-bordered table-striped dataTable">
+					<thead>
+						<tr>
+							
+							<th>订单编号</th>
+							<th>父订单编号</th>
+							<th>用户ID</th>
+							<th>退货方式</th>
+							<th>申请时间</th>
+							<th>退款金额</th>
+							<th>状态</th>
+							<th>操作</th>
+							
+							
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+	</section>
+
+  </div>
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2014-2016 <a href="http://www.digirun.cn/">南京码动信息科技有限公司</a>.</strong> All rights reserved.
+  </footer>
+
+</div>
+
+
+<div id="shenhe"  style="display: none; width: 400px"  >
+	<form class="form-horizontal">
+              <div class="box-body">
+	                
+	                <div class="form-group">
+	                  <label class="col-sm-2 control-label">状态</label>
+	                  <div class="col-sm-6">
+	                   	<div class="radio" style="float: left;"> <input type="radio" name="status" id="staus1" value="2"  checked="checked"> 通过</div>
+	                    <div class="radio" style="float: left; margin-left: 40px;"> <input type="radio" name="status" id="staus2" value="4">  拒绝</div>
+	                  </div>
+	                </div>
+	                
+	                
+	                
+	                <div class="form-group">
+	                  <label class="col-sm-2 control-label">备注</label>
+	                  <div class="col-sm-6">
+	                   	<textarea class="form-control"  rows="" cols="" style="width: 300px;" name="adminRemark"></textarea>
+	                  </div>
+	                </div>
+              </div>
+              
+              <!-- /.box-footer -->
+            </form>
+</div>
+<div id="edit"  style="display: none;" >
+	<form class="form-horizontal">
+	
+	<section class="well clearfix" style="padding: 5px 19px;">
+		<h5 class="ra-well-title">
+			<span class="k-icon k-i-arrow-e"></span> 退货商品信息
+		</h5>
+    </section>
+       <div class="form-horizontal form-widgets col-sm-4 clearfix" name="itemNameDIV">
+				
+		</div>
+			
+		<div class="form-horizontal form-widgets col-sm-4" name="itemPriceDIV">
+			
+			
+		</div>
+		
+		<div class="form-horizontal form-widgets col-sm-4"  name="itemCountDIV">
+			
+		</div>  
+       
+       <div class="clearfix"></div>
+       <section class="well clearfix" style="padding: 5px 19px;">
+		<h5 class="ra-well-title">
+			<span class="k-icon k-i-arrow-e"></span> 退货订单信息
+		</h5>
+          
+       </section>    
+       
+       <div class="form-horizontal form-widgets col-sm-12 clearfix">
+				<div class="form-group" style="margin-bottom: 1px">
+					<label class="control-label col-sm-2">订单编号：</label>
+					<div class="col-sm-8 col-md-10" >
+						<input class="form-control"   placeholder="" name="orderNo" style="border: 0;border-bottom: 1px solid #ccc;">
+					</div>
+				</div>
+				
+				<div class="form-group" style="margin-bottom: 1px">
+					<label class="control-label col-sm-2">退换方式 ：</label>
+					<div class="col-sm-8 col-md-10" >
+						<input class="form-control"   placeholder="" name="returnTypeName" style="border: 0;border-bottom: 1px solid #ccc;">
+					</div>
+				</div>
+				
+				<div class="form-group" style="margin-bottom: 1px">
+					<label class="control-label col-sm-2">申请时间：</label>
+					<div class="col-sm-8 col-md-10" >
+						<input class="form-control"   placeholder="" name="applyTime" style="border: 0;border-bottom: 1px solid #ccc;">
+					</div>
+				</div>
+				
+				<div class="form-group" style="margin-bottom: 1px">
+					<label class="control-label col-sm-2">退款金额：</label>
+					<div class="col-sm-8 col-md-10" >
+						<input class="form-control"   placeholder="" name="returnMoney" style="border: 0;border-bottom: 1px solid #ccc;">
+					</div>
+				</div>
+				
+				<div class="form-group" style="margin-bottom: 1px">
+					<label class="control-label col-sm-2">退换货原因：</label>
+					<div class="col-sm-8 col-md-10" >
+						<input class="form-control"   placeholder="" name="applyRemark" style="border: 0;border-bottom: 1px solid #ccc;">
+					</div>
+				</div>
+				
+				<div class="form-group" style="margin-bottom: 1px">
+					<label class="control-label col-sm-2">状态：</label>
+					<div class="col-sm-8 col-md-10" >
+						<input class="form-control"   placeholder="" name="statusName" style="border: 0;border-bottom: 1px solid #ccc;" >
+					</div>
+				</div>
+				
+				<div class="form-group" style="margin-bottom: 1px">
+					<label class="control-label col-sm-2">审核时间：</label>
+					<div class="col-sm-8 col-md-10" >
+						<input class="form-control"   placeholder="" name="agreeTime" style="border: 0;border-bottom: 1px solid #ccc;">
+					</div>
+				</div>
+				
+				<div class="form-group" style="margin-bottom: 1px">
+					<label class="control-label col-sm-2"> 用户寄回物流：</label>
+					<div class="col-sm-8 col-md-10" >
+						<input class="form-control"   placeholder="" name="userDeliveryName" style="border: 0;border-bottom: 1px solid #ccc;">
+					</div>
+				</div>
+				
+				<div class="form-group" style="margin-bottom: 1px">
+					<label class="control-label col-sm-2"> 用户寄回时间：</label>
+					<div class="col-sm-8 col-md-10" >
+						<input class="form-control"   placeholder="" name="returnProductTime" style="border: 0;border-bottom: 1px solid #ccc;">
+					</div>
+				</div>
+				
+				<div class="form-group" style="margin-bottom: 1px">
+					<label class="control-label col-sm-2"> 收到货物时间：</label>
+					<div class="col-sm-8 col-md-10" >
+						<input class="form-control"   placeholder="" name="confirmUserLogisticsTime" style="border: 0;border-bottom: 1px solid #ccc;">
+					</div>
+				</div>
+				
+				
+				 <div class="form-group" style="margin-bottom: 1px;display: block;" id="queryDeliveryDIV">
+					<label class="control-label col-sm-2">完成时间：</label>
+					<div class="col-sm-8 col-md-10" >
+						<input class="form-control"   placeholder="" name="overTime" style="border: 0;border-bottom: 1px solid #ccc;">
+					</div>
+				</div> 
+				
+			</div>
+			
+			
+			
+			  
+              <!-- /.box-footer -->
+    </form>
+</div>
+
+
+
+<script>
+var datatable=null;
+	$(function() {
+		
+		
+		var linkageSelect = new LinkageSelect($("#categorySel"), {
+			url: '/order_delivery/getDeliverys',  //数据源
+			id: 'id',   //key属性名
+			name: 'name', //value属性名
+			parentNameDomName: 'deliveryId', //第一层name （父节点name）
+			requestType:'get',
+			
+			//queryParam:{"row":100,"page":1},
+			//isPage:true
+		});
+		linkageSelect.getParentValue();  //初始化父节点数据
+		
+		$(function() {
+			var param = base64encode(utf16to8(JSON.stringify({"userId":100})));
+			datatable = $(".dataTable").DataTable({
+				"ajax" : {
+					"url" : "/order/getOrderReturn",
+					"contentType": "application/json",
+				    "type": "POST",
+				    "data":{"dataGridParam":param}
+				},
+				"paging":   false,
+			    "ordering": false,
+			    "info":     false,
+			    "searching":false,
+				"columnDefs" : [ {
+					"data" : "orderNo",
+					"targets":0
+				}, {
+					"data" : "orderNo",
+					"targets":1,
+					"render":function(data,type,row){
+						console.log(row);
+						 return '';
+                         ;
+					}
+				}, {
+					"data" : "userId",
+					"targets":2,
+					
+				},{
+					"data":"returnType",
+					"targets":3,
+					"render":function(data,type,row){
+						 var type ='';
+						 //1已到货申请退货 2已到货申请换货  3未到货退款
+						 if(row.returnType=='1'){
+							 type='已到货申请退货';
+						 }else{
+							 type='未到货退款';
+						 }
+						 return type;
+					}
+				},{
+					"data" : "applyTime",
+					"targets":4/* ,
+					"render":function(data,type,row){
+						 return new Date(row.applyTime).pattern("yyyy-MM-dd hh:mm:ss")
+                        ;
+					} */
+				},{
+					"data" : "returnMoney",
+					"targets":5
+				},{
+					"data":"status",
+					"targets":6,
+					"render":function(data,type,row){
+						var staName='';
+						
+						//0:用户取消    1:待审核  2：审核通过   4：拒绝   5:买家已退货 6:商户确认收到用户回寄货物  7：卖家已换货 8:已退款  9::用户收到货物，订单完成
+						if(row.status == '1'){
+							staName ='待审核';
+						}else if(row.status == '2'){
+							staName ='待回寄';
+						}else if(row.status == '4'){
+							staName ='拒绝';
+						}else if(row.status == '5'){
+							staName ='买家已退货';
+						}else if(row.status == '6'){
+							staName ='待退款';
+						}else if(row.status == '8'){
+							staName ='已退款';
+						}else{
+							staName ='用户已取消 ';
+						}
+						return staName;
+						
+					}
+				},{
+					"data":"handle",
+					"targets":7,
+					"orderable":false,
+					"render":function(data,type,row){
+						var _html = "<a title='查看' onclick='query("+row.orderNo+")' class='btn btn-default btn-xs'><i class='fa fa-search'></i></a>&nbsp;";
+						
+							if(row.status == '1'){
+								//'待确认'
+								_html +="<a title='审核' onclick='shenhe("+row.orderNo+")' class='btn btn-default btn-xs'><i class='fa fa-edit'></i></a>&nbsp;"
+							}else if(row.status=='5'){
+								_html +="<a title='确认收货' onclick='qrsh("+row.orderNo+")' class='btn btn-default btn-xs'><i class='fa fa-edit'></i></a>&nbsp;"
+							}else if(row.status=='6'){
+								_html +="<a title='退款' onclick='tk("+row.orderNo+","+row.returnMoney+")' class='btn btn-default btn-xs'><i class='fa fa-edit'></i></a>&nbsp;"
+							}
+					
+						return _html;
+					}
+				} ],
+				"language" : {
+					"sProcessing" : "处理中...",
+					"sLengthMenu" : "显示 _MENU_ 项结果",
+					"sZeroRecords" : "没有匹配结果",
+					"sInfo" : "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+					"sInfoEmpty" : "显示第 0 至 0 项结果，共 0 项",
+					"sInfoFiltered" : "(由 _MAX_ 项结果过滤)",
+					"sInfoPostFix" : "",
+					"sSearch" : "搜索:",
+					"sUrl" : "",
+					"sEmptyTable" : "表中数据为空",
+					"sLoadingRecords" : "载入中...",
+					"sInfoThousands" : ",",
+					"oPaginate" : {
+						"sFirst" : "首页",
+						"sPrevious" : "上页",
+						"sNext" : "下页",
+						"sLast" : "末页"
+					},
+					"oAria" : {
+						"sSortAscending" : ": 以升序排列此列",
+						"sSortDescending" : ": 以降序排列此列"
+					}
+				},
+			});
+		})
+		
+		function reloadTable(){
+			datatable.ajax.reload();
+		}
+	})
+	function tk(orderNo,money){
+		var ly =layer.confirm('退款金额:'+money+";是否确认?", {
+		    btn: ['确定','取消']
+		}, function(){
+			 var cartPost = new Ajax('',{
+					url: "/order/adminRefund",
+					type:"POST",
+					param:base64encode(utf16to8(JSON.stringify({"orderNo":orderNo}))),
+					callback : function(rsp) {
+						
+						layer.closeAll();
+						layer.alert('操作成功!');
+						datatable.ajax.reload();
+					}
+			 })
+		});
+	}
+	function qrsh(orderNo){
+		var ly =layer.confirm('是否已确认收到退回货物？', {
+		    btn: ['确定','取消']
+		}, function(){
+			 var cartPost = new Ajax('',{
+					url: "/order/confirmUserLogistics",
+					type:"POST",
+					param:base64encode(utf16to8(JSON.stringify({"orderNo":orderNo}))),
+					callback : function(rsp) {
+						
+						layer.closeAll();
+						layer.alert('操作成功!');
+						datatable.ajax.reload();
+					}
+			 })
+		});
+	}
+	function shenhe(orderNo){
+		$("#shenhe").find('form').find('[name="shtj"]').remove();
+		
+		var index = layer.open({
+	        type: 1,
+	        title: "审核",
+	        shadeClose: true,
+	      
+	        area:['410px','250px'],
+	        content: $("#shenhe"),
+	    });
+		
+		
+		
+		var subBtn = $('<input name="shtj" type="button" class="btn btn-info pull" value="提交"  style="margin-left:15px;"></input>');
+		subBtn.on("click",function(){
+			
+			 var p = $("#shenhe").find('form').serializeJson();
+			 p.orderNo = orderNo;
+			 var cartPost = new Ajax('',{
+					url: "/order/reviewedReturnOrder",
+					type:"POST",
+					param:base64encode(utf16to8(JSON.stringify(p))),
+					callback : function(rsp) {
+						
+						layer.closeAll();
+						layer.alert('操作成功!');
+						datatable.ajax.reload();
+					}
+			 })
+		})
+		
+		$("#shenhe").find('form').append(subBtn);
+		
+	}
+	function cfm(orderNo){
+		var ly =layer.confirm('是否确定把该订单状态改成已确认？', {
+		    btn: ['确定','取消']
+		}, function(){
+			 var cartPost = new Ajax('',{
+					url: "/order/deliveryConfirm",
+					type:"POST",
+					param:base64encode(utf16to8(JSON.stringify({"orderNo":orderNo,"confirmStatus":1}))),
+					callback : function(rsp) {
+						
+						layer.closeAll();
+						layer.alert('操作成功!');
+						datatable.ajax.reload();
+					}
+			 })
+		});
+	}
+	
+	
+	function delivery(orderNo){
+		
+		$("#edit").find('form').find('[name="fahuobtn"]').remove();
+		query(orderNo,"delivery");
+		
+		
+		
+		var subBtn = $('<input name="fahuobtn" type="button" class="btn btn-info pull-right" value="发货"></input>');
+		
+		subBtn.on("click",function(){
+			
+			var deliveryId =$("#edit").find('[name=deliveryId]').val();
+			var shippingSn = $("#edit").find('[name=shippingSn]').val();
+			
+			var p = $("#edit").find('form').serializeJson();
+			 var cartPost = new Ajax('',{
+					url: "/order/deliveryOrder",
+					type:"POST",
+					param:base64encode(utf16to8(JSON.stringify(p))),
+					callback : function(rsp) {
+						
+						layer.closeAll();
+						layer.alert('操作成功!');
+						datatable.ajax.reload();
+						$("#edit").find('form').find('[name="fahuobtn"]').remove();
+					}
+			 })
+			 
+			
+		})
+		$("#edit").find('form').append(subBtn);
+		
+	}
+	function query(orderNo,type){
+		
+		$("#edit").find('form').find('[name="fahuobtn"]').remove();
+			var index = layer.open({
+		        type: 1,
+		        title: "详情",
+		        shadeClose: true,
+		        maxmin:true,
+		        area:['100%','100%'],
+		        content: $("#edit"),
+		    });
+			
+			var cartPost = new Ajax('',{
+				url: "/order/getOrderReturnDetail?orderNo="+orderNo,
+				type:"get",
+				callback : function(rsp) {
+					var data =rsp.data;
+					var orderDetail = data.orderReturnDetail;
+				
+					var form = new Form($("#edit").find('form'),{
+		        		data : data
+		        	});
+		        	form.formEdit();
+		        	
+		        	
+		        	
+					var itemNameHtml='';
+					var itemPriceHtml='';
+					var itemCountHtml='';
+					
+					$("#edit").find('[name=itemNameDIV]').html('');
+					$("#edit").find('[name=itemPriceDIV]').html('');
+					$("#edit").find('[name=itemCountDIV]').html('');
+					
+					
+					/* if(null!=data.applyTime){
+						$("#edit").find('[name="applyTime"]').val(new Date(data.applyTime).pattern("yyyy-MM-dd hh:mm:ss"));
+		        	}
+					
+					if(null!=data.agreeTime){
+						$("#edit").find('[name="agreeTime"]').val(new Date(data.agreeTime).pattern("yyyy-MM-dd hh:mm:ss"));
+		        	}
+					
+					if(null!=data.returnProductTime){
+						$("#edit").find('[name="returnProductTime"]').val(new Date(data.returnProductTime).pattern("yyyy-MM-dd hh:mm:ss"));
+		        	}
+					
+					if(null!=data.confirmUserLogisticsTime){
+						$("#edit").find('[name="confirmUserLogisticsTime"]').val(new Date(data.confirmUserLogisticsTime).pattern("yyyy-MM-dd hh:mm:ss"));
+		        	}
+					
+					if(null!=data.overTime){
+						$("#edit").find('[name="overTime"]').val(new Date(data.overTime).pattern("yyyy-MM-dd hh:mm:ss"));
+		        	} */
+					if(null!=data.userDelivery){
+		        		$("#edit").find('[name="userDeliveryName"]').val(data.userDelivery.name + '  ' +data.userLogisticsNo);
+		        	}
+					
+					
+					var staName='';
+					
+					//0:用户取消    1:待审核  2：审核通过   4：拒绝   5:买家已退货 6:商户确认收到用户回寄货物  7：卖家已换货 8:已退款  9::用户收到货物，订单完成
+					if(data.status == '1'){
+						staName ='待审核';
+					}else if(data.status == '2'){
+						staName ='待买家回寄商品';
+					}else if(data.status == '4'){
+						staName ='拒绝';
+					}else if(data.status == '5'){
+						staName ='买家已退货';
+					}else if(data.status == '6'){
+						staName ='待退款';
+					}else if(data.status == '8'){
+						staName ='已退款';
+					}else{
+						staName ='用户已取消 ';
+					}
+					
+					$("#edit").find('[name="statusName"]').val(staName);
+					
+					$("#edit").find('[name="returnTypeName"]').val(data.returnType=='1'?'已到货申请退货':'未到货退款');
+					
+					$.each(orderDetail,function(i,objDetail){
+						
+						if(i==0){
+							itemNameHtml+='<div class="form-group" style="margin-bottom: 1px">';
+							itemNameHtml+='<label class="control-label col-sm-4">商品名称:</label>';
+								itemNameHtml+='<div class="col-sm-8 col-md-6" style="margin-top: 6px;">';
+									itemNameHtml+='<div >'+objDetail.itemId+'</div>';
+								itemNameHtml+='</div>';
+							itemNameHtml+='</div>';
+							
+							itemPriceHtml+='<div class="form-group" style="margin-bottom: 1px">';
+							itemPriceHtml+='<label class="control-label col-sm-4">单价:</label>';
+								itemPriceHtml+='<div class="col-sm-8 col-md-6" style="margin-top: 6px;">';
+									itemPriceHtml+='<div >'+objDetail.price+'</div>';
+								itemPriceHtml+='</div>';
+							itemPriceHtml+='</div>';
+							
+							
+							itemCountHtml+='<div class="form-group" style="margin-bottom: 1px">';
+							itemCountHtml+='<label class="control-label col-sm-4">数量:</label>';
+								itemCountHtml+='<div class="col-sm-8 col-md-6" style="margin-top: 6px;">';
+									itemCountHtml+='<div >'+objDetail.quantity+'</div>';
+								itemCountHtml+='</div>';
+							itemCountHtml+='</div>';
+						}else{
+							itemNameHtml+='<div class="form-group" style="margin-bottom: 1px">';
+								itemNameHtml+='<label class="control-label col-sm-4"></label>';
+								itemNameHtml+='<div class="col-sm-8 col-md-6" style="margin-top: 6px;">';
+									itemNameHtml+='<div >'+objDetail.itemId+'</div>';
+								itemNameHtml+='</div>';
+							itemNameHtml+='</div>';
+							
+							
+							
+							itemPriceHtml+='<div class="form-group" style="margin-bottom: 1px">';
+							itemPriceHtml+='<label class="control-label col-sm-4"></label>';
+								itemPriceHtml+='<div class="col-sm-8 col-md-6" style="margin-top: 6px;">';
+									itemPriceHtml+='<div >'+objDetail.price+'</div>';
+								itemPriceHtml+='</div>';
+							itemPriceHtml+='</div>';
+							
+							
+							itemCountHtml+='<div class="form-group" style="margin-bottom: 1px">';
+							itemCountHtml+='<label class="control-label col-sm-4"></label>';
+								itemCountHtml+='<div class="col-sm-8 col-md-6" style="margin-top: 6px;">';
+									itemCountHtml+='<div >'+objDetail.quantity+'</div>';
+								itemCountHtml+='</div>';
+							itemCountHtml+='</div>';
+						}
+					})
+					$("#edit").find('[name=itemNameDIV]').append(itemNameHtml);
+					$("#edit").find('[name=itemPriceDIV]').append(itemPriceHtml);
+					$("#edit").find('[name=itemCountDIV]').append(itemCountHtml);
+				}
+		 });
+			layer.full(index);
+		}
+	
+	
+
+</script>
+</body>
+</html>
